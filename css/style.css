@@ -15,7 +15,7 @@ rgb(221, 221, 221), #DDDDDD
 }
 
 header {
-	padding: 4px 0;
+	padding: 5px 0;
 	background-color: #222;
 }
 
@@ -53,4 +53,31 @@ header {
 	background-color: #E44D26;
 	color: white;
 	border-color: #F16529;
+}
+
+.project-icon {
+	background-size: 100%;
+	width: 150px;
+	height: 50px;
+	background-color: #222;
+	display: block;
+}
+
+.project-box {
+	background-color: #222;
+	padding: 6px 10px;
+	color: white;
+	display: block;
+	border: 8px solid #444;
+}
+
+.project-box:hover {
+	color: white;
+	text-decoration: none;
+	border: 8px solid #F16529;
+}
+
+.project-box:focus {
+	color: white;
+	text-decoration: none;
 }
