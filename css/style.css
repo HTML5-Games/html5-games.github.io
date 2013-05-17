@@ -32,7 +32,7 @@ header nav .menu-link {
 	
 	font-size: 1.6em;
 	color: white;
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 }
 
 header nav .menu-link:hover, header nav .menu-link:focus {
@@ -47,6 +47,7 @@ header nav .menu-link:hover, header nav .menu-link:focus {
 header nav .dropdown-menu {
 	background-color: #E44D26;
 	border-radius: 0;
+	top: 71px;
 }
 
 header nav .dropdown-menu a {
