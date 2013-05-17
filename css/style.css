@@ -10,9 +10,38 @@ rgb(255, 255, 255), #FFFFFF
 rgb(221, 221, 221), #DDDDDD
 */
 
+* {
+	font-family: 'Happy Monkey', cursive;
+}
+
 header {
-  padding: 4px 0;
+	padding: 4px 0;
 	background-color: #222;
+}
+
+.links {
+	margin: 10px 0;
+	font-size: 32px;
+	line-height: 32px;
+}
+
+.links img {
+	vertical-align: top;
+	border-right: 1px solid #CCC;
+	padding-right: .5rem;
+}
+
+.links a {
+	font-family: 'Lobster', cursive;
+	color: #171717;
+}
+
+.links a:hover {
+	color: #171717;
+}
+
+.links a:focus {
+	color: #171717;
 }
 
 .block {
