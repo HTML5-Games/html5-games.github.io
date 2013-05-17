@@ -22,7 +22,7 @@ header #icon {
 	padding: 5px 0;
 }
 
-header nav a {
+header nav .menu-link {
 	display: block;
 	float: left;
 	padding: 0 12px;
@@ -35,13 +35,27 @@ header nav a {
 	letter-spacing: 2px;
 }
 
-header nav a:hover, header nav a:focus {
+header nav .menu-link:hover, header nav .menu-link:focus {
 	background-color: #E44D26;
 	color: white;
 	text-decoration: none;
 	height: 68px;
 	line-height: 68px;
 	border-top: 6px solid #F16529;
+}
+
+header nav .dropdown-menu {
+	background-color: #E44D26;
+	border-radius: 0;
+}
+
+header nav .dropdown-menu a {
+	color: white;
+}
+
+header nav .dropdown-menu a:hover {
+	background-color: #F16529;
+	background-image: none;
 }
 
 .links {
