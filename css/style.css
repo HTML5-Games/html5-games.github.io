@@ -1,0 +1,27 @@
+/*
+Color Scheme:
+
+rgb(228, 77, 38), #E44D26
+rgb(241, 101, 41), #F16529
+
+and
+
+rgb(255, 255, 255), #FFFFFF
+rgb(221, 221, 221), #DDDDDD
+*/
+
+header {
+  padding: 4px 0;
+	background-color: #222;
+}
+
+.block {
+	background-color: #F0F0F0;
+	border-top: 8px solid #DDD;
+}
+
+.block.red {
+	background-color: #E44D26;
+	color: white;
+	border-color: #F16529;
+}
