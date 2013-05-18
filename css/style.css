@@ -14,8 +14,16 @@ rgb(221, 221, 221), #DDDDDD
 	font-family: 'Happy Monkey', cursive;
 }
 
+body {
+	padding-top: 74px;
+}
+
 header {
 	background-color: #222;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
 }
 
 header #icon {
@@ -32,7 +40,6 @@ header nav .menu-link {
 	
 	font-size: 1.6em;
 	color: white;
-	letter-spacing: 1px;
 }
 
 header nav .menu-link:hover, header nav .menu-link:focus {
@@ -107,7 +114,7 @@ header nav .dropdown-menu a:hover {
 	padding: 6px 10px;
 	color: white;
 	display: block;
-	border: 8px solid #444;
+	border: 8px solid #333;
 }
 
 .project-box:hover {
@@ -123,4 +130,22 @@ header nav .dropdown-menu a:hover {
 
 #projects > .project-box:not(:first-child) {
 	margin-top: 10px;
+}
+
+#learn a {
+	text-decoration: none;
+}
+
+#learn a > p {
+	color: #999;
+	font-size: .8em;
+}
+
+.track-heading {
+	font-size: 1.2em;
+	color: #777;
+	margin-top: 18px;
+	margin-bottom: 12px;
+	display: block;
+	border-bottom: 2px solid #777;
 }
