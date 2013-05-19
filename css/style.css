@@ -24,6 +24,7 @@ header {
 	top: 0;
 	left: 0;
 	width: 100%;
+	box-shadow: 0 2px 5px #222;
 }
 
 header #icon {
@@ -105,12 +106,12 @@ header nav .dropdown-menu a:hover {
 
 .project-icon {
 	background-size: 100%;
-	background-color: #222;
+	background-color: #292929;
 	display: block;
 }
 
 .project-box {
-	background-color: #222;
+	background-color: #292929;
 	padding: 6px 10px;
 	color: white;
 	display: block;
