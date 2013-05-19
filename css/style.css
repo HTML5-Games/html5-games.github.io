@@ -25,6 +25,7 @@ header {
 	left: 0;
 	width: 100%;
 	box-shadow: 0 2px 5px #222;
+	z-index: 1000;
 }
 
 header #icon {
@@ -67,29 +68,35 @@ header nav .dropdown-menu a:hover {
 	background-image: none;
 }
 
-.links {
-	margin-top: 20px;
-	margin-bottom: 25px;
-	font-size: 32px;
-	line-height: 32px;
+section {
+	position: relative;
 }
 
-.links img {
+section .id-link {
+	position:absolute;
+	top: -82px;
+}
+
+#links {
+	padding-top: 20px;
+	padding-bottom: 25px;
+	font-size: 32px;
+	line-height: 32px;
+	background-color: #fff;
+}
+
+#links img {
 	vertical-align: top;
 	border-right: 1px solid #CCC;
 	padding-right: .5rem;
 }
 
-.links a {
+#links a {
 	font-family: 'Lobster', cursive;
 	color: #171717;
 }
 
-.links a:hover {
-	color: #171717;
-}
-
-.links a:focus {
+#links a:hover, #links a:focus {
 	color: #171717;
 }
 
@@ -129,15 +136,15 @@ header nav .dropdown-menu a:hover {
 	text-decoration: none;
 }
 
-#projects > .project-box:not(:first-child) {
+.project-box:not(:first-child) {
 	margin-top: 10px;
 }
 
-#learn a {
+#learn-block a {
 	text-decoration: none;
 }
 
-#learn a > p {
+#learn-block a > p {
 	color: #999;
 	font-size: .8em;
 }
