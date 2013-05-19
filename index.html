@@ -23,19 +23,21 @@
 			</a>
 			<nav class="pull-right">
 				<div class="dropdown">
-					<a class="dropdown-toggle menu-link" data-toggle="dropdown" href="#">
+					<a class="menu-link" href="#about">
+						About
+					</a>
+					<a class="menu-link" href="#projects">
 						Projects
 					</a>
-					<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-						<li><a tabindex="-1" href="http://html5-games.github.io/vilify">Vilify</a></li>
-						<li><a tabindex="-1" href="https://github.com/HTML5-Games/gamedev">Gamedev Site</a></li>
-					</ul>
+					<a class="menu-link" href="#learn">
+						Learn
+					</a>
 				</div>
 			</nav>
 		</div>
 	</header>
 
-	<section class="links">
+	<section id="links">
 		<div class="container">
 			<span class="muted">Visit us on:</span>
 			<a href="https://github.com/HTML5-Games"><img src="img/GitHub-Mark-32px.png" alt="GitHub"/></a>
@@ -43,7 +45,8 @@
 		</div>
 	</section>
 
-	<section class="block" id="about">
+	<section class="block">
+		<span id="about" class="id-link"></span>
 		<div class="container">
 			<h1>About Us</h1>
 			<p class="lead">
@@ -52,7 +55,8 @@
 		</div>
 	</section>
 
-	<section class="block red" id="projects">
+	<section class="block red">
+		<span id="projects" class="id-link"></span>
 		<div class="container">
 			<h1>Projects</h1>
 			<p class="lead" id="projects">
@@ -68,7 +72,8 @@
 		</div>
 	</section>
 
-	<section class="block" id="learn">
+	<section class="block" id="learn-block">
+		<span id="learn" class="id-link"></span>
 		<div class="container">
 			<h1>Wanna Learn HTML5 Gamedev?</h1>
 			<div class="lead" style="margin-bottom: 20px;">
@@ -122,15 +127,15 @@
 
 	<script src="http://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	
+
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		
+
 		ga('create', 'UA-41025952-1', 'html5-games.github.io');
 		ga('send', 'pageview');
-	</script> 
+	</script>
 </body>
 </html>
