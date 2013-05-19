@@ -150,3 +150,13 @@ header nav .dropdown-menu a:hover {
 	display: block;
 	border-bottom: 2px solid #777;
 }
+
+footer {
+	background-color: #202020;
+	border-top: 8px solid #292929;
+	color: #777;
+}
+
+footer a, footer a:hover, footer a:focus {
+	color: #777;
+}
