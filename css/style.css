@@ -19,13 +19,14 @@ body {
 }
 
 header {
-	background-color: #222;
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
-	box-shadow: 0 2px 5px #222;
 	z-index: 1000;
+	
+	background-color: #222;
+	box-shadow: 0 2px 5px #222;
 }
 
 header #icon {
@@ -45,18 +46,21 @@ header nav .menu-link {
 }
 
 header nav .menu-link:hover, header nav .menu-link:focus {
-	background-color: #E44D26;
-	color: white;
-	text-decoration: none;
 	height: 68px;
 	line-height: 68px;
+	
+	background-color: #E44D26;
 	border-top: 6px solid #F16529;
+	
+	color: white;
+	text-decoration: none;
 }
 
 header nav .dropdown-menu {
+	top: 71px;
+	
 	background-color: #E44D26;
 	border-radius: 0;
-	top: 71px;
 }
 
 header nav .dropdown-menu a {
@@ -80,15 +84,18 @@ section .id-link {
 #links {
 	padding-top: 20px;
 	padding-bottom: 25px;
+	
 	font-size: 32px;
 	line-height: 32px;
+	
 	background-color: #fff;
 }
 
 #links img {
 	vertical-align: top;
-	border-right: 1px solid #CCC;
 	padding-right: .5rem;
+	
+	border-right: 1px solid #CCC;
 }
 
 #links a {
@@ -107,28 +114,33 @@ section .id-link {
 
 .block.red {
 	background-color: #E44D26;
-	color: white;
 	border-color: #F16529;
+	
+	color: white;
 }
 
 .project-icon {
+	display: block;
+	
 	background-size: 100%;
 	background-color: #292929;
-	display: block;
 }
 
 .project-box {
-	background-color: #292929;
-	padding: 6px 10px;
-	color: white;
 	display: block;
+	padding: 6px 10px;
+	
+	background-color: #292929;
 	border: 8px solid #333;
+	
+	color: white;
 }
 
 .project-box:hover {
+	border: 8px solid #F16529;
+	
 	color: white;
 	text-decoration: none;
-	border: 8px solid #F16529;
 }
 
 .project-box:focus {
@@ -150,17 +162,20 @@ section .id-link {
 }
 
 .track-heading {
-	font-size: 1.2em;
-	color: #777;
+	display: block;
 	margin-top: 18px;
 	margin-bottom: 12px;
-	display: block;
+	
 	border-bottom: 2px solid #777;
+	
+	color: #777;
+	font-size: 1.2em;
 }
 
 footer {
 	background-color: #202020;
 	border-top: 8px solid #292929;
+	
 	color: #777;
 }
 
