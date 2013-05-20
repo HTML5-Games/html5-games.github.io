@@ -156,6 +156,10 @@ section .id-link {
 	text-decoration: none;
 }
 
+#learn-block a.coming-soon {
+	color: #888;
+}
+
 #learn-block a > p {
 	color: #999;
 	font-size: .8em;
