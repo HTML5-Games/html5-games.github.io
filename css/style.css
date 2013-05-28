@@ -116,7 +116,8 @@ section .id-link {
 }
 
 .block.red {
-	background-color: #E44D26;
+	/*background-color: #E44D26;*/
+	background-color: #000;
 	/*border-color: #F16529;*/
 	
 	border-color: #333333;
