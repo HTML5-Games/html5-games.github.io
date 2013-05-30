@@ -33,7 +33,7 @@ header #icon {
 	padding: 5px 0;
 }
 
-header nav .menu-link {
+header nav .menu-link, header nav .menu-link:focus {
 	display: block;
 	float: left;
 	padding: 0 12px;
@@ -45,7 +45,7 @@ header nav .menu-link {
 	color: white;
 }
 
-header nav .menu-link:hover, header nav .menu-link:focus {
+header nav .menu-link:hover, header nav .menu-link:active {
 	height: 68px;
 	line-height: 68px;
 	
@@ -63,11 +63,11 @@ header nav .dropdown-menu {
 	border-radius: 0;
 }
 
-header nav .dropdown-menu a {
+header nav .dropdown-menu a, header nav .dropdown-menu a:focus {
 	color: white;
 }
 
-header nav .dropdown-menu a:hover {
+header nav .dropdown-menu a:hover, header nav .dropdown-menu a:active {
 	background-color: #F16529;
 	background-image: none;
 }
@@ -137,7 +137,7 @@ section .id-link {
 }
 
 .project-box:hover {
-	border: 8px solid #F16529;
+	border-color: #444;
 	
 	color: white;
 	text-decoration: none;
@@ -180,9 +180,35 @@ footer {
 	background-color: #202020;
 	border-top: 8px solid #292929;
 	
+	padding: 3px 0;
+	
 	color: #777;
 }
 
-footer a, footer a:hover, footer a:focus {
+footer a, footer a:hover, footer a:active, footer a:focus {
 	color: #777;
+}
+
+footer .btn, footer .btn:focus {
+	background: #444;
+	box-shadow: none;
+	color: #FFF;
+	border: 5px solid #333;
+	top: -4px;
+	position: relative;
+	border-radius: 0px;
+	text-shadow: none;
+}
+
+footer .btn:hover {
+	border-color: #292929;
+	background: #333;
+	color: #FFF;
+}
+
+footer .btn:active {
+	border-color: #333;
+	background: #333;
+	color: #FFF;
+	box-shadow: inset 0 0 5px black;
 }
