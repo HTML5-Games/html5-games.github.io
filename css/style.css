@@ -126,7 +126,7 @@ section .id-link {
 	background-color: #292929;
 }
 
-.project-box {
+.project-box, .project-box:focus {
 	display: block;
 	padding: 6px 10px;
 	
@@ -134,18 +134,23 @@ section .id-link {
 	border: 8px solid #333;
 	
 	color: white;
+	text-decoration: none;
 }
 
-.project-box:hover {
+.project-box:hover, .project-box:active {
 	border-color: #444;
 	
 	color: white;
 	text-decoration: none;
 }
 
-.project-box:focus {
+.project-box:active {
+	border-color: #444;
+	
 	color: white;
 	text-decoration: none;
+	
+	box-shadow: inset 0 0 5px black;
 }
 
 .project-box:not(:first-child) {
@@ -190,25 +195,31 @@ footer a, footer a:hover, footer a:active, footer a:focus {
 }
 
 footer .btn, footer .btn:focus {
-	background: #444;
-	box-shadow: none;
-	color: #FFF;
-	border: 5px solid #333;
-	top: -4px;
 	position: relative;
+	top: -4px;
+	
+	background: #444;
+	border: 5px solid #333;
+	
+	color: #FFF;
+		
 	border-radius: 0px;
+	box-shadow: none;
 	text-shadow: none;
 }
 
 footer .btn:hover {
-	border-color: #292929;
 	background: #333;
+	border-color: #292929;
+	
 	color: #FFF;
 }
 
 footer .btn:active {
-	border-color: #333;
 	background: #333;
+	border-color: #333;
+	
 	color: #FFF;
-	box-shadow: inset 0 0 5px black;
+	
+	box-shadow: inset 0 0 3px black;
 }
