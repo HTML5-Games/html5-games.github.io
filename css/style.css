@@ -108,6 +108,8 @@ section .id-link {
 }
 
 .block {
+	padding-bottom: 20px;
+	
 	background-color: #F0F0F0;
 	border-top: 8px solid #DDD;
 }
@@ -119,6 +121,10 @@ section .id-link {
 	color: white;
 }
 
+.block .lead {
+	margin-bottom: 0;
+}
+
 .project-icon {
 	display: block;
 	
@@ -128,7 +134,7 @@ section .id-link {
 
 .project-box, .project-box:focus {
 	display: block;
-	padding: 6px 10px;
+	padding: 8px 10px;
 	
 	background-color: #292929;
 	border: 8px solid #333;
@@ -164,7 +170,7 @@ section .id-link {
 }
 
 .panel {
-	padding: 12px 8px;
+	padding: 8px 10px;
 	
 	border: 8px solid #666;
 	background: #777;
@@ -233,4 +239,33 @@ footer .btn:active {
 	color: #FFF;
 	
 	box-shadow: inset 0 0 3px black;
+}
+
+.grid-box, .grid-box:focus {
+	display: block;
+	width: calc( 50% - 10px );
+
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 8px 10px;
+	
+	background-color: #292929;
+	border: 8px solid #333;	
+	
+	color: white;
+	text-decoration: none;
+}
+
+.grid-box:hover, .grid-box:active {
+	border-color: #444;
+	
+	color: white;
+	text-decoration: none;
+	
+	box-shadow: inset 0 0 5px black;
+}
+
+#sidebar {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 }
