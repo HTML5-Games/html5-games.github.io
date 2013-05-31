@@ -286,6 +286,10 @@ footer .btn:active {
 	-moz-box-sizing: border-box;
 }
 
+#sidebar li {
+	list-style-type: none;
+}
+
 .post {
 	padding: 8px 10px;
 }
