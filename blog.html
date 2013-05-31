@@ -23,74 +23,63 @@
 			<nav class="pull-right">
 				<div class="dropdown">
 					<a class="menu-link" href="#about">
-						About
-					</a>
-					<a class="menu-link" href="#projects">
-						Projects
-					</a>
-					<a class="menu-link" href="#learn">
-						Learn
+						&larr; Back
 					</a>
 				</div>
 			</nav>
 		</div>
 	</header>
 
-<div class="content">
-	<div class="container">
-		<section id="intro">
+	<section id="intro">
+		<div class="container">
 			<h2>Do you love coding and gaming as much as we do?</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
-		</section>
+		</div>
+	</section>
 
-		<section>
-			<!-- Main content area -->
-			<article class ="blogPost">
+	<div class="container">
+	<div class="row">
+		<!-- Main content -->
+		<article class="span9">
+			<section id="post">
 				<h2>This is the title of the blog post</h2>
 				<p>Posted on <time datetime ="2013-05-30T20:40:00-06:00">May 30th, 2013</time> by <a href = "#"> Tritexander </a> - <a href = "#comments"> 2 comments<a></p>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
-		</article>
-		</section>
+			</section>
 
-		<section id="comments">
-		<h3>Comments</h3>
-		<article>
-			<a href="#">Tritexander</a> on <time datetime="2013-05-30T23:35:25-06:00">May 30th, 2013 at 23:35</time>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+			<section id="comments">
+				<h3>Comments</h3>
+				<a href="#">Tritexander</a> on <time datetime="2013-05-30T23:35:25-06:00">May 30th, 2013 at 23:35</time>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+				<a href="#">Tritexandern</a> on <time datetime="2013-05-30T23:40:09-06:00">May 30th, 2013 at 23:40</time>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+				<form action="#" method="post">
+					<h3>Post a comment</h3>
+					<p>
+						<label for="name">Name</label>
+						<input name="name" id="name" type="text" required />
+					</p>
+					<p>
+						<label for="email">E-mail</label>
+						<input name="email" id="email" type="email" required />
+					</p>
+					<p>
+						<label for="website">Website</label>
+						<input name="website" id="website" type="url" />
+					</p>
+					<p>
+						<label for="comment">Comment</label>
+						<textarea name="comment" id="comment" required></textarea>
+					</p>
+					<p>
+						<input type="submit" value="Post comment" />
+					</p>
+				</form>
+			</section>
 		</article>
-		<article>
-			<a href="#">Tritexandern</a> on <time datetime="2013-05-30T23:40:09-06:00">May 30th, 2013 at 23:40</time>
-			<div>
-				<p>Lorem ipsum dolor sit amet</p>
-				<p>Lorem ipsum dolor sit amet</p>
-				<p>Lorem ipsum dolor sit amet</p>
-				<p>Lorem ipsum dolor sit amet</p>
-			</div>
-		</article>
-			<form action="#" method="post">
-		<h3>Post a comment</h3>
-		<p>
-			<label for="name">Name</label>
-			<input name="name" id="name" type="text" required />
-		</p>
-		<p>
-			<label for="email">E-mail</label>
-			<input name="email" id="email" type="email" required />
-		</p>
-		<p>
-			<label for="website">Website</label>
-			<input name="website" id="website" type="url" />
-		</p>
-		<p>
-			<label for="comment">Comment</label>
-			<textarea name="comment" id="comment" required></textarea>
-		</p>
-		<p><input type="submit" value="Post comment" /></p>
-			</form>
-	</section>
 
-		<aside>
-			<!-- Sidebar -->
+		<!-- Sidebar -->
+		<aside class="span3" id="sidebar">
 			<section id="categories">
 				<li><a href ="#">Lorem ipsum dolor</a></li>
 				<li><a href ="#">Lorem ipsum dolor</a></li>
@@ -108,36 +97,38 @@
 				<li><a href ="#">June 2013</a></li>
 			</section>
 		</aside>
-</div>
-		<footer>
-			<!-- Footer -->
-			<section id="about">
-				<h5>About</h5>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porta vulputate posuere. Vestibulum ut lacus arcu, sit amet aliquet orci. In viverra faucibus tincidunt. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla elementum blandit tempor. Pellentesque dignissim congue urna id rhoncus. Nulla ligula tortor, vulputate eu euismod ut, mollis id nisi.</p>
-			</section>
-
-			<section id="blogroll">
-				<h5>Blogroll</h5>
-				<ul><a href="#">Villify</a></ul>
-				<ul><a href="#">Blog</a></ul>
-				<ul><a href="#">Home</a></ul>
-				<ul><a href="#">Codeacademy</a></ul>
-			</section>
-
-			<section id="popular">
-				<h5>Popular</h5>
-				<ul><a href="#">Lorem ipsum dolor sit amet</a></ul>
-				<ul><a href="#">Lorem ipsum dolor sit amet</a></ul>
-				<ul><a href="#">Lorem ipsum dolor sit amet</a></ul>
-				<ul><a href="#">Lorem ipsum dolor sit amet</a></ul>
-				<ul><a href="#">Lorem ipsum dolor sit amet</a></ul>
-				<ul><a href="#">Lorem ipsum dolor sit amet</a></ul>
-				<ul><a href="#">Lorem ipsum dolor sit amet</a></ul>
-				<ul><a href="#">Lorem ipsum dolor sit amet</a></ul>
-				<ul><a href="#">Lorem ipsum dolor sit amet</a></ul>
-
-			</section>
-		</footer>
 	</div>
+	</div>
+
+	<footer>
+		<!-- Footer -->
+		<section id="about">
+			<h5>About</h5>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porta vulputate posuere. Vestibulum ut lacus arcu, sit amet aliquet orci. In viverra faucibus tincidunt. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla elementum blandit tempor. Pellentesque dignissim congue urna id rhoncus. Nulla ligula tortor, vulputate eu euismod ut, mollis id nisi.</p>
+		</section>
+
+		<section id="blogroll">
+			<h5>Blogroll</h5>
+			<ul><a href="#">Villify</a></ul>
+			<ul><a href="#">Blog</a></ul>
+			<ul><a href="#">Home</a></ul>
+			<ul><a href="#">Codeacademy</a></ul>
+		</section>
+
+		<section id="popular">
+			<h5>Popular</h5>
+			<ul><a href="#">Lorem ipsum dolor sit amet</a></ul>
+			<ul><a href="#">Lorem ipsum dolor sit amet</a></ul>
+			<ul><a href="#">Lorem ipsum dolor sit amet</a></ul>
+			<ul><a href="#">Lorem ipsum dolor sit amet</a></ul>
+			<ul><a href="#">Lorem ipsum dolor sit amet</a></ul>
+			<ul><a href="#">Lorem ipsum dolor sit amet</a></ul>
+			<ul><a href="#">Lorem ipsum dolor sit amet</a></ul>
+			<ul><a href="#">Lorem ipsum dolor sit amet</a></ul>
+			<ul><a href="#">Lorem ipsum dolor sit amet</a></ul>
+
+		</section>
+	</footer>
+
 </body>
 </html>
