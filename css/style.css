@@ -269,3 +269,19 @@ footer .btn:active {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 }
+
+.post {
+	padding: 8px 10px;
+}
+
+.post .panel p {
+	margin-bottom: 2px;
+}
+
+.post h2 {
+	margin: 0;
+}
+
+.comments h3 {
+	margin: 0;
+}
