@@ -27,6 +27,9 @@ header {
 	
 	background-color: #222;
 	box-shadow: 0 2px 5px #222;
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 }
 
 header #icon {
@@ -196,11 +199,19 @@ section .id-link {
 	text-decoration: underline !important;
 }
 
-.block.red .panel {
+.block.red .panel, .panel.red {
 	background-color: #292929;
 	border-color: #333;
 	
 	color: #fff;
+}
+
+.block.red .panel a, .block.red .panel a:focus, .panel.red a, .panel.red a:focus {
+	color: #777;
+}
+
+.block.red .panel a:hover, .block.red .panel a:active, .panel.red a:hover, .panel.red a:active {
+	color: #999;
 }
 
 .track-heading {
@@ -284,6 +295,7 @@ footer .btn:active {
 #sidebar {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
+	padding-right: 20px;
 }
 
 #sidebar > section {
@@ -295,7 +307,7 @@ footer .btn:active {
 }
 
 .post {
-	padding: 8px 10px;
+	padding: 8px 20px;
 }
 
 .post .panel p {
