@@ -301,3 +301,11 @@ footer .btn:active {
 .comments h3 {
 	margin: 0;
 }
+
+.archives div {
+	margin: 20px;
+}
+
+.categories div {
+	margin: 20px;
+}
