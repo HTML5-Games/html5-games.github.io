@@ -286,6 +286,10 @@ footer .btn:active {
 	-moz-box-sizing: border-box;
 }
 
+#sidebar > section {
+	margin-bottom: 8px;
+}
+
 #sidebar li {
 	list-style-type: none;
 }
@@ -303,5 +307,9 @@ footer .btn:active {
 }
 
 .comments h3 {
+	margin: 0;
+}
+
+#sidebar h3 {
 	margin: 0;
 }
