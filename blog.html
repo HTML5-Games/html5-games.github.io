@@ -29,13 +29,57 @@
 						<span style="background-image: url('img/user-icon.png'); width: 22px; height: 22px;" class="header-icon"></span>
 					</a>
 					<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" style="left: -46px; top: 84px;">
-						<li><a tabindex="-1" href="#">Sign In</a></li>
-						<li><a tabindex="-1" href="#">Sign Up</a></li>
+						<li><a tabindex="-1" href="#login" role="button" data-toggle="modal">Log In</a></li>
+						<li><a tabindex="-1" href="#signup" role="button" data-toggle="modal">Sign Up</a></li>
 					</ul>
 				</span>
 			</nav>
 		</div>
 	</header>
+
+	<div id="login" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3 id="loginLabel">Login</h3>
+		</div>
+		<div class="modal-body">
+			<form style="margin-bottom: 0px;">
+				<fieldset>
+					<label for="name-login">Username</label>
+					<input type="text" id="name-login" name="name-login">
+					<label for="psword-login">Password</label>
+					<input type="password" id="psword-login" name="psword-login">
+				</fieldset>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<button class="btn">Login</button>
+		</div>
+	</div>
+
+	<div id="signup" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="signinLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3 id="signupLabel">Sign Up</h3>
+		</div>
+		<div class="modal-body">
+			<form style="margin-bottom: 0px;">
+				<fieldset>
+					<label for="name-signup">Username *</label>
+					<input type="text" id="name-signup" name="user-signup">
+					<label for="psword-signup">Password *</label>
+					<input type="password" id="psword-signup" name="psword-signup">
+					<label for="psword2-signup">Confirm Password *</label>
+					<input type="password" id="psword2-signup" name="psword2-signup">
+					<label for="email-signup">Email</label>
+					<input type="email" id="email-signup" name="email-signup">
+				</fieldset>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<button class="btn">Sign Up</button>
+		</div>
+	</div>
 
 	<section id="intro">
 		<div class="container">
@@ -129,6 +173,7 @@
 
 	<script src="http://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="http://www.parsecdn.com/js/parse-1.2.7.min.js"></script>
 	<script src="js/main.js"></script>
 
 	<script>
