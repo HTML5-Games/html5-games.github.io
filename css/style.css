@@ -59,6 +59,17 @@ header nav .menu-link:hover, header nav .menu-link:active {
 	text-decoration: none;
 }
 
+header nav .menu-link-dropdown:focus {
+	height: 68px;
+	line-height: 68px;
+	
+	background-color: #E44D26;
+	border-top: 6px solid #F16529;
+	
+	color: white;
+	text-decoration: none;
+}
+
 header nav .dropdown-menu {
 	top: 71px;
 	
@@ -73,6 +84,12 @@ header nav .dropdown-menu a, header nav .dropdown-menu a:focus {
 header nav .dropdown-menu a:hover, header nav .dropdown-menu a:active {
 	background-color: #F16529;
 	background-image: none;
+}
+
+.header-icon {
+	display: inline-block;
+	
+	background-size: 100%;
 }
 
 section {
