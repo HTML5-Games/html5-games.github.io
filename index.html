@@ -34,12 +34,11 @@
 					Social
 				</a>
 				<span class="dropdown">
-					<a class="dropdown-toggle menu-link menu-link-dropdown" data-toggle="dropdown" href="#">
+					<a id="login-menu-link" class="dropdown-toggle menu-link menu-link-dropdown" data-toggle="dropdown" href="#">
 						<span style="background-image: url('img/user-icon.png'); width: 22px; height: 22px;" class="header-icon"></span>
 					</a>
-					<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" style="left: -46px; top: 84px;">
-						<li><a tabindex="-1" href="#login" role="button" data-toggle="modal">Log In</a></li>
-						<li><a tabindex="-1" href="#signup" role="button" data-toggle="modal">Sign Up</a></li>
+					<ul id="login-menu" class="dropdown-menu" role="menu" aria-labelledby="dLabel" style="left: -46px; top: 84px;">
+						<!-- Filled by buildMenu() in main.js -->
 					</ul>
 				</span>
 			</nav>
@@ -54,15 +53,25 @@
 		<div class="modal-body">
 			<form style="margin-bottom: 0px;">
 				<fieldset>
-					<label for="name-login">Username</label>
-					<input type="text" id="name-login" name="name-login">
-					<label for="psword-login">Password</label>
-					<input type="password" id="psword-login" name="psword-login">
+					<div class="control-group">
+						<label for="name-login">Username</label>
+						<div class="controls">
+							<input type="text" id="name-login" name="name-login">
+							<span class="help-inline"></span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label for="psword-login">Password</label>
+						<div class="controls">
+							<input type="password" id="psword-login" name="psword-login">
+							<span class="help-inline"></span>
+						</div>
+					</div>
 				</fieldset>
 			</form>
 		</div>
 		<div class="modal-footer">
-			<button class="btn">Login</button>
+			<button class="btn" onclick="logIn()">Login</button>
 		</div>
 	</div>
 
