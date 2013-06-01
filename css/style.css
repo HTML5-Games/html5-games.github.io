@@ -15,7 +15,7 @@ rgb(221, 221, 221), #DDDDDD
 }
 
 body {
-	padding-top: 74px;
+	padding-top: 86px;
 }
 
 header {
@@ -102,8 +102,8 @@ section .id-link {
 }
 
 #links {
-	padding-top: 20px;
-	padding-bottom: 21px;
+	padding-top: 12px;
+	padding-bottom: 20px;
 	
 	font-size: 32px;
 	line-height: 32px;
@@ -176,7 +176,7 @@ section .id-link {
 	border-color: #444;
 	
 	color: #fff;
-	text-decoration: none !important;
+	text-decoration: none;
 	
 	box-shadow: inset 0 0 5px black;
 }
@@ -199,12 +199,15 @@ section .id-link {
 }
 
 .panel {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	padding: 8px 10px;
 	
 	border: 8px solid #666;
 	background: #777;
 	
 	color: #DDD;
+	text-decoration: none;
 }
 
 .panel a, .panel a:focus {
@@ -229,6 +232,15 @@ section .id-link {
 
 .block.red .panel a:hover, .block.red .panel a:active, .panel.red a:hover, .panel.red a:active {
 	color: #999;
+}
+
+.panel-hover:hover, .panel-hover:active, .panel-hover:focus {
+	border-color: #444;
+	
+	color: white !important;
+	text-decoration: none !important;
+	
+	box-shadow: inset 0 0 5px black;
 }
 
 .track-heading {
@@ -283,30 +295,6 @@ footer .btn:active {
 	color: #FFF;
 	
 	box-shadow: inset 0 0 3px black;
-}
-
-.grid-box, .grid-box:focus {
-	display: block;
-	width: calc( 50% - 10px );
-
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	padding: 8px 10px;
-	
-	background-color: #292929;
-	border: 8px solid #333;	
-	
-	color: white;
-	text-decoration: none;
-}
-
-.grid-box:hover, .grid-box:active {
-	border-color: #444;
-	
-	color: white;
-	text-decoration: none;
-	
-	box-shadow: inset 0 0 5px black;
 }
 
 #filter label {
