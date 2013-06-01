@@ -17,7 +17,7 @@
 </head>
 <body>
 	<header>
-		<div class="container-fluid">
+		<div class="container">
 			<a href="#" class="pull-left">
 				<img id="icon" src="img/logo.png" alt="HTML5 Game Development"/>
 			</a>
@@ -32,24 +32,50 @@
 	</header>
 
 	<section id="intro">
-		<div class="container-fluid">
+		<div class="container">
 			<br/>
 			<div class="alert alert-warning">
 				<button type="button" class="close" data-dismiss="alert">&times;</button>
 				<strong>Page Not Complete Yet.</strong> If you want to, you can help build it at <a href="https://github.com/HTML5-Games/html5-games.github.io">https://github.com/HTML5-Games/html5-games.github.io</a>.
 			</div>
-			<h2>Do you love coding and gaming as much as we do?</h2>
-			<p>Welcome to the HTML5 Blog. We are advid programmers and designers that are interested in learning more about the languages around us. If you are interested and not apart of our ever growing community, please sign up and introduce yourself! We are happy to take anyone who has the passion and knowledge to expand the world of the Internet and make use of the fabulous languages that are given to us. If you just need some pointers on a project you are working so hard on, feel free to check the categories and find the appropriate language you need help in. If you don't see the answer you are looking for, or have some advice for anyone else, feel free to comment on the post or ask questions, we are always happy to assist! Thank you for your time and we hope you enjoy your visit!</p>
+			<h1>Do you love coding and gaming as much as we do?</h1>
+			<p class="lead-small">
+				Welcome to the HTML5 Blog. We are advid programmers and designers that are interested in learning more about the languages around us. If you are interested and not apart of our ever growing community, please sign up and introduce yourself! We are happy to take anyone who has the passion and knowledge to expand the world of the Internet and make use of the fabulous languages that are given to us. If you just need some pointers on a project you are working so hard on, feel free to check the categories and find the appropriate language you need help in. If you don't see the answer you are looking for, or have some advice for anyone else, feel free to comment on the post or ask questions, we are always happy to assist! Thank you for your time and we hope you enjoy your visit!
+			</p>
 		</div>
 	</section>
 
-	<div class="row-fluid">
-		<!-- Main content -->
-		<article class="span9">
-			<section class="post block">
+	<form id="filter" class="form-inline container muted">
+		<label for="category" class="lead">Category:</label>
+		<select id="category" name="category">
+			<option>All Categories</option>
+			<option>Introduce Yourself</option>
+			<option>JavaScript</option>
+			<option>jQuery</option>
+			<option>PHP</option>
+			<option>HTML5</option>
+			<option>Miscellaneous</option>
+		</select>
+
+		<label for="month" class="lead">Month:</label>
+		<select id="month" name="month">
+			<option>All Months</option>
+			<option>June 2013</option>
+			<option>May 2013</option>
+			<option>April 2013</option>
+			<option>March 2013</option>
+			<option>February 2013</option>
+			<option>January 2013</option>
+			<option>December 2012</option>
+		</select>
+	</form>
+
+	<article>
+		<section class="post block">
+			<div class="container">
 				<h2>This is the title of the blog post</h2>
-				<p>Posted on <time datetime ="2013-05-30T20:40:00-06:00">May 30th, 2013</time> by <a href = "#"> Tritexander </a> - <a href = "#comments"> 2 comments</a></p>
-				<div class="panel">
+				<p class="lead-small">Posted on <time datetime ="2013-05-30T20:40:00-06:00">May 30th, 2013</time> by <a href = "#"> Tritexander </a> - <a href = "#comments"> 2 comments</a></p>
+				<div class="panel lead">
 					<p>Lorem ipsum dolor sit amet</p>
 					<p>Lorem ipsum dolor sit amet</p>
 					<p>Lorem ipsum dolor sit amet</p>
@@ -58,16 +84,18 @@
 				<section class="comments">
 					<h3>Comments</h3>
 					By <a href="#">Tritexander</a> on <time datetime="2013-05-30T23:35:25-06:00">May 30th, 2013 at 23:35</time>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+					<p class="lead-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
 					By <a href="#">Tritexandern</a> on <time datetime="2013-05-30T23:40:09-06:00">May 30th, 2013 at 23:40</time>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+					<p class="lead-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
 					<button class="btn">Post a Comment</button>
 				</section>
-			</section>
-			<section class="post block red">
+			</div>
+		</section>
+		<section class="post block red">
+			<div class="container">
 				<h2>This is the title of the blog post</h2>
-				<p>Posted on <time datetime ="2013-05-30T20:40:00-06:00">May 30th, 2013</time> by <a href = "#"> Tritexander </a> - <a href = "#comments"> 2 comments</a></p>
-				<div class="panel">
+				<p class="lead-small">Posted on <time datetime ="2013-05-30T20:40:00-06:00">May 30th, 2013</time> by <a href = "#"> Tritexander </a> - <a href = "#comments"> 2 comments</a></p>
+				<div class="panel lead">
 					<p>Lorem ipsum dolor sit amet</p>
 					<p>Lorem ipsum dolor sit amet</p>
 					<p>Lorem ipsum dolor sit amet</p>
@@ -76,41 +104,17 @@
 				<section class="comments">
 					<h3>Comments</h3>
 					By <a href="#">Tritexander</a> on <time datetime="2013-05-30T23:35:25-06:00">May 30th, 2013 at 23:35</time>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+					<p class="lead-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
 					By <a href="#">Tritexandern</a> on <time datetime="2013-05-30T23:40:09-06:00">May 30th, 2013 at 23:40</time>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+					<p class="lead-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
 					<button class="btn btn-inverse">Post a Comment</button>
 				</section>
-			</section>
-		</article>
-
-		<!-- Sidebar -->
-		<aside class="span3" id="sidebar">
-			<section id="categories" class="panel red">
-				<h3>Categories</h3>
-					<li><a href="#">Introduce Yourself</a></li>
-					<li><a href="#">JavaScript</a></li>
-					<li><a href="#">jQuery</a></li>
-					<li><a href="#">PHP</a></li>
-					<li><a href="#">HTML5</a></li>
-					<li><a href="#">Miscellaneous</a></li>
-			</section>
-
-			<section id="archives" class="panel">
-				<h3>Archives</h3>
-				<li><a href ="#">December 2012</a></li>
-				<li><a href ="#">January 2013</a></li>
-				<li><a href ="#">February 2013<a></li>
-				<li><a href ="#">March 2013</a></li>
-				<li><a href ="#">April 2013</a></li>
-				<li><a href ="#">May 2013</a></li>
-				<li><a href ="#">June 2013</a></li>
-			</section>
-		</aside>
-	</div>
+			</div>
+		</section>
+	</article>
 
 	<footer>
-		<div class="container-fluid">
+		<div class="container">
 			<p class="lead" style="margin-top: 10px;">
 				<a class="pull-left" href="https://github.com/HTML5-Games/html5-games.github.io">View this project on GitHub</a>
 				<a class="pull-right btn" href="mailto: html5.gamedev.group@gmail.com">Contact Us</a>
