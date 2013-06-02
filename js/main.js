@@ -15,7 +15,7 @@ var Comment = Parse.Object.extend("Comment");
 
 // Log In & Sign Up
 function signUp() {
-  // Get values
+	// Get values
 	var $username = $("#name-signup"),
 	    $password = $("#psword-signup"),
 	    $password2 = $("#psword2-signup"),
@@ -163,7 +163,7 @@ function buildMenu() {
 	}
 	// If user logged in
 	else {
-		$profile = $('<li><a tabindex="-1" href="#">Hi, ' + Parse.User.current().get("username") + '</a></li>');
+		$profile = $('<li><a tabindex="-1" href="profile.html">Hi, ' + Parse.User.current().get("username") + '</a></li>');
 		$logout = $('<li><a tabindex="-1" href="#" onclick="logOut();">Logout</a></li>');
 		$("#login-menu").append($profile);
 		$("#login-menu").append($logout);
