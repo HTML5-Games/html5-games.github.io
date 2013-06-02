@@ -380,62 +380,32 @@ footer .btn:active {
 	line-height: 25px;
 }
 
-/* LOGIN CSS */
-
-.loginform ul {
-	padding: 0;
-	margin: 0;
+.persona {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 24px 0;
+	
+	background-color: #292929;
+	
+	color: #FFF;
 }
-.loginform li {
-	display: inline;
-	float: left;
-}
 
-label {
+.persona-icon {
 	display: block;
-	color: #999;
-}
-.cf:before,
-.cf:after {
-    content: ""; 
-    display: table;
-}
-
-.cf:after {
-    clear: both;
-}
-.cf {
-    *zoom: 1;
-}
-:focus {
-	outline: 0;
+	margin: 0 auto;
+	margin-bottom: 24px;
+	
+	background-size: 100%;
+	width: 260px;
+	height: 260px;
+	
+	border: 8px solid #111;
+	
+	background-image: url('http://placehold.it/260x260');
 }
 
-.loginform input:not([type=submit]) {
-	padding: 5px;
-	margin-right: 10px;
-	border: 1px solid rgba(0, 0, 0, 0.3);
-	border-radius: 3px;
-	box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 
-				0px 1px 0px 0px rgba(250, 250, 250, 0.5) ;
+.persona .span2, .persona .span3 {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 0 20px;
 }
-
-.loginform input[type=submit] {
-	border: 1px solid rgba(0, 0, 0, 0.3);
-	background: #E44D26; /* Old browsers */
-	background: -moz-linear-gradient(top,  #E44D26 0%, #F16529 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#E44D26), color-stop(100%,#F16529)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #E44D26 0%,#F16529 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #E44D26 0%,#F16529 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #E44D26 0%,#F16529 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #E44D26 0%,#F16529 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E44D26', endColorstr='#F16529',GradientType=0 ); /* IE6-9 */
-	color: #fff;
-	padding: 5px 15px;
-	margin-right: 0;
-	margin-top: 15px;
-	border-radius: 3px;
-	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
-}
-
-/* END LOGIN CSS */
