@@ -10,6 +10,9 @@ rgb(255, 255, 255), #FFFFFF
 rgb(221, 221, 221), #DDDDDD
 */
 
+
+/* Page defaults
+-------------------------------------------------------------------------------------------- */
 * {
 	font-family: 'Happy Monkey', cursive;
 }
@@ -18,6 +21,304 @@ body {
 	padding-top: 86px;
 }
 
+/* Blocks
+-------------------------------------------------------------------------------------------- */
+.block {
+	padding-bottom: 20px;
+	
+	background-color: #F0F0F0;
+	border-top: 8px solid #DDD;
+}
+
+.block.red {
+	background-color: #E44D26;
+	border-color: #F16529;
+	
+	color: white;
+}
+
+.block.red a:not(.btn), .red a:focus:not(.btn) {
+	color: #333;
+}
+
+.block.red a:hover:not(.btn), .block.red a:active:not(.btn) {
+	color: #111;
+	text-decoration: underline;
+}
+
+.block .lead {
+	margin-bottom: 0;
+}
+
+/* Panel
+-------------------------------------------------------------------------------------------- */
+.panel {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 8px 10px;
+	
+	border: 8px solid #666;
+	background: #777;
+	
+	color: #DDD;
+	text-decoration: none;
+}
+
+.panel a, .panel a:focus {
+	color: #333;
+}
+
+.panel a:hover, .panel a:active {
+	color: #111;
+	text-decoration: underline !important;
+}
+
+.block.red .panel, .panel.red {
+	background-color: #292929;
+	border-color: #333;
+	
+	color: #FFF;
+}
+
+.block.red .panel a, .block.red .panel a:focus, .panel.red a, .panel.red a:focus {
+	color: #777;
+}
+
+.block.red .panel a:hover, .block.red .panel a:active, .panel.red a:hover, .panel.red a:active {
+	color: #999;
+}
+
+.panel-hover {
+	color: #FFF !important;
+}
+
+.panel-hover:hover, .panel-hover:active, .panel-hover:focus {
+	border-color: #444;
+	
+	color: #FFF !important;
+	text-decoration: none !important;
+	
+	box-shadow: inset 0 0 5px black;
+}
+
+/* Track
+-------------------------------------------------------------------------------------------- */
+.track a {
+	text-decoration: none;
+}
+
+.track a.coming-soon {
+	color: #888;
+}
+
+.track a > p {
+	color: #999;
+	font-size: .8em;
+}
+
+.track-heading {
+	display: block;
+	margin-top: 18px;
+	margin-bottom: 12px;
+	
+	border-bottom: 2px solid #777;
+	
+	color: #777;
+	font-size: 1.2em;
+}
+
+/* Project boxes
+-------------------------------------------------------------------------------------------- */
+.project-box, .project-box:focus {
+	display: block;
+	padding: 8px 10px;
+	
+	background-color: #292929;
+	border: 8px solid #333;
+	
+	color: #fff !important;
+	text-decoration: none !important;
+}
+
+.project-box:hover, .project-box:active {
+	border-color: #444;
+	
+	color: #fff;
+	text-decoration: none;
+	
+	box-shadow: inset 0 0 5px black;
+}
+
+.project-box:not(:first-child) {
+	margin-top: 10px;
+}
+
+.project-icon {
+	display: block;
+	
+	background-size: 100%;
+	background-color: #292929;
+}
+
+/* Links
+-------------------------------------------------------------------------------------------- */
+#links {
+	padding-top: 12px;
+	padding-bottom: 20px;
+	
+	font-size: 32px;
+	line-height: 32px;
+	
+	background-color: #FFF;
+}
+
+#links img {
+	vertical-align: top;
+	padding-right: .5rem;
+	
+	border-right: 1px solid #CCC;
+}
+
+#links a {
+	font-family: 'Lobster', cursive;
+	color: #171717;
+}
+
+#links a:hover, #links a:focus {
+	color: #171717;
+}
+
+/* Filter
+-------------------------------------------------------------------------------------------- */
+#filter label {
+	margin-bottom: 0;
+	margin-right: 3px;
+}
+
+#filter label:not(:first-child) {
+	margin-left: 10px;
+}
+
+/* Post
+-------------------------------------------------------------------------------------------- */
+.post {
+	padding: 8px 20px;
+}
+
+.post .panel p {
+	margin-bottom: 2px;
+}
+
+.post h2 {
+	margin: 0;
+}
+
+/* Comment
+-------------------------------------------------------------------------------------------- */
+.comments h3 {
+	margin: 0;
+}
+
+/* Persona
+-------------------------------------------------------------------------------------------- */
+.persona {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 24px 0;
+	
+	background-color: #292929;
+	
+	color: #FFF;
+}
+
+.persona-icon {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 24px;
+	
+	background-size: 100%;
+	width: 260px;
+	height: 260px;
+	
+	border: 4px solid #111;
+	
+	background-image: url('http://placehold.it/260x260');
+}
+
+.persona .span2 {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 0 20px;
+}
+
+/* Recent
+-------------------------------------------------------------------------------------------- */
+.recent {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 5px 0;
+
+	background-color: #F0F0F0;
+}
+
+.recent h1, .recent h2, .recent h3 {
+	margin-bottom: 20px;
+	background-color: #FFF;
+	display: inline-block;
+	margin-right: -20px;
+	padding: 5px 12px;
+}
+
+/* Feed
+-------------------------------------------------------------------------------------------- */
+.feed {
+	padding: 0 20px;
+}
+
+.feed hr {
+	border-color: rgb(200, 200, 200);
+	margin: 15px 0;
+}
+
+.feed a {
+	text-decoration: none;
+}
+
+.feed a.coming-soon {
+	color: #888;
+}
+
+.feed a > p {
+	color: #999;
+	font-size: .8em;
+}
+
+.feed a:hover {
+	text-decoration: none;
+}
+
+.feed p {
+	margin-bottom: 25px;
+}
+
+/* Level
+-------------------------------------------------------------------------------------------- */
+.level {
+	display: inline-block;
+	background: #DDD;
+	width: 48px;
+	height: 48px;
+	text-align: center;
+	line-height: 48px;
+	cursor: pointer;
+}
+
+.level:last-child {
+	margin-bottom: 25px;
+}
+
+/* Header
+-------------------------------------------------------------------------------------------- */
 header {
 	position: fixed;
 	top: 0;
@@ -86,6 +387,59 @@ header nav .dropdown-menu a:hover, header nav .dropdown-menu a:active {
 	background-image: none;
 }
 
+.header-icon {
+	display: inline-block;
+	
+	background-size: 100%;
+}
+
+/* Footer
+-------------------------------------------------------------------------------------------- */
+footer {
+	background-color: #202020;
+	border-top: 8px solid #292929;
+	
+	padding: 3px 0;
+	
+	color: #777;
+}
+
+footer a, footer a:hover, footer a:active, footer a:focus {
+	color: #777;
+}
+
+footer .btn, footer .btn:focus {
+	position: relative;
+	top: -4px;
+	
+	background: #444;
+	border: 5px solid #333;
+	
+	color: #FFF;
+		
+	border-radius: 0px;
+	box-shadow: none;
+	text-shadow: none;
+}
+
+footer .btn:hover {
+	background: #333;
+	border-color: #292929;
+	
+	color: #FFF;
+}
+
+footer .btn:active {
+	background: #333;
+	border-color: #333;
+	
+	color: #FFF;
+	
+	box-shadow: inset 0 0 3px black;
+}
+
+/* Bootstrap overrides
+-------------------------------------------------------------------------------------------- */
 .modal {
 	background-color: #F0F0F0 !important;
 	border-top: 8px solid #DDD !important;
@@ -137,339 +491,6 @@ header nav .dropdown-menu a:hover, header nav .dropdown-menu a:active {
 	box-shadow: inset 0 0 3px black;
 }
 
-.header-icon {
-	display: inline-block;
-	
-	background-size: 100%;
-}
-
-section {
-	position: relative;
-}
-
-section .id-link {
-	position:absolute;
-	top: -82px;
-}
-
-#links {
-	padding-top: 12px;
-	padding-bottom: 20px;
-	
-	font-size: 32px;
-	line-height: 32px;
-	
-	background-color: #FFF;
-}
-
-#links img {
-	vertical-align: top;
-	padding-right: .5rem;
-	
-	border-right: 1px solid #CCC;
-}
-
-#links a {
-	font-family: 'Lobster', cursive;
-	color: #171717;
-}
-
-#links a:hover, #links a:focus {
-	color: #171717;
-}
-
-.block {
-	padding-bottom: 20px;
-	
-	background-color: #F0F0F0;
-	border-top: 8px solid #DDD;
-}
-
-.block.red {
-	background-color: #E44D26;
-	border-color: #F16529;
-	
-	color: white;
-}
-
-.block.red a:not(.btn), .red a:focus:not(.btn) {
-	color: #333;
-}
-
-.block.red a:hover:not(.btn), .block.red a:active:not(.btn) {
-	color: #111;
-	text-decoration: underline;
-}
-
-.block .lead {
-	margin-bottom: 0;
-}
-
-.project-icon {
-	display: block;
-	
-	background-size: 100%;
-	background-color: #292929;
-}
-
-.project-box, .project-box:focus {
-	display: block;
-	padding: 8px 10px;
-	
-	background-color: #292929;
-	border: 8px solid #333;
-	
-	color: #fff !important;
-	text-decoration: none !important;
-}
-
-.project-box:hover, .project-box:active {
-	border-color: #444;
-	
-	color: #fff;
-	text-decoration: none;
-	
-	box-shadow: inset 0 0 5px black;
-}
-
-.project-box:not(:first-child) {
-	margin-top: 10px;
-}
-
-#learn-block a {
-	text-decoration: none;
-}
-
-#learn-block a.coming-soon {
-	color: #888;
-}
-
-#learn-block a > p {
-	color: #999;
-	font-size: .8em;
-}
-
-.panel {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	padding: 8px 10px;
-	
-	border: 8px solid #666;
-	background: #777;
-	
-	color: #DDD;
-	text-decoration: none;
-}
-
-.panel a, .panel a:focus {
-	color: #333;
-}
-
-.panel a:hover, .panel a:active {
-	color: #111;
-	text-decoration: underline !important;
-}
-
-.block.red .panel, .panel.red {
-	background-color: #292929;
-	border-color: #333;
-	
-	color: #fff;
-}
-
-.block.red .panel a, .block.red .panel a:focus, .panel.red a, .panel.red a:focus {
-	color: #777;
-}
-
-.block.red .panel a:hover, .block.red .panel a:active, .panel.red a:hover, .panel.red a:active {
-	color: #999;
-}
-
-.panel-hover:hover, .panel-hover:active, .panel-hover:focus {
-	border-color: #444;
-	
-	color: white !important;
-	text-decoration: none !important;
-	
-	box-shadow: inset 0 0 5px black;
-}
-
-.track-heading {
-	display: block;
-	margin-top: 18px;
-	margin-bottom: 12px;
-	
-	border-bottom: 2px solid #777;
-	
-	color: #777;
-	font-size: 1.2em;
-}
-
-footer {
-	background-color: #202020;
-	border-top: 8px solid #292929;
-	
-	padding: 3px 0;
-	
-	color: #777;
-}
-
-footer a, footer a:hover, footer a:active, footer a:focus {
-	color: #777;
-}
-
-footer .btn, footer .btn:focus {
-	position: relative;
-	top: -4px;
-	
-	background: #444;
-	border: 5px solid #333;
-	
-	color: #FFF;
-		
-	border-radius: 0px;
-	box-shadow: none;
-	text-shadow: none;
-}
-
-footer .btn:hover {
-	background: #333;
-	border-color: #292929;
-	
-	color: #FFF;
-}
-
-footer .btn:active {
-	background: #333;
-	border-color: #333;
-	
-	color: #FFF;
-	
-	box-shadow: inset 0 0 3px black;
-}
-
-#filter label {
-	margin-bottom: 0;
-	margin-right: 3px;
-}
-
-#filter label:not(:first-child) {
-	margin-left: 10px;
-}
-
-.post {
-	padding: 8px 20px;
-}
-
-.post .panel p {
-	margin-bottom: 2px;
-}
-
-.post h2 {
-	margin: 0;
-}
-
-.comments h3 {
-	margin: 0;
-}
-
-.lead-small {
-	margin-bottom: 10px;
-	font-size: 16px;
-	font-weight: 300;
-	line-height: 25px;
-}
-
-.persona {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	padding: 24px 0;
-	
-	background-color: #292929;
-	
-	color: #FFF;
-}
-
-.persona-icon {
-	display: block;
-	margin: 0 auto;
-	margin-bottom: 24px;
-	
-	background-size: 100%;
-	width: 260px;
-	height: 260px;
-	
-	border: 4px solid #111;
-	
-	background-image: url('http://placehold.it/260x260');
-}
-
-.persona .span2 {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	padding: 0 20px;
-}
-
-.recent {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	padding: 5px 0;
-
-	background-color: #F0F0F0;
-}
-
-.recent h1, .recent h2, .recent h3 {
-	margin-bottom: 20px;
-	background-color: #FFF;
-	display: inline-block;
-	margin-right: -20px;
-	padding: 5px 12px;
-}
-
-.feed {
-	padding: 0 20px;
-}
-
-.feed hr {
-	border-color: rgb(200, 200, 200);
-	margin: 15px 0;
-}
-
-.feed a {
-	text-decoration: none;
-}
-
-.feed a.coming-soon {
-	color: #888;
-}
-
-.feed a > p {
-	color: #999;
-	font-size: .8em;
-}
-
-.feed a:hover {
-	text-decoration: none;
-}
-
-.feed p {
-	margin-bottom: 25px;
-}
-
-.level {
-	display: inline-block;
-	background: #DDD;
-	width: 48px;
-	height: 48px;
-	text-align: center;
-	line-height: 48px;
-	cursor: pointer;
-}
-
-.level:last-child {
-	margin-bottom: 25px;
-}
-
 .popover {
 	border-radius: 0 !important;
 	background-color: #292929 !important;
@@ -485,4 +506,22 @@ footer .btn:active {
 
 .popover.bottom .arrow:after {
 	border-bottom-color: #333 !important;
+}
+
+/* Extras
+-------------------------------------------------------------------------------------------- */
+section {
+	position: relative;
+}
+
+section .id-link {
+	position:absolute;
+	top: -82px;
+}
+
+.lead-small {
+	margin-bottom: 10px;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 25px;
 }
