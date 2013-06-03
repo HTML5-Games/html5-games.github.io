@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML5 Game Development</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Style -->
+	<link href="css/style.css" rel="stylesheet" media="screen">
+
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+	<!-- Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Happy+Monkey' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<a href="#" class="pull-left">
+				<img id="icon" src="img/logo.png" alt="HTML5 Game Development"/>
+			</a>
+			<nav class="pull-right">
+				<a class="menu-link" href="#about">
+					About
+				</a>
+				<a class="menu-link" href="#projects">
+					Projects
+				</a>
+				<a class="menu-link" href="#learn">
+					Learn
+				</a>
+				<a class="menu-link" href="#social">
+					Social
+				</a>
+				<span class="dropdown">
+					<a id="login-menu-link" class="dropdown-toggle menu-link menu-link-dropdown" data-toggle="dropdown" href="#">
+						<span style="background-image: url('img/user-icon.png'); width: 22px; height: 22px;" class="header-icon"></span>
+					</a>
+					<ul id="login-menu" class="dropdown-menu" role="menu" aria-labelledby="dLabel" style="left: -46px; top: 84px;">
+						<!-- Filled by buildMenu() in main.js -->
+					</ul>
+				</span>
+			</nav>
+		</div>
+	</header>
+
+	<div id="login" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+			<h3 id="loginLabel">Login</h3>
+		</div>
+		<div class="modal-body">
+			<form style="margin-bottom: 0px;">
+				<fieldset>
+					<div class="control-group">
+						<label for="name-login">Username</label>
+						<div class="controls">
+							<input type="text" id="name-login" name="name-login">
+							<span class="help-inline"></span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label for="psword-login">Password</label>
+						<div class="controls">
+							<input type="password" id="psword-login" name="psword-login">
+							<span class="help-inline"></span>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<button class="btn" onclick="logIn()">Login</button>
+		</div>
+	</div>
+
+	<div id="signup" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="signinLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+			<h3 id="signupLabel">Sign Up</h3>
+		</div>
+		<div class="modal-body">
+			<form style="margin-bottom: 0px;">
+				<fieldset>
+					<div class="control-group">
+						<label for="name-signup">Username *</label>
+						<div class="controls">
+							<input type="text" id="name-signup" name="name-signup">
+							<span class="help-inline"></span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label for="psword-signup">Password *</label>
+						<div class="controls">
+							<input type="password" id="psword-signup" name="psword-signup">
+							<span class="help-inline"></span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label for="psword2-signup">Confirm Password *</label>
+						<div class="controls">
+							<input type="password" id="psword2-signup" name="psword2-signup">
+							<span class="help-inline"></span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label for="email-signup">Email</label>
+						<div class="controls">
+							<input type="email" id="email-signup" name="email-signup">
+							<span class="help-inline"></span>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<button class="btn" onclick="signUp()">Sign Up</button>
+		</div>
+	</div>
+
+	<div class="alert alert-warning container" style="margin-bottom: 0;">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<strong>Page Not Complete Yet.</strong> If you want to, you can help build it at <a href="https://github.com/HTML5-Games/html5-games.github.io">https://github.com/HTML5-Games/html5-games.github.io</a>.
+	</div>
+	<br>
+
+	<section class="block" id="about-block">
+		<span id="about" class="id-link"></span>
+		<div class="container">
+			<h1>Chat</h1>
+			<div id="messages" class="lead">
+				<div class="message">
+					Logi0 (8:04pm 06/03/13): This is a test message that is not really a message.
+				</div>
+				<div class="message">
+					Logi0 (8:04pm 06/03/13): This is a test message that is not really a message.
+				</div>
+				<div class="message">
+					Logi0 (8:04pm 06/03/13): This is a test message that is not really a message.
+				</div>
+				<div class="message">
+					Logi0 (8:04pm 06/03/13): This is a test message that is not really a message.
+				</div>
+				<div class="message">
+					Logi0 (8:04pm 06/03/13): This is a test message that is not really a message.
+				</div>
+				<div class="message">
+					Logi0 (8:04pm 06/03/13): This is a test message that is not really a message.
+				</div>
+				<div class="message">
+					Logi0 (8:04pm 06/03/13): This is a test message that is not really a message.
+				</div>
+				<div class="message">
+					Logi0 (8:03pm 06/03/13): This is a test message that is not really a message.
+				</div>
+				<div class="message">
+					Logi0 (8:03pm 06/03/13): This is a test message that is not really a message.
+				</div>
+				<div class="message">
+					Logi0 (8:03pm 06/03/13): This is a test message that is not really a message.
+				</div>
+				<div class="message">
+					Logi0 (8:03pm 06/03/13): This is a test message that is not really a message.
+				</div>
+				<div class="message">
+					Logi0 (8:03pm 06/03/13): This is a test message that is not really a message.
+				</div>
+				<div class="message">
+					Logi0 (8:03pm 06/03/13): This is a test message that is not really a message.
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="block red" id="projects-block">
+		<span id="projects" class="id-link"></span>
+		<div class="container">
+			<h1>Send Message</h1>
+			<textarea placeholder="Type message here" class="span12" rows="4"></textarea>
+			<br>
+			<div class="text-right">
+				<button class="btn btn-inverse">Send Message</button>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="container">
+			<p class="lead" style="margin-top: 10px;">
+				<a class="pull-left" href="https://github.com/HTML5-Games/html5-games.github.io">View this project on GitHub</a>
+				<a class="pull-right btn" href="mailto: html5.gamedev.group@gmail.com">Contact Us</a>
+			</p>
+		</div>
+	</footer>
+
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="http://www.parsecdn.com/js/parse-1.2.7.min.js"></script>
+	<script src="js/main.js"></script>
+
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-41025952-1', 'html5-games.github.io');
+		ga('send', 'pageview');
+	</script>
+</body>
+</html>
