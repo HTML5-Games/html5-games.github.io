@@ -237,12 +237,10 @@ body {
 	margin-bottom: 24px;
 	
 	background-size: 100%;
-	width: 260px;
-	height: 260px;
+	width: 160px;
+	height: 160px;
 	
-	border: 4px solid #111;
-	
-	background-image: url('http://placehold.it/260x260');
+	border: 8px solid #111;
 }
 
 .persona .span2 {
@@ -519,8 +517,8 @@ footer .btn:active {
 }
 
 hr {
-	border-color: rgb(200, 200, 200);
-	margin: 15px 0;
+	border-color: rgb(200, 200, 200) !important;
+	margin: 15px 0 !important;
 }
 
 .red textarea:focus {
