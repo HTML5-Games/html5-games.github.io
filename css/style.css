@@ -399,13 +399,55 @@ footer .btn:active {
 	width: 260px;
 	height: 260px;
 	
-	border: 8px solid #111;
+	border: 4px solid #111;
 	
 	background-image: url('http://placehold.it/260x260');
 }
 
-.persona .span2, .persona .span3 {
+.persona .span2 {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	padding: 0 20px;
+}
+
+.recent {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 5px 0;
+
+	background-color: #F0F0F0;
+}
+
+.recent h1, .recent h2, .recent h3 {
+	margin-bottom: 20px;
+	background-color: #FFF;
+	display: inline-block;
+	margin-right: -20px;
+	padding: 5px 12px;
+}
+
+.feed {
+	padding: 0 20px;
+}
+
+.feed hr {
+	border-color: rgb(200, 200, 200);
+	margin: 15px 0;
+}
+
+.feed a {
+	text-decoration: none;
+}
+
+.feed a.coming-soon {
+	color: #888;
+}
+
+.feed a > p {
+	color: #999;
+	font-size: .8em;
+}
+
+.feed a:hover {
+	text-decoration: none;
 }
