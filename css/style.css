@@ -451,3 +451,38 @@ footer .btn:active {
 .feed a:hover {
 	text-decoration: none;
 }
+
+.feed p {
+	margin-bottom: 25px;
+}
+
+.level {
+	display: inline-block;
+	background: #DDD;
+	width: 48px;
+	height: 48px;
+	text-align: center;
+	line-height: 48px;
+	cursor: pointer;
+}
+
+.level:last-child {
+	margin-bottom: 25px;
+}
+
+.popover {
+	border-radius: 0 !important;
+	background-color: #292929 !important;
+	border: 8px solid #333 !important;
+	box-shadow: none !important;
+	color: #FFF !important;
+}
+
+.popover.bottom .arrow {
+	top: -19px !important;
+	.popover.bottom .arrow: #333 !important;
+}
+
+.popover.bottom .arrow:after {
+	border-bottom-color: #333 !important;
+}
