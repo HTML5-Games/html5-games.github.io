@@ -165,7 +165,7 @@
 					<p class="lead-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
 					By <a href="#">Tritexandern</a> on <time datetime="2013-05-30T23:40:09-06:00">May 30th, 2013 at 23:40</time>
 					<p class="lead-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
-					<button class="btn">Post a Comment</button>
+					<a class="btn" tabindex="-1" href="#comment" role="button" data-toggle="modal">Post a Comment</a>
 				</section>
 			</div>
 		</section>
@@ -185,11 +185,24 @@
 					<p class="lead-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
 					By <a href="#">Tritexandern</a> on <time datetime="2013-05-30T23:40:09-06:00">May 30th, 2013 at 23:40</time>
 					<p class="lead-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
-					<button class="btn btn-inverse">Post a Comment</button>
+					<a class="btn btn-inverse" tabindex="-1" href="#comment" role="button" data-toggle="modal">Post a Comment</a>
 				</section>
 			</div>
 		</section>
 	</article>
+
+	<div id="comment" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="commentLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+			<h3 id="loginLabel">Comment</h3>
+		</div>
+		<div class="modal-body">
+
+		</div>
+		<div class="modal-footer">
+			<button class="btn" onclick="logIn()">Post</button>
+		</div>
+	</div>
 
 	<footer>
 		<div class="container">
