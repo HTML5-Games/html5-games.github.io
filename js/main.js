@@ -5,6 +5,26 @@
 // Init DOM elements
 var $linkTiles = $(".link-tile");
 $linkTiles.eq(0).height($linkTiles.eq(1).height() + 32 /* Padding and Border */);
+level1 = '<b>Newb</b> Can post in chat';
+level2 = '<b>?</b> ?';
+level3 = '<b>?</b> ?';
+level4 = '<b>?</b> ?';
+level5 = '<b>?</b> ?';
+level6 = '<b>?</b> ?';
+level7 = '<b>?</b> Can write blog posts';
+level8 = '<b>?</b> ?';
+level9 = '<b>Moderator</b> Can edit and delete posts';
+level10 = '<b>Leader</b> Can use admin features';
+$("#level1").popover({html: true, placement: "bottom", content: level1});
+$("#level2").popover({html: true, placement: "bottom", content: level2});
+$("#level3").popover({html: true, placement: "bottom", content: level3});
+$("#level4").popover({html: true, placement: "bottom", content: level4});
+$("#level5").popover({html: true, placement: "bottom", content: level5});
+$("#level6").popover({html: true, placement: "bottom", content: level6});
+$("#level7").popover({html: true, placement: "bottom", content: level7});
+$("#level8").popover({html: true, placement: "bottom", content: level8});
+$("#level9").popover({html: true, placement: "bottom", content: level9});
+$("#level10").popover({html: true, placement: "bottom", content: level10});
 
 // Init Parse
 Parse.initialize("cF1KaOFNgSERAxKgv4ZUDE3XBnMEpGxF2ACWmMZE", "tnNd8KSP42GsJ9ZyBVaaN9REYRW76gUj9sxm8e3i");
