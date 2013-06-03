@@ -192,11 +192,11 @@ section .id-link {
 	color: white;
 }
 
-.block.red a, .red a:focus {
+.block.red a:not(.btn), .red a:focus:not(.btn) {
 	color: #333;
 }
 
-.block.red a:hover, .block.red a:active {
+.block.red a:hover:not(.btn), .block.red a:active:not(.btn) {
 	color: #111;
 	text-decoration: underline;
 }
