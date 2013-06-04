@@ -280,3 +280,54 @@ function displayMessages() {
 		}
 	});
 }
+
+// Blog
+function post() {
+	// Make sure that user is logged in
+	currentUser = Parse.User.current();
+	if (currentUser == null) {
+		alert("You must login to write posts.");
+		return false;
+	}
+	
+	// Make sure that user at least level 7
+	if (currentUser.get("level") < 7) {
+		alert("You must be level 7 or heigher to write posts.");
+		return false;
+	}
+	
+	// Get post data
+	var title = $("#title-post").val();
+	var text = $("#text-post").val();
+	var tags = [];
+	if ($("#tag1-post").val() != "") {
+		tags.push($("#tag1-post").val());
+	}
+	if ($("#tag2-post").val() != "") {
+		tags.push($("#tag2-post").val());
+	}
+	if ($("#tag3-post").val() != "") {
+		tags.push($("#tag3-post").val());
+	}
+	if ($("#tag4-post").val() != "") {
+		tags.push($("#tag4-post").val());
+	}
+	
+	// Create new post
+	var post = new Post();
+	post.set("title", title);
+	post.set("text", text);
+	post.set("tags", tags);
+	post.set("user", currentUser.get("username"));
+	
+	// Save message
+	post.save(null, {
+		success: function(post) {
+			// Hide modal
+			$("#post").modal("hide");
+		},
+		error: function(message, error) {
+			alert("Error: " + error.code + " " + error.message);
+		}
+	});
+}
