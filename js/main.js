@@ -8,6 +8,7 @@ Parse.initialize("cF1KaOFNgSERAxKgv4ZUDE3XBnMEpGxF2ACWmMZE", "tnNd8KSP42GsJ9ZyBV
 // Init Parse objects
 var Post = Parse.Object.extend("Post");
 var Comment = Parse.Object.extend("Comment");
+var Message = Parse.Object.extend("Message");
 
 // Init DOM elements
 var $linkTiles = $(".link-tile");
@@ -207,3 +208,83 @@ function buildMenu() {
 }
 
 buildMenu();
+
+// Chat
+function sendMessage() {
+	// Make sure that user is logged in
+	currentUser = Parse.User.current();
+	if (currentUser == null) {
+		alert("You must login to use chat.");
+		return false;
+	}
+	
+	// Make sure that message isn't empty
+	text = $("#message-chat").val();
+	if (text == "") {
+		alert("Can't send empty message!")
+		return false;
+	}
+	
+	// Create new message
+	var message = new Message();
+	message.set("text", text);
+	message.set("user", currentUser);
+	
+	// Save message
+	message.save(null, {
+		success: function(message) {
+			// Clear message box
+			$("#message-chat").val("");
+			
+			// Update message display
+			displayMessages();
+		},
+		error: function(message, error) {
+			alert("Error: " + error.code + " " + error.message);
+		}
+	});
+}
+
+function displayMessages() {
+	$messages = $("#all-messages-chat");
+	
+	// Clear messages
+	$messages.html("");
+	
+	// Get messages from Parse
+	var query = new Parse.Query(Message);
+	
+	// Retrieve only the most recent ones
+	query.descending("createdAt");
+	 
+	// Retrieve only the last 25
+	query.limit(25);
+	
+	query.find({
+		success: function(messages) {
+			addMessage(messages);
+		},
+		error: function(error) {
+			alert("Error: " + error.code + " " + error.message);
+		}
+	});
+}
+
+function addMessage(messages) {
+	// Base case
+	if (messages.length != 0) {
+		var messageObject = messages.pop();
+		var user = messageObject.get("user");
+		user.fetch({
+			success: function(user) {
+				$message = $('<div class="message"></div>');
+				var m = user.get("username") + " ";
+				m += "(" + messageObject.createdAt.toLocaleTimeString() + "): ";
+				m += messageObject.get("text");
+				$message.html(m);
+				$messages.append($message);
+				addMessage(messages);
+			}
+		});
+	}
+}
