@@ -14,7 +14,11 @@ rgb(221, 221, 221), #DDDDDD
 /* Page defaults
 -------------------------------------------------------------------------------------------- */
 * {
-	font-family: 'Happy Monkey', cursive;
+	font-family: 'Monda', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Nova Round', cursive !important;
 }
 
 body {
@@ -104,6 +108,11 @@ body {
 /* Track
 -------------------------------------------------------------------------------------------- */
 .track a {
+	text-decoration: none;
+	font-family: 'Nova Round', cursive !important;
+}
+
+.track a:hover {
 	text-decoration: none;
 }
 
