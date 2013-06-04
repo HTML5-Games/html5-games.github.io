@@ -228,7 +228,7 @@ function sendMessage() {
 	// Create new message
 	var message = new Message();
 	message.set("text", text);
-	message.set("user", currentUser);
+	message.set("user", currentUser.get("username"));
 	
 	// Save message
 	message.save(null, {
@@ -262,29 +262,19 @@ function displayMessages() {
 	
 	query.find({
 		success: function(messages) {
-			addMessage(messages);
+			while (messages.length > 0) {
+				var messageObject = messages.pop();
+				var user = messageObject.get("user");
+				$message = $('<div class="message"></div>');
+				var m = user + " ";
+				m += "(" + messageObject.createdAt.toLocaleTimeString() + "): ";
+				m += messageObject.get("text");
+				$message.html(m);
+				$messages.append($message);
+			}
 		},
 		error: function(error) {
 			alert("Error: " + error.code + " " + error.message);
 		}
 	});
-}
-
-function addMessage(messages) {
-	// Base case
-	if (messages.length != 0) {
-		var messageObject = messages.pop();
-		var user = messageObject.get("user");
-		user.fetch({
-			success: function(user) {
-				$message = $('<div class="message"></div>');
-				var m = user.get("username") + " ";
-				m += "(" + messageObject.createdAt.toLocaleTimeString() + "): ";
-				m += messageObject.get("text");
-				$message.html(m);
-				$messages.append($message);
-				addMessage(messages);
-			}
-		});
-	}
 }
