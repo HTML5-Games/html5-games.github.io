@@ -129,47 +129,7 @@
 		<span id="about" class="id-link"></span>
 		<div class="container">
 			<h1>Chat</h1>
-			<div id="messages" class="lead">
-				<div class="message">
-					Logi0 (8:04pm 06/03/13): This is a test message that is not really a message.
-				</div>
-				<div class="message">
-					Logi0 (8:04pm 06/03/13): This is a test message that is not really a message.
-				</div>
-				<div class="message">
-					Logi0 (8:04pm 06/03/13): This is a test message that is not really a message.
-				</div>
-				<div class="message">
-					Logi0 (8:04pm 06/03/13): This is a test message that is not really a message.
-				</div>
-				<div class="message">
-					Logi0 (8:04pm 06/03/13): This is a test message that is not really a message.
-				</div>
-				<div class="message">
-					Logi0 (8:04pm 06/03/13): This is a test message that is not really a message.
-				</div>
-				<div class="message">
-					Logi0 (8:04pm 06/03/13): This is a test message that is not really a message.
-				</div>
-				<div class="message">
-					Logi0 (8:03pm 06/03/13): This is a test message that is not really a message.
-				</div>
-				<div class="message">
-					Logi0 (8:03pm 06/03/13): This is a test message that is not really a message.
-				</div>
-				<div class="message">
-					Logi0 (8:03pm 06/03/13): This is a test message that is not really a message.
-				</div>
-				<div class="message">
-					Logi0 (8:03pm 06/03/13): This is a test message that is not really a message.
-				</div>
-				<div class="message">
-					Logi0 (8:03pm 06/03/13): This is a test message that is not really a message.
-				</div>
-				<div class="message">
-					Logi0 (8:03pm 06/03/13): This is a test message that is not really a message.
-				</div>
-			</div>
+			<div id="all-messages-chat" class="lead"></div>
 		</div>
 	</section>
 
@@ -177,10 +137,10 @@
 		<span id="projects" class="id-link"></span>
 		<div class="container">
 			<h1>Send Message</h1>
-			<textarea placeholder="Type message here" class="span12" rows="4"></textarea>
+			<textarea id="message-chat" placeholder="Type message here" class="span12" rows="4"></textarea>
 			<br>
 			<div class="text-right">
-				<button class="btn btn-inverse">Send Message</button>
+				<button class="btn btn-inverse" onclick="sendMessage();">Send Message</button>
 			</div>
 		</div>
 	</section>
