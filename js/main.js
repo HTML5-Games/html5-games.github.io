@@ -248,9 +248,6 @@ function sendMessage() {
 function displayMessages() {
 	$messages = $("#all-messages-chat");
 	
-	// Clear messages
-	$messages.html("");
-	
 	// Get messages from Parse
 	var query = new Parse.Query(Message);
 	
@@ -262,16 +259,21 @@ function displayMessages() {
 	
 	query.find({
 		success: function(messages) {
+			// The final html for $messages
+			var result = "";
+	
 			while (messages.length > 0) {
 				var messageObject = messages.pop();
 				var user = messageObject.get("user");
-				$message = $('<div class="message"></div>');
-				var m = user + " ";
+				var m = '<div class="messages">';
+				m += user + " ";
 				m += "(" + messageObject.createdAt.toLocaleTimeString() + "): ";
 				m += messageObject.get("text");
-				$message.html(m);
-				$messages.append($message);
+				m += "</div>"
+				result += m;
 			}
+			
+			$messages.html(result);
 		},
 		error: function(error) {
 			alert("Error: " + error.code + " " + error.message);
