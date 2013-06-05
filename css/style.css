@@ -322,7 +322,7 @@ body {
 
 /* Messages
 -------------------------------------------------------------------------------------------- */
-#messages {
+#all-messages-chat {
 	max-height: 300px;
 	overflow-x: auto;
 }
