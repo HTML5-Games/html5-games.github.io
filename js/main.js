@@ -274,10 +274,6 @@ function displayMessages() {
 			}
 			
 			$messages.html(result);
-			
-			// Scroll div
-			var chatDiv = document.getElementById("all-messages-chat");
-			chatDiv.scrollTop = chatDiv.scrollHeight;
 		},
 		error: function(error) {
 			alert("Error: " + error.code + " " + error.message);
@@ -355,14 +351,20 @@ function displayPosts() {
 		success: function(posts) {
 			// The final html for $article
 			var result = "";
-
+			
+			var n = 0;
 			while (posts.length > 0) {
+				// Update n
+				n++;
+				
+				// Get post data
 				var post = posts.pop();
 				var title = post.get("title");
 				var text = post.get("text");
 				var user = post.get("user");
 				var createdAt = post.createdAt;
 				
+				// Post
 				var p = '<section class="post block"><div class="container">';
 				p += '<h2>' + title + '</h2>';
 				p += '<p class="lead-small">Posted '; 
@@ -370,14 +372,34 @@ function displayPosts() {
 				p += ' by ' + user;
 				p += ' - 0 comments</p>';
 				p += '<div class="panel lead">' + text + '</div>';
-				p += '</div></section>';
+				
+				// Comments
+				p += '<section class="comments" id="comments-' + n + '">';
+				p += '<h3>Comments</h3>';
+				p += '<p class="lead-small">Loading...</p>';
+				p += '<a class="btn" tabindex="-1" href="#comment" role="button" data-toggle="modal">Post Comment</a>';
+				
+				// End post
+				p += '</section></div></section>';
 				result += p;
+				
+				loadComments(post, n);
 			}
 
 			$article.html(result);
 		},
 		error: function(error) {
 			alert("Error: " + error.code + " " + error.message);
+		}
+	});
+}
+
+function loadComments(post, n) {
+	var query = new Parse.Query(Comment);
+	query.equalTo("post", post);
+	query.find({
+		success: function(comments) {
+			
 		}
 	});
 }
