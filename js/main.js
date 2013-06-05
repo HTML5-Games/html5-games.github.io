@@ -274,6 +274,10 @@ function displayMessages() {
 			}
 			
 			$messages.html(result);
+			
+			// Scroll div
+			var chatDiv = document.getElementById("all-messages-chat");
+			chatDiv.scrollTop = chatDiv.scrollHeight;
 		},
 		error: function(error) {
 			alert("Error: " + error.code + " " + error.message);
