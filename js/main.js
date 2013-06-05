@@ -291,10 +291,10 @@ function post() {
 	}
 	
 	// Make sure that user at least level 7
-	if (currentUser.get("level") < 7) {
-		alert("You must be level 7 or heigher to write posts.");
-		return false;
-	}
+	//if (currentUser.get("level") < 7) {
+	//	alert("You must be level 7 or heigher to write posts.");
+	//	return false;
+	//}
 	
 	// Get post data
 	var title = $("#title-post").val();
@@ -325,8 +325,54 @@ function post() {
 		success: function(post) {
 			// Hide modal
 			$("#post").modal("hide");
+			
+			// Update posts
+			displayPosts();
 		},
 		error: function(message, error) {
+			alert("Error: " + error.code + " " + error.message);
+		}
+	});
+}
+
+function displayPosts() {
+	$article = $("article");
+
+	// Get messages from Parse
+	var query = new Parse.Query(Post);
+
+	// Retrieve only the most recent ones
+	query.descending("createdAt");
+
+	// Retrieve only the last 5
+	query.limit(5);
+
+	query.find({
+		success: function(posts) {
+			// The final html for $article
+			var result = "";
+
+			while (posts.length > 0) {
+				var post = posts.pop();
+				var title = post.get("title");
+				var text = post.get("text");
+				var user = post.get("user");
+				var createdAt = post.createdAt;
+				
+				var p = '<section class="post block"><div class="container">';
+				p += '<h2>' + title + '</h2>';
+				p += '<p class="lead-small">Posted '; 
+				p += 'on ' + createdAt.toLocaleDateString();
+				p += ' by ' + user;
+				p += ' - 0 comments</p>';
+				p += '<div class="panel lead">' + text + '</div>';
+				p += '</div></section>';
+				result += p;
+			}
+
+			$article.html(result);
+		},
+		error: function(error) {
 			alert("Error: " + error.code + " " + error.message);
 		}
 	});
