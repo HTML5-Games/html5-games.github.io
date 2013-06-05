@@ -357,6 +357,7 @@ function displayPosts() {
 			var result = "";
 			
 			var n = 0;
+			var posts2 = [];
 			while (posts.length > 0) {
 				// Update n
 				n++;
@@ -368,6 +369,8 @@ function displayPosts() {
 				var user = post.get("user");
 				var createdAt = post.createdAt;
 				
+				posts2.unshift(post);
+				
 				// Post
 				var p = '<section class="post block"><div class="container">';
 				p += '<h2>' + title + '</h2>';
@@ -378,19 +381,23 @@ function displayPosts() {
 				p += '<div class="panel lead">' + text + '</div>';
 				
 				// Comments
-				p += '<section class="comments" id="comments-' + n + '">';
+				p += '<section class="comments">';
 				p += '<h3>Comments</h3>';
+				p += '<div id="comments-' + n + '">';
 				p += '<p class="lead-small">Loading...</p>';
+				p += '</div>';
 				p += '<a class="btn" tabindex="-1" href="#comment" role="button" data-toggle="modal">Post Comment</a>';
 				
 				// End post
 				p += '</section></div></section>';
 				result += p;
-				
-				loadComments(post, n);
 			}
 
 			$article.html(result);
+			
+			for (i = n; i > 0; i--) {
+				loadComments(posts2[i - 1], i);
+			}
 		},
 		error: function(error) {
 			alert("Error: " + error.code + " " + error.message);
@@ -399,11 +406,17 @@ function displayPosts() {
 }
 
 function loadComments(post, n) {
+	// Get div
+	$comments = $("#comments-"+n);
+	
+	// Load comments
 	var query = new Parse.Query(Comment);
 	query.equalTo("post", post);
 	query.find({
 		success: function(comments) {
-			
+			if (comments.length == 0) {
+				$comments.html('<p class="lead-small">No comments</p>');
+			}
 		}
 	});
 }
