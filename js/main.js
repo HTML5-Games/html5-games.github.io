@@ -2,6 +2,9 @@
  * Main JS code goes here
  */
 
+// Globals
+var postId;
+
 // Init Parse
 Parse.initialize("cF1KaOFNgSERAxKgv4ZUDE3XBnMEpGxF2ACWmMZE", "tnNd8KSP42GsJ9ZyBVaaN9REYRW76gUj9sxm8e3i");
 
@@ -371,7 +374,7 @@ function comment() {
 	// Create new comment
 	var comment = new Comment();
 	comment.set("text", text);
-	comment.set("post", post);
+	comment.set("post", postId);
 	comment.set("user", currentUser.get("username"));
 	
 	// Save message
@@ -427,16 +430,17 @@ function displayPosts() {
 				p += '<p class="lead-small">Posted '; 
 				p += 'on ' + createdAt.toLocaleDateString();
 				p += ' by ' + user;
-				p += ' - 0 comments</p>';
+				p += ' - <a href="#comments-link-' + n + '">0 comments</a></p>';
 				p += '<div class="panel lead">' + text + '</div>';
 				
 				// Comments
-				p += '<section class="comments">';
+				p += '<section class="comments" id="comments-link-' + n + '">';
 				p += '<h3>Comments</h3>';
 				p += '<div id="comments-' + n + '">';
 				p += '<p class="lead-small">Loading...</p>';
 				p += '</div>';
-				p += '<a class="btn" tabindex="-1" href="#comment" role="button" data-toggle="modal">Post Comment</a>';
+				p += '<button class="btn" tabindex="-1" onclick="postId=\'' + post.id + '\';$(\'#comment\').modal(\'show\');">Post Comment</button>';
+				p += '</div>';
 				
 				// End post
 				p += '</section></div></section>';
@@ -461,11 +465,39 @@ function loadComments(post, n) {
 	
 	// Load comments
 	var query = new Parse.Query(Comment);
-	query.equalTo("post", post);
+	query.equalTo("post", post.id);
+	query.decending("createdAt");
 	query.find({
 		success: function(comments) {
 			if (comments.length == 0) {
 				$comments.html('<p class="lead-small">No comments</p>');
+			}
+			else {
+				var result = "";
+				while (comments.length > 0) {
+					// Get comment data
+					var comment = comments.pop();
+					var text = comment.get("text");
+					var user = comment.get("user");
+					var createdAt = comment.createdAt;
+
+					// By who, when
+					var c = '<div class="comment">';
+					c += 'By ' + user;
+					c += ' at ' + createdAt.toLocaleTimeString();
+					c += ' on ' + createdAt.toLocaleDateString();
+
+					// Comment
+					c += '<p class="lead-small">';
+					c += text;
+					c += '</p>';
+
+					// End comment
+					c += '</div>';
+					result += c;
+				}
+				
+				$comments.html(result);
 			}
 		}
 	});
