@@ -6,8 +6,14 @@ rgb(241, 101, 41), #F16529
 
 and
 
-rgb(255, 255, 255), #FFFFFF
+rgb(255, 255, 255), #F0F0F0
 rgb(221, 221, 221), #DDDDDD
+
+and
+
+#333333
+#292929
+
 */
 
 
@@ -97,7 +103,7 @@ body {
 }
 
 .panel-hover:hover, .panel-hover:active, .panel-hover:focus {
-	border-color: #444;
+	border-color: #444 !important;
 	
 	color: #FFF !important;
 	text-decoration: none !important;
