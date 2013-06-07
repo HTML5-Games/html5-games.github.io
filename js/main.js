@@ -466,7 +466,7 @@ function loadComments(post, n) {
 	// Load comments
 	var query = new Parse.Query(Comment);
 	query.equalTo("post", post.id);
-	query.decending("createdAt");
+	query.descending("createdAt");
 	query.find({
 		success: function(comments) {
 			if (comments.length == 0) {
