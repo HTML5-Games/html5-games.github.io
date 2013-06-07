@@ -296,7 +296,7 @@ function post() {
 	
 	// Make sure that user at least level 7
 	//if (currentUser.get("level") < 7) {
-	//	alert("You must be level 7 or heigher to write posts.");
+	//	alert("You must be level 7 or higher to write posts.");
 	//	return false;
 	//}
 	
@@ -329,6 +329,44 @@ function post() {
 		success: function(post) {
 			// Hide modal
 			$("#post").modal("hide");
+			
+			// Update posts
+			displayPosts();
+		},
+		error: function(message, error) {
+			alert("Error: " + error.code + " " + error.message);
+		}
+	});
+}
+
+function comment() {
+	// Make sure that user is logged in
+	currentUser = Parse.User.current();
+	if (currentUser == null) {
+		alert("You must login to write posts.");
+		return false;
+	}
+	
+	// Make sure that user at least level 4
+	//if (currentUser.get("level") < 4) {
+	//	alert("You must be level 4 or higher to write posts.");
+	//	return false;
+	//}
+	
+	// Get comment data
+	var text = $("#text-comment").val();
+	
+	// Create new comment
+	var comment = new Comment();
+	comment.set("text", text);
+	comment.set("post", post);
+	comment.set("user", currentUser.get("username"));
+	
+	// Save message
+	comment.save(null, {
+		success: function(comment) {
+			// Hide modal
+			$("#comment").modal("hide");
 			
 			// Update posts
 			displayPosts();
