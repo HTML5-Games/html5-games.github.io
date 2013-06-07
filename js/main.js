@@ -230,7 +230,7 @@ function sendMessage() {
 	
 	// Make sure that message doesn't contain a "<"
 	if (text.indexOf("<") == 1) {
-		alert("Html5 is not allowed in chat!");
+		alert("HTML is not allowed in chat!");
 		return false;
 	}
 	
