@@ -218,12 +218,24 @@ function sendMessage() {
 		return false;
 	}
 	
-	// Make sure that message isn't empty
+	/* ERROR HANDLING */
+	
 	text = $("#message-chat").val();
+	
+	// Make sure that message isn't empty
 	if (text == "") {
-		alert("Can't send empty message!")
+		alert("Can't send empty message!");
 		return false;
 	}
+	
+	// Make sure that message doesn't contain a "<"
+	if (text.indexOf("<") == 1) {
+		alert("Html5 is not allowed in chat!");
+		return false;
+	}
+	
+	/* end ERROR HANDLING */
+	
 	
 	// Create new message
 	var message = new Message();
