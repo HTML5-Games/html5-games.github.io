@@ -236,6 +236,7 @@ body {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	padding: 24px 0;
+	padding-bottom: 6px;
 	
 	background-color: #292929;
 	
@@ -245,11 +246,11 @@ body {
 .persona-icon {
 	display: block;
 	margin: 0 auto;
-	margin-bottom: 24px;
+	margin-bottom: 30px;
 	
 	background-size: 100%;
-	width: 160px;
-	height: 160px;
+	width: 190px;
+	height: 190px;
 	
 	border: 8px solid #111;
 }
@@ -257,7 +258,39 @@ body {
 .persona .span2 {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	padding: 0 20px;
+	padding-left: 46px;
+}
+
+.persona .span2.text-right {
+	padding-left: 0;
+	padding-right: 46px;
+}
+
+.persona .row.space {
+	margin-top: 38px;
+}
+
+.persona .about-icon {
+	padding-left: 34px;
+	font-size: 3em;
+	color: #E44D26;
+}
+
+.persona .about {
+	font-size: .9em;
+	padding-left: 80px;
+	max-width: 174px;
+	margin-top: -26px;
+}
+
+.persona .band {
+	margin-top: 24px;
+	background-color: #F0F0F0;
+	color: #111;
+}
+
+.persona .band > div {
+	padding: 10px 46px;
 }
 
 /* Recent
