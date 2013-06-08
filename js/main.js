@@ -221,8 +221,6 @@ function sendMessage() {
 		return false;
 	}
 	
-	/* ERROR HANDLING */
-	
 	text = $("#message-chat").val();
 	
 	// Make sure that message isn't empty
@@ -232,12 +230,10 @@ function sendMessage() {
 	}
 	
 	// Make sure that message doesn't contain a "<"
-	if (text.indexOf("<") == 1) {
+	if (text.indexOf("<") > 0) {
 		alert("HTML is not allowed in chat!");
 		return false;
 	}
-	
-	/* end ERROR HANDLING */
 	
 	
 	// Create new message
