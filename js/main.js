@@ -18,9 +18,9 @@ var $linkTiles = $(".link-tile");
 $linkTiles.eq(0).height($linkTiles.eq(1).height() + 32 /* Padding and Border */);
 
 level1 = '<b>Newb</b> Can post in chat';
-level2 = '<b>?</b> ?';
+level2 = '<b>?</b> Can rate blog posts';
 level3 = '<b>?</b> ?';
-level4 = '<b>?</b> ?';
+level4 = '<b>?</b> Can comment on blog posts';
 level5 = '<b>?</b> ?';
 level6 = '<b>?</b> ?';
 level7 = '<b>?</b> Can write blog posts';
