@@ -45,7 +45,7 @@ if (currentUser != null) {
 	$("#joined-profile").text(joined.getMonth() + "/" + joined.getDate() + "/" + joined.getFullYear().toString().substring(2, 4));
 	$("#level-profile").text(currentUser.get("level"));
 	$(".persona-icon").each(function() {
-		$(this).css("background-image", "url('http://www.gravatar.com/avatar/" + md5(currentUser.get("email")) + ".jpg?s=160&d=wavatar')");
+		$(this).css("background-image", "url('http://www.gravatar.com/avatar/" + md5(currentUser.get("email")) + ".jpg?s=190&d=wavatar')");
 	});
 }
 
