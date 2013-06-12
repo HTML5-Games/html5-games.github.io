@@ -482,6 +482,36 @@ footer .btn:active {
 	box-shadow: inset 0 0 3px black;
 }
 
+footer aside {
+	display: inline-block;
+	width: calc(25% - .5%);
+	vertical-align: top;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+footer aside > div {
+	width: 75%;
+	border-top: 2px solid #777;
+	margin: auto;
+}
+
+footer h3 {
+	margin: 0;
+}
+
+footer ul {
+	list-style: none;
+	margin-left: 1px;
+	font-size: 16px;
+}
+
+footer #buttons {
+	width: 94%;
+	margin: auto;
+	margin-top: 15px;
+}
+
 /* Bootstrap overrides
 -------------------------------------------------------------------------------------------- */
 .modal {
