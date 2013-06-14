@@ -547,3 +547,52 @@ function submitGame() {
 		}
 	});
 }
+
+function displayFeaturedGames() {
+	$featured = $("#featured");
+	
+	// Get games from Parse
+	var query = new Parse.Query(Game);
+	
+	// Get only featured games
+	query.equalTo("featured", true);
+	
+	// Retrieve at most 4
+	query.limit(4);
+
+	query.find({
+		success: function(games) {
+			// The final html for $featured
+			var result = "";
+
+			while (games.length > 0) {
+				// Get game data
+				var game = games.pop();
+				var title = game.get("title");
+				var url = game.get("url");
+				var genres = game.get("genres");
+				var desc = game.get("desc");
+				
+				// Post
+				var g = '<a href="' + url + '" class="project-box">';
+				g += '<h2>' + title + '</h2>';
+				g += '<div>';
+				for (var i = 0; i < genres.length; i++) {
+					g += '<span class="label label-important">' + genres[i] + '</span> ';
+				}
+				g += '</div>';
+				g += desc;
+				g += '</a>';
+				
+				result += g;
+			}
+
+			$featured.html(result);
+		},
+		error: function(error) {
+			alert("Error: " + error.code + " " + error.message);
+		}
+	});
+}
+
+displayFeaturedGames();
