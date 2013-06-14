@@ -594,5 +594,3 @@ function displayFeaturedGames() {
 		}
 	});
 }
-
-displayFeaturedGames();
