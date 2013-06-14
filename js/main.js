@@ -3,7 +3,7 @@
  */
 
 // Globals
-var postId;
+var postId; // TODO: Remove
 
 // Init Parse
 Parse.initialize("cF1KaOFNgSERAxKgv4ZUDE3XBnMEpGxF2ACWmMZE", "tnNd8KSP42GsJ9ZyBVaaN9REYRW76gUj9sxm8e3i");
@@ -12,6 +12,7 @@ Parse.initialize("cF1KaOFNgSERAxKgv4ZUDE3XBnMEpGxF2ACWmMZE", "tnNd8KSP42GsJ9ZyBV
 var Post = Parse.Object.extend("Post");
 var Comment = Parse.Object.extend("Comment");
 var Message = Parse.Object.extend("Message");
+var Game = Parse.Object.extend("Game");
 
 // Init DOM elements
 var $linkTiles = $(".link-tile");
@@ -495,6 +496,54 @@ function loadComments(post, n) {
 				
 				$comments.html(result);
 			}
+		}
+	});
+}
+
+// Games
+function submitGame() {
+	// Make sure that user is logged in
+	currentUser = Parse.User.current();
+	if (currentUser == null) {
+		alert("You must be logged in to submit games.");
+		return false;
+	}
+	
+	// Make sure that user at least level 2
+	//if (currentUser.get("level") < 2) {
+	//	alert("You must be level 2 or higher to submit games.");
+	//	return false;
+	//}
+	
+	// Get post data
+	var title = $("#title-game").val();
+	var url = $("#url-game").val();
+	var desc = $("#desc-game").val();
+	var genres = [];
+	if ($("#genre1-game").val() != "") {
+		genres.push($("#genre1-game").val());
+	}
+	if ($("#genre2-game").val() != "") {
+		genres.push($("#genre2-game").val());
+	}
+	
+	// Create new post
+	var game = new Game();
+	game.set("title", title);
+	game.set("url", url);
+	game.set("genres", genres);
+	game.set("desc", desc);
+	game.set("featured", false);
+	game.set("user", currentUser);
+	
+	// Save message
+	game.save(null, {
+		success: function(game) {
+			// Hide modal
+			$("#submit-game").modal("hide");
+		},
+		error: function(message, error) {
+			alert("Error: " + error.code + " " + error.message);
 		}
 	});
 }
