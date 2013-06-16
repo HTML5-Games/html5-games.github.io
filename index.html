@@ -1,475 +1,277 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-	<title>HTML5 Game Development</title>
+	<title>HTML5 Game Development Group</title>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!-- Icon -->
-	<link rel="icon" type="image/x-icon" href="https://dl.dropboxusercontent.com/u/62044718/favicon.ico">
-	<!--href="img/favicon.ico" is supposed to work but is not working-->
-	<!--Placed icon in my public dropbox for temporary use until problem is resolved-->
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text.css">
 
-	<!-- Style -->
-	<link href="css/style.css" rel="stylesheet" media="screen">
+	<link href="css/style2.css" rel="stylesheet" media="screen">
 
-	<!-- Bootstrap -->
-	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-
-	<!-- Fonts -->
 	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Nova+Round' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Shojumaru' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<header>
-		<div class="container">
-			<a href="#" class="pull-left">
-				<img id="icon" src="img/logo.png" alt="HTML5 Game Development"/>
-			</a>
-			<nav class="pull-right" style="width: 45%; !important"><!--Could not find default width code-->
-				<a class="menu-link" href="#about">
-					About
+	<header id="header" class="navbar navbar-fixed-top navbar-inverse">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
 				</a>
-				<a class="menu-link" href="#games">
-					Games
-				</a>
-				<a class="menu-link" href="#learn">
-					Learn
-				</a>
-				<a class="menu-link" href="#social">
-					Social
-				</a>
-				<span class="dropdown">
-					<a id="login-menu-link" class="dropdown-toggle menu-link menu-link-dropdown" data-toggle="dropdown" href="#">
-						<span style="background-image: url('img/user-icon.png'); width: 22px; height: 22px;" class="header-icon"></span>
-					</a>
-					<ul id="login-menu" class="dropdown-menu" role="menu" aria-labelledby="dLabel" style="left: -46px; top: 84px;">
-						<!-- Filled by buildMenu() in main.js -->
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+						<li>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-white"></i> User</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Log In</a></li>
+								<li><a href="#">Sign Up</a></li>
+							</ul>
+						</li>
 					</ul>
-				</span>
-			</nav>
+					<ul class="nav">
+						<li class="active"><a href="#home"><i class="icon-home icon-white"></i></a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#games">Games</a></li>
+						<li><a href="#learn">Learn</a></li>
+						<li><a href="#social">Social</a></li>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</header>
 
-	<section id="links">
-		<div class="container">
-			<span class="muted">Visit us on:</span>
-			<a href="https://github.com/HTML5-Games"><img src="img/GitHub-Mark-32px.png" alt="GitHub"/></a>
-			<a href="http://www.codecademy.com/groups/html5-game-development/invite/9aec4bb0429f38c47944ab6d42fc30d3">Codecademy</a>
-		</div>
-	</section>
+	<div id="logo-container">
+		<img src="img/html5_badge_desaturated.png" id="logo-html5-des">
+		<img src="img/html5_badge.png" id="logo-html5">
+		<span id="logo-game">Game</span>
+		<span id="logo-dev">Dev</span>
+	</div>
 
-	<section class="block" id="about-block">
-		<span id="about" class="id-link"></span>
+	<section class="section section-dark">
 		<div class="container">
 			<h1>About Us</h1>
-			<p class="lead">
-				We are the HTML5 Game Development Group, a group on <a href="http://codecademy.com">Codecademy</a> that is passionate about creating HTML5 games and moving the web forward.
+			<p class="text-large">
+				We are the HTML5 Game Development Group, a group on <a href="http://codecademy.com/">Codecademy</a>, that is passionate about creating HTML5 games and moving the web forward.
 			</p>
+			<aside class="pull-right text-large">
+				<span class="muted">Visit us on:</span> &nbsp;
+				<a href="https://github.com/HTML5-Games" title="GitHub"><img src="img/GitHub-Mark-32px.png" alt="GitHub"></a> &nbsp;
+				<a href="http://www.codecademy.com/groups/html5-game-development/invite/9aec4bb0429f38c47944ab6d42fc30d3" class="font-cursive link-light">Codecademy</a>
+			</aside>
 		</div>
 	</section>
 
-	<section class="block red">
-		<span id="games" class="id-link"></span>
+	<section class="section">
 		<div class="container">
-			<h1>Games</h1>
-			<div class="lead">
-				<a href="http://html5-games.github.io/vilify" class="project-box">
-					<span style="background-image: url('img/vilify-logo.png'); width: 150px; height: 50px;" class="project-icon"></span>
-					You are a mad scientist whose dream is to destroy the world. After many years of work, your doomsday device is almost ready -- and the end is set for tomorrow.
-				</a>
-				<div style="margin-top: 10px">
-					<a href="#">All games &raquo;</a>
-					<a class="pull-right" tabindex="-1" href="#submit-game" data-toggle="modal">Submit game</a>
+			<h1>Our Games</h1>
+			<div class="row">
+				<div class="span6">
+					<div class="well-dark">
+						<img src="img/vilify-logo.png" alt="Vilify" class="game-logo">
+						You are a mad scientist whose dream is to destroy the world. After many years of work, your doomsday device is almost ready &minus; and the end is set for tomorrow.
+					</div>
+				</div>
+				<div class="span6">
+					<div class="well-dark">
+						<h2>Another Awesome Game</h2>
+						Lorem ipsum dolor sit amet.
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="block">
-		<span id="learn" class="id-link"></span>
-		<div class="container">
-			<h1>Learn HTML5 Gamedev</h1>
-			<div class="lead" style="margin-bottom: 20px;">
-				<div class="panel">
-					Prerequisites: Some understanding of
-					<a href="http://www.codecademy.com/tracks/javascript">JavaScript</a>
-					&
-					<a href="http://www.codecademy.com/tracks/web">HTML</a>
-					<br/>
-					Select a track and begin your journey towards creating awesome games!
-				</div>
+	<section class="section section-dark">
+		<div class="container text-large">
+			<h1>Learn how to make HTML5 games</h1>
+			<h3 class="heading">2D Track</h2>
+			<ol class="track-list">
+				<li>
+					<a href="http://www.codecademy.com/courses/web-beginner-en-SWM11/0/3?curriculum_id=50b91eda28c2fb212300039e" target="_blank">
+						Draw with JavaScript
+						<p class="muted">by Eric Weinstein</p>
+					</a>
+				</li>
+				<li>
+					<a href="http://www.codecademy.com/courses/web-intermediate-en-CkOwl" target="_blank">
+						Getting Started
+						<p class="muted">by Logan Ralston with Tommy Copeland and William Van Rensselaer</p>
+					</a>
+				</li>
+				<li>
+					<a href="http://www.codecademy.com/courses/web-beginner-en-Hdmch" target="_blank">
+						Physics
+						<p class="muted">by William Van Rensselaer with Logan Ralston</p>
+					</a>
+				</li>
+				<li>
+					<a href="http://www.codecademy.com/courses/web-intermediate-en-5LH5k" target="_blank">
+						Getting Input
+						<p class="muted">by Logan Ralston with William Van Rensselaer, SungRim Huh, Tommy Copeland, and Graeme</p>
+					</a>
+				</li>
+				<li>
+					Project: Pong <span class="label">Coming Soon</span>
+					<p class="muted">by Logan Ralston with William Van Rensselaer, SungRim Huh, Graeme, and Anonymos</p>
+				</li>
+				<li>
+					Object Oriented Game Development <span class="label">Coming Soon</span>
+					<p class="muted">by William Van Rensselaer with Logan Ralston</p>
+				</li>
+				<li>
+					Sprite Sheets <span class="label">Coming Soon</span>
+					<p class="muted">by Logan Ralston with William Van Rensselaer and Graeme</p>
+				</li>
+				<li>
+					Physics 2 <span class="label">Coming Soon</span>
+					<p class="muted">by William Van Rensselaer</p>
+				</li>
+				<li>
+					Sounds and Music <span class="label">Coming Soon</span>
+					<p class="muted">by Logan Ralston with William Van Rensselaer and Graeme</p>
+				</li>
+				<li>
+					Project: Fruit Ninja <span class="label">Coming Soon</span>
+					<p class="muted">by William Van Rensselaer with Logan Ralston and Graeme</p>
+				</li>
+			</ol>
 
-				<span class="track-heading">2D Track</span>
-				<ol class="track">
-					<li>
-						<a href="http://www.codecademy.com/courses/web-beginner-en-SWM11/0/3?curriculum_id=50b91eda28c2fb212300039e" target="_blank">
-							Draw with JavaScript
-							<p>by Eric Weinstein</p>
-						</a>
-					</li>
-					<li>
-						<a href="http://www.codecademy.com/courses/web-intermediate-en-CkOwl" target="_blank">
-							Getting Started
-							<p>by Logan Ralston with Tommy Copeland and William Van Rensselaer</p>
-						</a>
-					</li>
-					<li>
-						<a href="http://www.codecademy.com/courses/web-beginner-en-Hdmch" target="_blank">
-							Physics
-							<p>by William Van Rensselaer with Logan Ralston</p>
-						</a>
-					</li>
-					<li>
-						<a href="http://www.codecademy.com/courses/web-intermediate-en-5LH5k" target="_blank">
-							Getting Input
-							<p>by Logan Ralston with William Van Rensselaer, SungRim Huh, Tommy Copeland, and Graeme</p>
-						</a>
-					</li>
-					<li>
-						<a class="coming-soon" href="#learn">
-							Project: Pong <span class="label">Coming Soon</span>
-							<p>by Logan Ralston with William Van Rensselaer, SungRim Huh, Graeme, and Anonymos</p>
-						</a>
-					</li>
-					<li>
-						<a class="coming-soon" href="#learn">
-							Object Oriented Game Development <span class="label">Coming Soon</span>
-							<p>by William Van Rensselaer with Logan Ralston</p>
-						</a>
-					</li>
-					<li>
-						<a class="coming-soon" href="#learn">
-							Sprite Sheets <span class="label">Coming Soon</span>
-							<p>by Logan Ralston with William Van Rensselaer and Graeme</p>
-						</a>
-					</li>
-					<li>
-						<a class="coming-soon" href="#learn">
-							Physics 2 <span class="label">Coming Soon</span>
-							<p>by William Van Rensselaer</p>
-						</a>
-					</li>
-					<li>
-						<a class="coming-soon" href="#learn">
-							Sounds and Music <span class="label">Coming Soon</span>
-							<p>by Logan Ralston with William Van Rensselaer and Graeme</p>
-						</a>
-					</li>
-					<li>
-						<a class="coming-soon" href="#learn">
-							Project: Fruit Ninja <span class="label">Coming Soon</span>
-							<p>by William Van Rensselaer with Logan Ralston and Graeme</p>
-						</a>
-					</li>
-				</ol>
-				<span class="track-heading">3D Track</span>
-				<ol class="track">
-					<li>
-						<a href="http://www.codecademy.com/courses/web-advanced-en-wQkx9" target="_blank">
-							Drawing 3D in Three.js
-							<p>by Tommy Copeland</p>
-						</a>
-					</li>
-				</ol>
-				<span class="track-heading">Feeling Underwhelmed?</span>
-				<ol class="track">
-					<li>
-						<a href="https://developer.mozilla.org/en-US/docs/HTML/Canvas/Tutorial?redirectlocale=en-US&redirectslug=Canvas_tutorial" target="_blank">
-							More on Drawing with JavaScript
-							<p>learn more about &lt;canvas&gt; element</p>
-						</a>
-					</li>
-					<li>
-						<a href="https://www.udacity.com/course/cs255" target="_blank">
-							Udacity's HTML5 Game Development Course
-							<p>"This course will walk you through the major components of building GRITS, an HTML5 game."</p>
-						</a>
-					</li>
-					<li>
-						<a href="http://www.html5rocks.com/en/" target="_blank">
-							HTML5 Rocks
-							<p>"All HTML5, all the time."</p>
-						</a>
-					</li>
-				</ol>
-			</div>
+			<h3 class="heading tm20">3D Track</h3>
+			<ol class="track-list">
+				<li>
+					<a href="http://www.codecademy.com/courses/web-advanced-en-wQkx9" target="_blank">
+						Drawing 3D in Three.js
+						<p class="muted">by Tommy Copeland</p>
+					</a>
+				</li>
+			</ol>
+
+			<h3 class="heading tm20">Feeling Underwhelmed?</h3>
+			<ol class="track-list">
+				<li>
+					<a href="https://developer.mozilla.org/en-US/docs/HTML/Canvas/Tutorial?redirectlocale=en-US&amp;redirectslug=Canvas_tutorial" target="_blank">
+						More on Drawing with JavaScript
+						<p class="muted">learn more about &lt;canvas&gt; element</p>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.udacity.com/course/cs255" target="_blank">
+						Udacity's HTML5 Game Development Course
+						<p class="muted">"This course will walk you through the major components of building GRITS, an HTML5 game."</p>
+					</a>
+				</li>
+				<li>
+					<a href="http://www.html5rocks.com/en/" target="_blank">
+						HTML5 Rocks
+						<p class="muted">"All HTML5, all the time."</p>
+					</a>
+				</li>
+			</ol>
 		</div>
 	</section>
 
-	<section class="block red">
-		<span id="social" class="id-link"></span>
+	<section class="section">
 		<div class="container">
 			<h1>Social</h1>
-			<div class="lead">
-				<div class="row">
-					<a href="blog.html" class="span6 panel panel-hover link-tile" style="height: 100%;">
-						<h2>Blog</h2>
-						Visit our blog.
-						<br>
-						<br>
-						<br>
-						<br>
-						<span class="label label-warning">Under Construction</span> <span class="label label-info">Needs Icon</span>
-					</a>
-					<a href="chat.html" class="span6 panel panel-hover link-tile">
-						<h2>Chat</h2>
-						Chat about anything HTML5 gamedev. From your latest project idea to how to use requestAnimFrame to where to publish your now complete game.
-						<br>
-						<span class="label label-info">Needs Icon</span>
+			<div class="row text-large">
+				<div class="span6">
+					<a href="blog.html" class="well-dark">
+						<h3>Blog</h3>
+						Visit our blog
 					</a>
 				</div>
-				<div class="row" style="margin-top: 10px;">
-					<a href="http://www.codecademy.com/groups/html5-game-development/invite/9aec4bb0429f38c47944ab6d42fc30d3" class="span12 panel panel-hover">
-						<h2 style="font-family: 'Lobster', cursive !important; font-weight: 300;">Codecademy</h2>
-						Visit our Codecademy group.
+				<div class="span6">
+					<a href="chat.html" class="well-dark">
+						<h3>Chat</h3>
+						Chat about HTML5 game development from your latest project
+						idea to where to publish your now completed games.
 					</a>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<footer>
+	<footer id="footer" class="section section-dark">
 		<div class="container">
-			<div class="lead" style="margin-top: 10px;">
-				<aside>
-					<div>
-						<h3>Project</h3>
-						<ul>
-							<li>
-								<a href="https://github.com/HTML5-Games/html5-games.github.io">GitHub Repo</a>
-							</li>
-							<li>
-								<a href="http://www.codecademy.com/groups/html5-game-development/discussions/51709b04977bc97e65000487">Codecademy</a>
-							</li>
-						</ul>
-					</div>
-				</aside>
-				<aside>
-					<div>
-						<h3>Games</h3>
-						<ul>
-							<li>
-								<a href="#">All Games</a>
-							</li>
-							<li>
-								<a href="#games">Featured Games</a>
-							</li>
-							<li>
-								<a href="#">Submit Game</a>
-							</li>
-						</ul>
-					</div>
-				</aside>
-				<aside>
-					<div>
-						<h3>Learn</h3>
-						<ul>
-							<li>
-								2D Gamedev
-							</li>
-							<li>
-								3D Gamedev
-							</li>
-							<li>
-								More Resources
-							</li>
-						</ul>
-					</div>
-				</aside>
-				<aside>
-					<div>
-						<h3>Social</h3>
-						<ul>
-							<li>
-								<a href="blog.html">Blog</a>
-							</li>
-							<li>
-								<a href="chat.html">Chat</a>
-							</li>
-							<li>
-								<a href="http://www.codecademy.com/groups/html5-game-development/invite/9aec4bb0429f38c47944ab6d42fc30d3">Codecademy</a>
-							</li>
-							<li>
-								<a href="https://github.com/HTML5-Games">GitHub</a>
-							</li>
-						</ul>
-					</div>
-				</aside>
-				<div id="buttons">
-					<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>
-					<span class="pull-right">
-						<a class="btn" href="mailto: html5.gamedev.group@gmail.com">Contact Us</a>
-					</span>
+			<div class="row">
+				<div class="span3">
+					<h3>Project</h3>
+					<a href="https://github.com/HTML5-Games/html5-games.github.io">GitHub Repo</a>
+					<a href="http://www.codecademy.com/groups/html5-game-development/discussions/51709b04977bc97e65000487">Codecademy</a>
+				</div>
+				<div class="span3">
+					<h3>Games</h3>
+					<a href="#">All Games</a>
+					<a href="#games">Featured Games</a>
+					<a href="#">Submit Game</a>
+				</div>
+				<div class="span3">
+					<h3>Learn</h3>
+					<a href="#learn">2D Game Dev</a>
+					<a href="#learn">3D Game Dev</a>
+					<a href="#learn">More Resources</a>
+				</div>
+				<div class="span3">
+					<h3>Social</h3>
+					<a href="blog.html">Blog</a>
+					<a href="chat.html">Chat</a>
+					<a href="http://www.codecademy.com/groups/html5-game-development/invite/9aec4bb0429f38c47944ab6d42fc30d3">Codecademy</a>
+					<a href="https://github.com/HTML5-Games">GitHub</a>
+				</div>
+			</div>
+			<div class="row tm20">
+				<div class="span2">
+					<a class="btn btn-inverse" href="mailto: html5.gamedev.group@gmail.com">Contact Us</a>
+				</div>
+				<div class="span2 offset8 text-right">
+					<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png"></a>
 				</div>
 			</div>
 		</div>
 	</footer>
 
-	<div id="login" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-			<h3 id="loginLabel">Login</h3>
-		</div>
-		<div class="modal-body">
-			<form style="margin-bottom: 0px;">
-				<fieldset>
-					<div class="control-group">
-						<label for="name-login">Username</label>
-						<div class="controls">
-							<input type="text" id="name-login" name="name-login">
-							<span class="help-inline"></span>
-						</div>
-					</div>
-					<div class="control-group">
-						<label for="psword-login">Password</label>
-						<div class="controls">
-							<input type="password" id="psword-login" name="psword-login">
-							<span class="help-inline"></span>
-						</div>
-					</div>
-				</fieldset>
-			</form>
-		</div>
-		<div class="modal-footer">
-			<button class="btn" onclick="logIn()">Login</button>
-		</div>
-	</div>
-
-	<div id="signup" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="signinLabel" aria-hidden="true">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-			<h3 id="signupLabel">Sign Up</h3>
-		</div>
-		<div class="modal-body">
-			<form style="margin-bottom: 0px;">
-				<fieldset>
-					<div class="control-group">
-						<label for="name-signup">Username *</label>
-						<div class="controls">
-							<input type="text" id="name-signup" name="name-signup">
-							<span class="help-inline"></span>
-						</div>
-					</div>
-					<div class="control-group">
-						<label for="psword-signup">Password *</label>
-						<div class="controls">
-							<input type="password" id="psword-signup" name="psword-signup">
-							<span class="help-inline"></span>
-						</div>
-					</div>
-					<div class="control-group">
-						<label for="psword2-signup">Confirm Password *</label>
-						<div class="controls">
-							<input type="password" id="psword2-signup" name="psword2-signup">
-							<span class="help-inline"></span>
-						</div>
-					</div>
-					<div class="control-group">
-						<label for="email-signup">Email *</label>
-						<div class="controls">
-							<input type="email" id="email-signup" name="email-signup">
-							<span class="help-inline"></span>
-						</div>
-					</div>
-				</fieldset>
-			</form>
-		</div>
-		<div class="modal-footer">
-			<button class="btn" onclick="signUp()">Sign Up</button>
-		</div>
-	</div>
-
-	<div id="submit-game" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="gameLabel" aria-hidden="true">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-			<h3 id="gameLabel">Submit Game</h3>
-		</div>
-		<div class="modal-body">
-			<form style="margin-bottom: 0px;">
-				<fieldset>
-					<div class="control-group">
-						<label for="title-game">Title</label>
-						<div class="controls">
-							<input type="text" id="title-game" name="title-game">
-							<span class="help-inline"></span>
-						</div>
-					</div>
-					<div class="control-group">
-						<label for="url-game">URL</label>
-						<div class="controls">
-							<input type="text" id="url-game" name="url-game">
-							<span class="help-inline">e.g. http://html5-games.github.io/vilify</span>
-						</div>
-					</div>
-					<div class="control-group">
-						<label for="genre1-game">Genre</label>
-						<div class="controls">
-							<select id="genre1-game" name="genre1-game">
-								<option></option>
-								<option>Action</option>
-								<option>Adventure</option>
-								<option>Board/Card</option>
-								<option>Casual</option>
-								<option>Multiplayer</option>
-								<option>Puzzle</option>
-								<option>RPG</option>
-								<option>Shooter</option>
-								<option>Simulation</option>
-								<option>Sports</option>
-								<option>Strategy</option>
-								<option>Tower Defense</option>
-							</select>
-							<select id="genre2-game" name="genre2-game">
-								<option></option>
-								<option>Action</option>
-								<option>Adventure</option>
-								<option>Board/Card</option>
-								<option>Casual</option>
-								<option>Multiplayer</option>
-								<option>Puzzle</option>
-								<option>RPG</option>
-								<option>Shooter</option>
-								<option>Simulation</option>
-								<option>Sports</option>
-								<option>Strategy</option>
-								<option>Tower Defense</option>
-							</select>
-							<span class="help-inline"></span>
-						</div>
-					</div>
-					<div class="control-group">
-						<label for="desc-game">Description</label>
-						<div class="controls">
-							<textarea id="desc-game" name="text-post"></textarea>
-							<span class="help-inline"></span>
-						</div>
-					</div>
-				</fieldset>
-			</form>
-		</div>
-		<div class="modal-footer">
-			<button class="btn" onclick="submitGame()">Submit</button>
-		</div>
-	</div>
-
 	<script src="http://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="http://www.parsecdn.com/js/parse-1.2.7.min.js"></script>
-	<script src="js/main.js"></script>
-	
-	<script>
-		displayFeaturedGames();
-	</script>
 
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<script>
+(function( $ ) {
 
-		ga('create', 'UA-41025952-1', 'html5-games.github.io');
-		ga('send', 'pageview');
-	</script>
+// Logo animation
+var $window = $( window ),
+
+	$logoContainer = $( "#logo-container" ),
+	$logo = $( "#logo-html5" ),
+	$logoDes = $( "#logo-html5-des" ),
+	$logoGame = $( "#logo-game" ),
+	$logoDev = $( "#logo-dev" );
+
+$logoContainer.height( $window.height() - 40 );
+
+$logoDes.fadeTo( "slow", .1, function() {
+	$logo.delay( 500 ).fadeIn( "slow", function() {
+		$logoDes.hide();
+		$logoGame.animate({
+			marginLeft: "-250px",
+			opacity: "toggle"
+		}, "slow" );
+		$logoDev.animate({
+			marginLeft: 84,
+			opacity: "toggle"
+		}, "slow", function() {
+			$logoContainer.delay( 200 ).animate({
+				height: 300
+			}, "slow" );
+		});
+	});
+});
+
+})( jQuery );
+</script>
+
 </body>
 </html>

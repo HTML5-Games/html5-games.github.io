@@ -1,0 +1,172 @@
+body {
+	background: #111;
+	color: #ccc;
+	font-family: 'Monda', sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	padding-top: 40px;
+}
+
+@media ( max-width: 979px ) {
+	body {
+		padding-top: 0;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 15px 0;
+}
+
+a {
+	color: #e44d26;
+}
+
+a:hover {
+	color: #f16529;
+}
+
+.tm20 {
+	margin-top: 20px;
+}
+
+.label {
+	background-color: #555;
+}
+
+.link-light, .link-light a {
+	color: #ccc !important;
+}
+
+.font-cursive {
+	font-family: 'Lobster', cursive;
+}
+
+.text-large {
+	font-size: 21px;
+	line-height: 30px;
+}
+
+.heading {
+	border-bottom: 1px solid #111;
+	padding-bottom: 5px;
+	margin-bottom: 15px;
+}
+
+.navbar-inverse .navbar-inner {
+	background: #080808;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.navbar-inverse .navbar-inner .active > a {
+	background: none;
+	border-bottom: 1px solid #f16529;
+}
+
+#header .dropdown-menu li > a:hover {
+	background: #e44d26;
+	color: #fff;
+}
+
+#logo-container {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+#logo-html5,
+#logo-html5-des,
+#logo-game,
+#logo-dev {
+	display: none;
+	left: 50%;
+	margin-left: -64px;
+	position: absolute;
+	top: 50%;
+	margin-top: -64px;
+}
+
+#logo-game,
+#logo-dev {
+	color: #eee;
+	font-family: 'Shojumaru';
+	font-size: 50px;
+	margin-top: -10px;
+	text-shadow: 0 0 10px rgba( 255, 255, 255, .6 );
+}
+
+#logo-game {
+	margin-left: -270px;
+}
+
+#logo-dev {
+	margin-left: 104px;
+}
+
+.section {
+	border-top: 1px solid #252525;
+	padding: 40px 0;
+}
+
+@media ( max-width: 767px ) {
+	.section {
+		padding: 15px;
+	}
+}
+
+.section-dark {
+	background: #080808;
+}
+
+.well-dark {
+	background: #080808;
+	border: 1px solid #252525;
+	border-radius: 4px;
+	display: block;
+	padding: 20px;
+}
+
+a.well-dark {
+	color: #ccc;
+	text-decoration: none;
+}
+
+a.well-dark:hover h3 {
+	color: #f16529;
+}
+
+.game-logo {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.track-list {
+	margin: 0;
+}
+
+.track-list li {
+	margin: 20px 0 0 44px;
+}
+
+.track-list li a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.track-list li a:hover {
+	color: #f16529;
+}
+
+.track-list li p {
+	font-size: 80%;
+	margin-top: 10px;
+	padding-left: 20px;
+}
+
+#footer .span3 a {
+	display: block;
+	color: #999;
+}
+
+#footer .span3 a:hover {
+	color: #f16529;
+}
