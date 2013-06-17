@@ -1,3 +1,18 @@
+## // TODO:
+* Convert `404.html` to new design
+* Convert `chat.html` to new design
+* Convert `blog.html` to new design
+* Convert `profile.html` to new design
+* Filter out HTML in chat
+* Fix submit game
+* Filter posts in blog
+* Fix "Log In"/"Sign Up" in new design (Claimed by @Logi0, #11)
+* Fix header nav (and implement scrollspy)
+* Make `games.html`
+* Add edit profile page
+* Implement user levels
+
+
 ## HTML5 Game Development Group
 
 This is a website for the [Codecademy HTML5 Game Development Group](http://www.codecademy.com/groups/html5-game-development/).
