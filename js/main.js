@@ -249,7 +249,7 @@ function sendMessage() {
 			$("#message-chat").val("");
 			
 			// Update message display
-			displayMessages();
+			displayMessages(true);
 		},
 		error: function(message, error) {
 			alert("Error: " + error.code + " " + error.message);
@@ -257,8 +257,8 @@ function sendMessage() {
 	});
 }
 
-function displayMessages() {
-	$messages = $("#all-messages-chat");
+function displayMessages(scroll) {
+	$messages = $("#chat-messages");
 	
 	// Get messages from Parse
 	var query = new Parse.Query(Message);
@@ -287,9 +287,11 @@ function displayMessages() {
 			
 			$messages.html(result);
 			
-			// Scroll div
-			var chatDiv = document.getElementById("all-messages-chat");
-			chatDiv.scrollTop = chatDiv.scrollHeight; 
+			if (scroll) {
+				// Scroll div
+				var chatDiv = document.getElementById("chat-messages");
+				chatDiv.scrollTop = chatDiv.scrollHeight;
+			}
 		},
 		error: function(error) {
 			alert("Error: " + error.code + " " + error.message);
