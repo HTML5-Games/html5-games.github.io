@@ -162,6 +162,12 @@ a.well-dark:hover h3 {
 	padding-left: 20px;
 }
 
+#chat-messages {
+	max-height: 300px;
+	overflow-x: auto;
+	margin-bottom: 10px;
+}
+
 #footer .span3 a {
 	display: block;
 	color: #999;
