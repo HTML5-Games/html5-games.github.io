@@ -1,6 +1,5 @@
 ## // TODO:
 * Convert `404.html` to new design
-* Convert `chat.html` to new design
 * Convert `blog.html` to new design
 * Convert `profile.html` to new design
 * Filter out HTML in chat
