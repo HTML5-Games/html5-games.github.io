@@ -192,22 +192,27 @@ function buildMenu() {
 	// Get login menu
 	$loginMenu = $("#login-menu");
 	
+	// Get user span
+	$userSpan = $("#user");
+	
 	// Clear login menu
 	$loginMenu.html("");
 	
 	// If user not logged in
 	if (Parse.User.current() == null) {
-		$login = $('<li><a tabindex="-1" href="#login" role="button" data-toggle="modal">Login</a></li>');
-		$signup = $('<li><a tabindex="-1" href="#signup" role="button" data-toggle="modal">Sign Up</a></li>');
-		$("#login-menu").append($login);
-		$("#login-menu").append($signup);
+		var $login = $('<li><a tabindex="-1" href="#login" role="button" data-toggle="modal">Login</a></li>');
+		var $signup = $('<li><a tabindex="-1" href="#signup" role="button" data-toggle="modal">Sign Up</a></li>');
+		$loginMenu.append($login);
+		$loginMenu.append($signup);
+		$userSpan.text("User");
 	}
 	// If user logged in
 	else {
-		$profile = $('<li><a tabindex="-1" href="profile.html">Hi, ' + Parse.User.current().get("username") + '</a></li>');
-		$logout = $('<li><a tabindex="-1" href="#" onclick="logOut();">Logout</a></li>');
-		$("#login-menu").append($profile);
-		$("#login-menu").append($logout);
+		var $profile = $('<li><a tabindex="-1" href="profile.html">Profile</a></li>');
+		var $logout = $('<li><a tabindex="-1" href="#" onclick="logOut();">Logout</a></li>');
+		$loginMenu.append($profile);
+		$loginMenu.append($logout);
+		$userSpan.text(Parse.User.current().get("username"));
 	}
 }
 
