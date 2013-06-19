@@ -26,10 +26,9 @@
 				<div class="nav-collapse collapse">
 					<ul class="nav pull-right">
 						<li>
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-white"></i> User</a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Log In</a></li>
-								<li><a href="#">Sign Up</a></li>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-white"></i> <span id="user"></span></a>
+							<ul id="login-menu" class="dropdown-menu">
+
 							</ul>
 						</li>
 					</ul>
@@ -203,6 +202,7 @@
 					<h3>Project</h3>
 					<a href="https://github.com/HTML5-Games/html5-games.github.io">GitHub Repo</a>
 					<a href="http://www.codecademy.com/groups/html5-game-development/discussions/51709b04977bc97e65000487">Codecademy</a>
+					<a href="https://github.com/HTML5-Games/html5-games.github.io">Contributers</a>
 				</div>
 				<div class="span3">
 					<h3>Games</h3>
@@ -237,41 +237,43 @@
 
 	<script src="http://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="http://www.parsecdn.com/js/parse-1.2.7.min.js"></script>
+	<script src="js/main.js"></script>
 
-<script>
-(function( $ ) {
+	<script>
+		(function( $ ) {
 
-// Logo animation
-var $window = $( window ),
+		// Logo animation
+		var $window = $( window ),
 
-	$logoContainer = $( "#logo-container" ),
-	$logo = $( "#logo-html5" ),
-	$logoDes = $( "#logo-html5-des" ),
-	$logoGame = $( "#logo-game" ),
-	$logoDev = $( "#logo-dev" );
+		$logoContainer = $( "#logo-container" ),
+		$logo = $( "#logo-html5" ),
+		$logoDes = $( "#logo-html5-des" ),
+		$logoGame = $( "#logo-game" ),
+		$logoDev = $( "#logo-dev" );
 
-$logoContainer.height( $window.height() - 40 );
+		$logoContainer.height( $window.height() - 40 );
 
-$logoDes.fadeTo( "slow", .1, function() {
-	$logo.delay( 500 ).fadeIn( "slow", function() {
-		$logoDes.hide();
-		$logoGame.animate({
-			marginLeft: "-250px",
-			opacity: "toggle"
-		}, "slow" );
-		$logoDev.animate({
-			marginLeft: 84,
-			opacity: "toggle"
-		}, "slow", function() {
-			$logoContainer.delay( 200 ).animate({
-				height: 300
-			}, "slow" );
+		$logoDes.fadeTo( "slow", .1, function() {
+			$logo.delay( 500 ).fadeIn( "slow", function() {
+				$logoDes.hide();
+				$logoGame.animate({
+					marginLeft: "-250px",
+					opacity: "toggle"
+				}, "slow" );
+				$logoDev.animate({
+					marginLeft: 84,
+					opacity: "toggle"
+				}, "slow", function() {
+					$logoContainer.delay( 200 ).animate({
+						height: 300
+					}, "slow" );
+				});
+			});
 		});
-	});
-});
 
-})( jQuery );
-</script>
+		})( jQuery );
+	</script>
 
 </body>
 </html>
