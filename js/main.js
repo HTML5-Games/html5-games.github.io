@@ -266,6 +266,8 @@ function sendMessage() {
 		}
 	});
 }
+//Boolean to check if page just loaded
+var pageJustLoaded = true;
 
 function displayMessages(scroll) {
 	$messages = $("#chat-messages");
@@ -275,9 +277,14 @@ function displayMessages(scroll) {
 	
 	// Retrieve only the most recent ones
 	query.descending("createdAt");
-	 
-	// Retrieve only the last 25
-	query.limit(25);
+	if (pageJustLoaded){
+		//Clear Chat on page load
+		query.limit(0);
+	}
+	else {
+		// Retrieve only the last 25
+		query.limit(25);
+	}
 	
 	query.find({
 		success: function(messages) {
