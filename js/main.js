@@ -279,12 +279,13 @@ function displayMessages(scroll) {
 	query.descending("createdAt");
 	if (pageJustLoaded){
 		//Clear Chat on page load
-		query.limit(0);
+		$("#chat-messages > div").remove();
 	}
 	else {
-		// Retrieve only the last 25
-		query.limit(25);
+		
 	}
+	// Retrieve only the last 25
+	query.limit(25);
 	
 	query.find({
 		success: function(messages) {
