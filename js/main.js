@@ -235,8 +235,8 @@ function sendMessage() {
 		return false;
 	}
 	
-	// Make sure that message doesn't contain a "<"
-	if (text.indexOf("<") > 0) {
+	// Make sure that message doesn't contain a "<textarea>,<div>,<canvas>,<script> or an <input>"
+	if (text.indexOf("<textarea>") >= 0 || text.indexOf("<div>") >= 0 || text.indexOf("<canvas>") >= 0 || text.indexOf("<script>") >= 0 || text.indexOf("<input") >= 0) {
 		alert("HTML is not allowed in chat!");
 		return false;
 	}
