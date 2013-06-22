@@ -279,7 +279,7 @@ function displayMessages(scroll) {
 	query.descending("createdAt");
 	if (pageJustLoaded){
 		//Clear Chat on page load
-		$("#chat-messages > div").remove();
+		$("#chat-messages > .messages").remove();
 	}
 	else {
 		
