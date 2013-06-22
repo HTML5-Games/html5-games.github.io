@@ -176,3 +176,7 @@ a.well-dark:hover h3 {
 #footer .span3 a:hover {
 	color: #f16529;
 }
+
+#submitgame-form #form{
+	padding: 10px;
+}
