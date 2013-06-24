@@ -269,7 +269,7 @@ function sendMessage() {
 //Boolean to check if page just loaded
 var pageJustLoaded = true;
 
-function displayMessages(scroll) {
+/*function displayMessages(scroll) {
 	$messages = $("#chat-messages");
 	
 	// Get messages from Parse
@@ -315,7 +315,7 @@ function displayMessages(scroll) {
 			alert("Error: " + error.code + " " + error.message);
 		}
 	});
-}
+}*/
 
 // Blog
 function post() {
