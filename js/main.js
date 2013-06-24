@@ -269,7 +269,7 @@ function sendMessage() {
 //Boolean to check if page just loaded
 var pageJustLoaded = true;
 
-/*function displayMessages(scroll) {
+function displayMessages(scroll) {
 	$messages = $("#chat-messages");
 	
 	// Get messages from Parse
@@ -277,13 +277,7 @@ var pageJustLoaded = true;
 	
 	// Retrieve only the most recent ones
 	query.descending("createdAt");
-	if (pageJustLoaded){
-		//Clear Chat on page load
-		$("#chat-messages > .messages").remove();
-	}
-	else {
-		
-	}
+
 	// Retrieve only the last 25
 	query.limit(25);
 	
@@ -315,7 +309,7 @@ var pageJustLoaded = true;
 			alert("Error: " + error.code + " " + error.message);
 		}
 	});
-}*/
+}
 
 // Blog
 function post() {
