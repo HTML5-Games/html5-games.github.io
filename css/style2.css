@@ -13,6 +13,24 @@ body {
 	}
 }
 
+::selection {
+	background: #e44d26;
+	color: #fff;
+}
+
+a::selection {
+	color: #333;
+}
+
+::-moz-selection {
+	background: #e44d26;
+	color: #fff;
+}
+
+a::-moz-selection {
+	color: #333;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	margin: 0 0 15px 0;
 }
