@@ -1,7 +1,7 @@
 /*!
  * Main JS code goes here
  */
-
+//
 // Globals
 var postId; // TODO: Remove
 
