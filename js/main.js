@@ -278,6 +278,10 @@ function displayMessages(scroll) {
 	// Retrieve only the most recent ones
 	query.descending("createdAt");
 	
+	// Remove TextAreas
+	var chatX = document.getElementById("chat-messages").getElementsByClassName("messages");
+	chatX.remove(chatX.getElementsByTagName("font").getElementsByTagName("textarea"))
+	
 	// Retrieve only the last 25
 	query.limit(25);
 	
