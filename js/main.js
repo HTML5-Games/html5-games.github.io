@@ -201,9 +201,7 @@ function buildMenu() {
 	// If user not logged in
 	if (Parse.User.current() == null) {
 		//Added User and Pass Inputs
-		var $user = $('<li title="Username"><input type="text" value="" placeholder="Username"/></li>');
-		var $pass = $('<li title="Password"><input type="password" value="" placeholder="Password"/></li>');
-		var $login = $('<li><a tabindex="-1" href="#login" role="button" data-toggle="modal" onclick="logIn()">Login</a></li>');
+		var $login = $('<li><a tabindex="-1" href="#login" role="button" data-toggle="modal">Login</a></li>');
 		var $signup = $('<li><a tabindex="-1" href="#signup" role="button" data-toggle="modal">Sign Up</a></li>');
 		$loginMenu.append($user);
 		$loginMenu.append($pass);
