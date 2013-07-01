@@ -203,8 +203,6 @@ function buildMenu() {
 		//Added User and Pass Inputs
 		var $login = $('<li><a tabindex="-1" href="#login" role="button" data-toggle="modal">Login</a></li>');
 		var $signup = $('<li><a tabindex="-1" href="#signup" role="button" data-toggle="modal">Sign Up</a></li>');
-		$loginMenu.append($user);
-		$loginMenu.append($pass);
 		$loginMenu.append($login);
 		$loginMenu.append($signup);
 		$userSpan.text("User");
