@@ -1,11 +1,10 @@
 ## // TODO:
 * Convert `404.html` to new design
 * Convert `blog.html` to new design
-* Convert `profile.html` to new design
+* Convert `profile.html` to new design (Claimed by @Logi0, [#12](https://github.com/HTML5-Games/html5-games.github.io/issues/12))
 * Filter out HTML in chat
 * Fix submit game
 * Filter posts in blog
-* Fix "Log In"/"Sign Up" in new design (Claimed by @Logi0, [#11](https://github.com/HTML5-Games/html5-games.github.io/issues/11))
 * Fix header nav (and implement scrollspy)
 * Make `games.html`
 * Add edit profile page
