@@ -198,3 +198,21 @@ a.well-dark:hover h3 {
 #submitgame-form #form{
 	padding: 10px;
 }
+
+.modal {
+	background: #ddd;
+	color: #000;
+	border-radius: 0;
+}
+
+.modal-header {
+	border: none;
+}
+
+.modal-footer {
+	background: rgba(0, 0, 0, 0.05);
+	border-radius: 0;
+	border: none !important;
+	box-shadow: none;
+}
+
