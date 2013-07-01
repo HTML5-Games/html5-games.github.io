@@ -20,7 +20,6 @@ allow proposals and discussions on new games to create, and more!
 
 #### The Website
 * Website Name/URL (still needed)
-* Apache server running PHP 5.3+ and MySQL
 * Frameworks (more may be added)
   * [Parse](http://parse.com/)
   * [Bootstrap](http://twitter.github.io/bootstrap/)
