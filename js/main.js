@@ -18,16 +18,17 @@ var Game = Parse.Object.extend("Game");
 var $linkTiles = $(".link-tile");
 $linkTiles.eq(0).height($linkTiles.eq(1).height() + 32 /* Padding and Border */);
 
-level1 = '<b>Newb</b> Can post in chat';
-level2 = '<b>?</b> Can rate blog posts';
-level3 = '<b>?</b> ?';
-level4 = '<b>?</b> Can comment on blog posts';
-level5 = '<b>?</b> ?';
-level6 = '<b>?</b> ?';
-level7 = '<b>?</b> Can write blog posts';
-level8 = '<b>?</b> ?';
-level9 = '<b>Moderator</b> Can edit and delete posts';
-level10 = '<b>Leader</b> Can use admin features';
+level1 = '<b>Newb</b>Basic access';
+level2 = '<b>Newb++</b>Can submit games';
+level3 = '<b>Minion</b>Can rate blog posts';
+level4 = '<b>Strategist</b>Can comment on blog posts';
+level5 = '<b>Commander</b>Can add game ideas';
+level6 = '<b>Elite</b>?';
+level7 = '<b>Elite++</b>Can write blog posts';
+level8 = '<b>Mod. Jr.</b>Can delete comments';
+level9 = '<b>Moderator</b>Can edit blog posts<br>Can delete blog posts<br>Can rankup "Mod. Jr."s';
+level10 = '<b>Admin</b>Delete posts/threads<br>Can feature games<br>Can rankup "Moderator"s';
+level11 = '<b>Leader</b>Can demote users<br>Can rankup "Admin"s';
 $("#level1").popover({html: true, placement: "bottom", content: level1});
 $("#level2").popover({html: true, placement: "bottom", content: level2});
 $("#level3").popover({html: true, placement: "bottom", content: level3});
@@ -38,6 +39,7 @@ $("#level7").popover({html: true, placement: "bottom", content: level7});
 $("#level8").popover({html: true, placement: "bottom", content: level8});
 $("#level9").popover({html: true, placement: "bottom", content: level9});
 $("#level10").popover({html: true, placement: "bottom", content: level10});
+$("#level11").popover({html: true, placement: "bottom", content: level11});
 
 currentUser = Parse.User.current();
 if (currentUser != null) {
