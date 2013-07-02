@@ -14,42 +14,45 @@ var Comment = Parse.Object.extend("Comment");
 var Message = Parse.Object.extend("Message");
 var Game = Parse.Object.extend("Game");
 
-// Init DOM elements
-var $linkTiles = $(".link-tile");
-$linkTiles.eq(0).height($linkTiles.eq(1).height() + 32 /* Padding and Border */);
+function buildProfile() {
+	level1 = '<b>Newb</b>Basic access';
+	level2 = '<b>Newb++</b>Can submit games';
+	level3 = '<b>Minion</b>Can rate blog posts';
+	level4 = '<b>Strategist</b>Can comment on blog posts';
+	level5 = '<b>Commander</b>Can add game ideas';
+	level6 = '<b>Elite</b>?';
+	level7 = '<b>Elite++</b>Can write blog posts';
+	level8 = '<b>Mod. Jr.</b>Can delete comments';
+	level9 = '<b>Moderator</b>Can edit blog posts<br>Can delete blog posts<br>Can rankup "Mod. Jr."s';
+	level10 = '<b>Admin</b>Delete posts/threads<br>Can feature games<br>Can rankup "Moderator"s';
+	level11 = '<b>Leader</b>Can demote users<br>Can rankup "Admin"s';
+	$("#level1").popover({html: true, placement: "bottom", content: level1});
+	$("#level2").popover({html: true, placement: "bottom", content: level2});
+	$("#level3").popover({html: true, placement: "bottom", content: level3});
+	$("#level4").popover({html: true, placement: "bottom", content: level4});
+	$("#level5").popover({html: true, placement: "bottom", content: level5});
+	$("#level6").popover({html: true, placement: "bottom", content: level6});
+	$("#level7").popover({html: true, placement: "bottom", content: level7});
+	$("#level8").popover({html: true, placement: "bottom", content: level8});
+	$("#level9").popover({html: true, placement: "bottom", content: level9});
+	$("#level10").popover({html: true, placement: "bottom", content: level10});
+	$("#level11").popover({html: true, placement: "bottom", content: level11});
 
-level1 = '<b>Newb</b>Basic access';
-level2 = '<b>Newb++</b>Can submit games';
-level3 = '<b>Minion</b>Can rate blog posts';
-level4 = '<b>Strategist</b>Can comment on blog posts';
-level5 = '<b>Commander</b>Can add game ideas';
-level6 = '<b>Elite</b>?';
-level7 = '<b>Elite++</b>Can write blog posts';
-level8 = '<b>Mod. Jr.</b>Can delete comments';
-level9 = '<b>Moderator</b>Can edit blog posts<br>Can delete blog posts<br>Can rankup "Mod. Jr."s';
-level10 = '<b>Admin</b>Delete posts/threads<br>Can feature games<br>Can rankup "Moderator"s';
-level11 = '<b>Leader</b>Can demote users<br>Can rankup "Admin"s';
-$("#level1").popover({html: true, placement: "bottom", content: level1});
-$("#level2").popover({html: true, placement: "bottom", content: level2});
-$("#level3").popover({html: true, placement: "bottom", content: level3});
-$("#level4").popover({html: true, placement: "bottom", content: level4});
-$("#level5").popover({html: true, placement: "bottom", content: level5});
-$("#level6").popover({html: true, placement: "bottom", content: level6});
-$("#level7").popover({html: true, placement: "bottom", content: level7});
-$("#level8").popover({html: true, placement: "bottom", content: level8});
-$("#level9").popover({html: true, placement: "bottom", content: level9});
-$("#level10").popover({html: true, placement: "bottom", content: level10});
-$("#level11").popover({html: true, placement: "bottom", content: level11});
-
-currentUser = Parse.User.current();
-if (currentUser != null) {
-	$("#username-profile").text(currentUser.get("username"));
-	var joined = currentUser.createdAt;
-	$("#joined-profile").text(joined.getMonth() + "/" + joined.getDate() + "/" + joined.getFullYear().toString().substring(2, 4));
-	$("#level-profile").text(currentUser.get("level"));
-	$(".persona-icon").each(function() {
-		$(this).css("background-image", "url('http://www.gravatar.com/avatar/" + md5(currentUser.get("email")) + ".jpg?s=190&d=wavatar')");
-	});
+	currentUser = Parse.User.current();
+	if (currentUser != null) {
+		$("#username-profile").text(currentUser.get("username"));
+		var joined = currentUser.createdAt;
+		$("#joined-profile").text(joined.getMonth() + "/" + joined.getDate() + "/" + joined.getFullYear().toString().substring(2, 4));
+		$("#level-profile").text(currentUser.get("level"));
+		$(".persona-icon").each(function() {
+			$(this).css("background-image", "url('http://www.gravatar.com/avatar/" + md5(currentUser.get("email")) + ".jpg?s=190&d=wavatar')");
+		});
+		for (var i = 1; i <= currentUser.get("level"); i++) {
+			$level = $("#level" + i);
+			$level.removeClass("locked");
+			$level.text(i);
+		}
+	}
 }
 
 // Log In & Sign Up
@@ -268,8 +271,6 @@ function sendMessage() {
 		}
 	});
 }
-//Boolean to check if page just loaded
-var pageJustLoaded = true;
 
 function displayMessages(scroll) {
 	$messages = $("#chat-messages");
@@ -279,10 +280,6 @@ function displayMessages(scroll) {
 	
 	// Retrieve only the most recent ones
 	query.descending("createdAt");
-	
-	// Remove TextAreas
-	var chatX = document.getElementById("chat-messages").getElementsByClassName("messages");
-	chatX.remove(chatX.getElementsByTagName("font").getElementsByTagName("textarea"))
 	
 	// Retrieve only the last 25
 	query.limit(25);
