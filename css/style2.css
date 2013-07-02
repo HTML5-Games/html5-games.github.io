@@ -199,6 +199,122 @@ a.well-dark:hover h3 {
 	padding: 10px;
 }
 
+.persona {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 24px 0;
+	padding-bottom: 6px;
+	
+	background-color: #080808;
+	
+	color: #FFF;
+}
+
+.persona-icon {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 30px;
+	
+	background-size: 100%;
+	width: 190px;
+	height: 190px;
+	
+	border: 8px solid #111;
+}
+
+.persona .span2 {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding-left: 46px;
+}
+
+.persona .span2.text-right {
+	padding-left: 0;
+	padding-right: 46px;
+}
+
+.persona .row.space {
+	margin-top: 38px;
+}
+
+.persona .about-icon {
+	padding-left: 34px;
+	font-size: 3em;
+	color: #e44d26;
+}
+
+.persona .about {
+	font-size: .9em;
+	padding-left: 80px;
+	max-width: 174px;
+	margin-top: -26px;
+}
+
+.persona .band {
+	margin-top: 24px;
+	background-color: #222;
+}
+
+.persona .band > div {
+	padding: 10px 46px;
+}
+
+.recent {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 5px 0;
+	background-color: #222;
+}
+
+.recent h1, .recent h2, .recent h3 {
+	margin-bottom: 20px;
+	background-color: #111;
+	margin-right: -5px;
+	padding: 5px 12px;
+	background: #333;
+	text-shadow: 1px 1px 2px #111;
+}
+
+.feed {
+	padding: 0 20px;
+}
+
+.feed a {
+	text-decoration: none;
+}
+
+.feed a > p {
+	color: #bbb;
+	font-size: .8em;
+}
+
+.feed a:hover {
+	text-decoration: none;
+}
+
+.feed p {
+	margin-bottom: 25px;
+}
+
+.feed ul {
+	margin-top: 5px;
+	margin-bottom: 0;
+}
+
+.level {
+	display: inline-block;
+	background: #080808;
+	width: 48px;
+	height: 48px;
+	text-align: center;
+	line-height: 48px;
+	cursor: pointer;
+}
+
+.level.locked {
+	background: #333;
+}
+
 .modal {
 	background: #ddd;
 	color: #000;
@@ -216,3 +332,31 @@ a.well-dark:hover h3 {
 	box-shadow: none;
 }
 
+hr {
+	border-color: #262626;
+	margin: 15px 0 !important;
+}
+
+.popover {
+	border-radius: 0 !important;
+	background-color: #ddd !important;
+	border: 8px solid #bbb !important;
+	box-shadow: none !important;
+	color: #111 !important;
+	font-size: 18px;
+}
+
+.popover.bottom .arrow {
+	top: -19px !important;
+	.popover.bottom .arrow: #bbb !important;
+}
+
+.popover.bottom .arrow:after {
+	border-bottom-color: #bbb !important;
+}
+
+.popover b {
+	display: block;
+	font-weight: bold;
+	border-bottom: 1px solid #111;
+}
