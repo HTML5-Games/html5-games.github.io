@@ -1,125 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>HTML5 Game Development</title>
+	<title>HTML5 Game Development Group</title>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!-- Shortcut Icon -->
-	<link rel="icon" type="image/x-icon" href="https://dl.dropboxusercontent.com/u/62044718/favicon.ico">
-	<!--href="img/favicon.ico" is supposed to work but is not working-->
-	<!--Placed icon in my public dropbox for temporary use until problem is resolved-->
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text.css">
 
-	<!-- Style -->
-	<link href="css/style.css" rel="stylesheet" media="screen">
+	<link href="css/style2.css" rel="stylesheet" media="screen">
 
-	<!-- Bootstrap -->
-	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-
-	<!-- Fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Nova+Round' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Shojumaru' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<header>
-		<div class="container">
-			<a href="#" class="pull-left">
-				<img id="icon" src="img/logo.png" alt="HTML5 Game Development"/>
-			</a>
-			<nav class="pull-right">
-				<a class="menu-link" href="http://html5-games.github.io">
-					Home
+	<header id="header" class="navbar navbar-fixed-top navbar-inverse">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
 				</a>
-				<span class="dropdown">
-					<a id="login-menu-link" class="dropdown-toggle menu-link menu-link-dropdown" data-toggle="dropdown" href="#">
-						<span style="background-image: url('img/user-icon.png'); width: 22px; height: 22px;" class="header-icon"></span>
-					</a>
-					<ul id="login-menu" class="dropdown-menu" role="menu" aria-labelledby="dLabel" style="left: -46px; top: 84px;">
-						<!-- Filled by buildMenu() in main.js -->
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+						<li>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-white"></i> <span id="user"></span></a>
+							<ul id="login-menu" class="dropdown-menu">
+
+							</ul>
+						</li>
 					</ul>
-				</span>
-			</nav>
+					<ul class="nav">
+						<li><a href="index.html"><i class="icon-home icon-white"></i></a></li>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</header>
 
-	<div id="login" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-			<h3 id="loginLabel">Login</h3>
-		</div>
-		<div class="modal-body">
-			<form style="margin-bottom: 0px;">
-				<fieldset>
-					<div class="control-group">
-						<label for="name-login">Username</label>
-						<div class="controls">
-							<input type="text" id="name-login" name="name-login">
-							<span class="help-inline"></span>
-						</div>
-					</div>
-					<div class="control-group">
-						<label for="psword-login">Password</label>
-						<div class="controls">
-							<input type="password" id="psword-login" name="psword-login">
-							<span class="help-inline"></span>
-						</div>
-					</div>
-				</fieldset>
-			</form>
-		</div>
-		<div class="modal-footer">
-			<button class="btn" onclick="logIn()">Login</button>
-		</div>
-	</div>
-
-	<div id="signup" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="signinLabel" aria-hidden="true">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-			<h3 id="signupLabel">Sign Up</h3>
-		</div>
-		<div class="modal-body">
-			<form style="margin-bottom: 0px;">
-				<fieldset>
-					<div class="control-group">
-						<label for="name-signup">Username *</label>
-						<div class="controls">
-							<input type="text" id="name-signup" name="name-signup">
-							<span class="help-inline"></span>
-						</div>
-					</div>
-					<div class="control-group">
-						<label for="psword-signup">Password *</label>
-						<div class="controls">
-							<input type="password" id="psword-signup" name="psword-signup">
-							<span class="help-inline"></span>
-						</div>
-					</div>
-					<div class="control-group">
-						<label for="psword2-signup">Confirm Password *</label>
-						<div class="controls">
-							<input type="password" id="psword2-signup" name="psword2-signup">
-							<span class="help-inline"></span>
-						</div>
-					</div>
-					<div class="control-group">
-						<label for="email-signup">Email *</label>
-						<div class="controls">
-							<input type="email" id="email-signup" name="email-signup">
-							<span class="help-inline"></span>
-						</div>
-					</div>
-				</fieldset>
-			</form>
-		</div>
-		<div class="modal-footer">
-			<button class="btn" onclick="signUp()">Sign Up</button>
-		</div>
-	</div>
-
 	<div class="container">
-		<div class="alert alert-warning">
-			<button type="button" class="close" data-dismiss="alert">&times;</button>
-			<strong>Page Not Complete Yet.</strong> If you want to, you can help build it at <a href="https://github.com/HTML5-Games/html5-games.github.io">https://github.com/HTML5-Games/html5-games.github.io</a>.
-		</div>
+		<br>
 		<div class="row">
 			<div class="span4 persona lead-small">
 				<div class="persona-icon">
@@ -189,23 +111,23 @@
 					<div id="level4" class="level">
 						4
 					</div>
-					<div id="level5" class="level">
-						5
+					<div id="level5" class="level locked">
+						&#128274;
 					</div>
-					<div id="level6" class="level">
-						6
+					<div id="level6" class="level locked">
+						&#128274;
 					</div>
-					<div id="level7" class="level">
-						7
+					<div id="level7" class="level locked">
+						&#128274;
 					</div>
-					<div id="level8" class="level">
-						8
+					<div id="level8" class="level locked">
+						&#128274;
 					</div>
-					<div id="level9" class="level">
-						9
+					<div id="level9" class="level locked">
+						&#128274;
 					</div>
-					<div id="level10" class="level">
-						10
+					<div id="level10" class="level locked">
+						&#128274;
 					</div>
 					<div style="margin-top: 5px;">
 						To Next Level:
@@ -253,12 +175,43 @@
 		</div>
 	</div>
 
-	<footer>
+	<footer id="footer" class="section section-dark">
 		<div class="container">
-			<p class="lead" style="margin-top: 10px;">
-				<a class="pull-left" href="https://github.com/HTML5-Games/html5-games.github.io">View this project on GitHub</a>
-				<a class="pull-right btn" href="mailto: html5.gamedev.group@gmail.com">Contact Us</a>
-			</p>
+			<div class="row">
+				<div class="span3">
+					<h3>Project</h3>
+					<a href="https://github.com/HTML5-Games/html5-games.github.io">GitHub Repo</a>
+					<a href="http://www.codecademy.com/groups/html5-game-development/discussions/51709b04977bc97e65000487">Codecademy</a>
+					<a href="https://github.com/HTML5-Games/html5-games.github.io">Contributers</a>
+				</div>
+				<div class="span3">
+					<h3>Games</h3>
+					<a href="#">All Games</a>
+					<a href="#games">Featured Games</a>
+					<a href="submitgame.html">Submit Game</a>
+				</div>
+				<div class="span3">
+					<h3>Learn</h3>
+					<a href="#learn">2D Game Dev</a>
+					<a href="#learn">3D Game Dev</a>
+					<a href="#learn">More Resources</a>
+				</div>
+				<div class="span3">
+					<h3>Social</h3>
+					<a href="blog.html">Blog</a>
+					<a href="chat.html">Chat</a>
+					<a href="http://www.codecademy.com/groups/html5-game-development/invite/9aec4bb0429f38c47944ab6d42fc30d3">Codecademy</a>
+					<a href="https://github.com/HTML5-Games">GitHub</a>
+				</div>
+			</div>
+			<div class="row tm20">
+				<div class="span2">
+					<a class="btn btn-inverse" href="mailto: html5.gamedev.group@gmail.com">Contact Us</a>
+				</div>
+				<div class="span2 offset8 text-right">
+					<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png"></a>
+				</div>
+			</div>
 		</div>
 	</footer>
 
