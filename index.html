@@ -7,14 +7,14 @@
 
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text.css">
-
+	
 	<link href="css/style2.css" rel="stylesheet" media="screen">
-
+	
 	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Shojumaru' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="41">
 	<header id="header" class="navbar navbar-fixed-top navbar-inverse">
 		<div class="navbar-inner">
 			<div class="container">
@@ -44,14 +44,16 @@
 		</div>
 	</header>
 
-	<div id="logo-container">
-		<img src="img/html5_badge_desaturated.png" id="logo-html5-des">
-		<img src="img/html5_badge.png" id="logo-html5">
-		<span id="logo-game">Game</span>
-		<span id="logo-dev">Dev</span>
+	<div id="home">
+		<div id="logo-container">
+			<img src="img/html5_badge_desaturated.png" id="logo-html5-des">
+			<img src="img/html5_badge.png" id="logo-html5">
+			<span id="logo-game">Game</span>
+			<span id="logo-dev">Dev</span>
+		</div>
 	</div>
 
-	<section class="section section-dark">
+	<section class="section section-dark" id="about">
 		<div class="container">
 			<h1>About Us</h1>
 			<p class="text-large">
@@ -65,7 +67,7 @@
 		</div>
 	</section>
 
-	<section class="section">
+	<section class="section" id="games">
 		<div class="container">
 			<h1>Our Games</h1>
 			<div class="row">
@@ -85,7 +87,7 @@
 		</div>
 	</section>
 
-	<section class="section section-dark">
+	<section class="section section-dark" id="learn">
 		<div class="container text-large">
 			<h1>Learn how to make HTML5 games</h1>
 			<h3 class="heading">2D Track</h2>
@@ -174,7 +176,7 @@
 		</div>
 	</section>
 
-	<section class="section">
+	<section class="section" id="social">
 		<div class="container">
 			<h1>Social</h1>
 			<div class="row text-large">
@@ -267,7 +269,12 @@
 				}, "slow", function() {
 					$logoContainer.delay( 200 ).animate({
 						height: 300
-					}, "slow" );
+					}, "slow", function() {
+							$('[data-spy="scroll"]').each(function () {
+								var $spy = $(this).scrollspy('refresh')
+							});
+						}
+					);
 				});
 			});
 		});
