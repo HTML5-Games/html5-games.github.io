@@ -1,13 +1,15 @@
 ## // TODO:
 * Convert `404.html` to new design
 * Convert `blog.html` to new design
-* Filter out HTML in chat
+* Fix chat
+* Filter HTML out of chat
 * Fix submit game
 * Filter posts in blog
 * Fix header nav (and implement scrollspy) (Claimed by @Logi0, [#13](https://github.com/HTML5-Games/html5-games.github.io/issues/13))
 * Make `games.html`
 * Add edit profile page
 * Implement user levels
+* Add badges
 
 
 ## HTML5 Game Development Group
