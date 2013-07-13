@@ -314,6 +314,48 @@ function displayMessages(scroll) {
 	});
 }
 
+function showMessages(scroll) {
+	$messages = $("#chat-messages");
+	
+	// Get messages from Parse
+	var query = new Parse.Query(Message);
+	
+	// Retrieve only the most recent ones
+	query.descending("createdAt");
+	
+	// Retrieve only the last 25
+	query.limit(25);
+	
+	query.find({
+		success: function(messages) {
+			// The final html for $messages
+			var result = "";
+	
+			while (messages.length > 0) {
+				var messageObject = messages.pop();
+				var user = messageObject.get("user");
+				var m = '<div class="messages">';
+				m += user + " ";
+				m += "(" + messageObject.createdAt.toLocaleTimeString() + "): ";
+				m += messageObject.get("text");
+				m += "</div>"
+				result += m;
+			}
+			
+			$messages.html(result);
+			
+			if (scroll) {
+				// Scroll div
+				var chatDiv = document.getElementById("chat-messages");
+				chatDiv.scrollTop = chatDiv.scrollHeight;
+			}
+		},
+		error: function(error) {
+			alert("Error: " + error.code + " " + error.message);
+		}
+	});
+}
+
 // Blog
 function post() {
 	// Make sure that user is logged in
