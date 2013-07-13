@@ -12,6 +12,7 @@ Parse.initialize("cF1KaOFNgSERAxKgv4ZUDE3XBnMEpGxF2ACWmMZE", "tnNd8KSP42GsJ9ZyBV
 var Post = Parse.Object.extend("Post");
 var Comment = Parse.Object.extend("Comment");
 var Message = Parse.Object.extend("Message");
+var InsMessage = Parse.Object.extend("Message")
 var Game = Parse.Object.extend("Game");
 
 function buildProfile() {
@@ -318,7 +319,7 @@ function showMessages(scroll) {
 	$messages = $("#chat-messages");
 	
 	// Get messages from Parse
-	var query = new Parse.Query(Message);
+	var query = new Parse.Query(InsMessage);
 	
 	// Retrieve only the most recent ones
 	query.descending("createdAt");
