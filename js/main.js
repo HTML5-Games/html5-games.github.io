@@ -357,6 +357,24 @@ function showMessages(scroll) {
 	});
 }
 
+function addToUserList(){
+	if (Parse.User.current() == null){
+		
+	}
+	else {
+		
+	}
+}
+
+function displayUsers(){
+	if (Parse.User.current() == null){
+		
+	}
+	else {
+		
+	}
+}
+
 // Blog
 function post() {
 	// Make sure that user is logged in
