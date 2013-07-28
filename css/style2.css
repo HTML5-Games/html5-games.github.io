@@ -183,7 +183,7 @@ a.well-dark:hover h3 {
 #chat-messages {
 	max-height: 300px;
 	overflow-x: auto;
-	width: 75%;
+	width: 80%;
 	margin-bottom: 10px;
 	border: 1px solid white;
 }
@@ -191,7 +191,7 @@ a.well-dark:hover h3 {
 #chat-members {
 	max-height: 300px;
 	overflow: auto;
-	width: 25%;
+	width: 20%;
 	margin-bottom: 10px;
 	border: 1px solid white;
 }
