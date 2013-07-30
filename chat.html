@@ -14,7 +14,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Shojumaru' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body onbeforeunload="">
 	<header id="header" class="navbar navbar-fixed-top navbar-inverse">
 		<div class="navbar-inner">
 			<div class="container">
@@ -46,10 +46,7 @@
 			<h1>Chat</h1>
 			<div class="row">
 				<div id="chat-messages" class="text-large span12"></div>
-				<div id="chat-members">
-					<a href="#">TestUsername</a>
-					<a href="#">Billy bobby</a>
-				</div>
+				<div id="chat-members"></div>
  			</div>
 			<div class="row">
 				<div class="span10">
@@ -111,6 +108,8 @@
 		displayMessages(true);
 		window.setInterval(displayMessages, 5000);
 		buildProfile();
+		addToUserList();
+		//window.setInterval(displayUsers, 2500);
 	</script>
 
 	<script>
