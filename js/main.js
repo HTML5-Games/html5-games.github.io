@@ -379,7 +379,13 @@ function displayUsers(){
 	}
 	else {
 		users.sort();
-		//document.getElementById("chat-members").removeChild()
+		$('#chat-members').remove('p');
+		for (i=0; i >= users.length; i++ ){
+			var pnode = document.createElement("p");
+			var userNameTxt = document.createTextNode(currentUser.get("username"));
+			pnode.appendChild(userNameTxt);
+			document.getElementById("chat-members").appendChild(pnode);
+		}
 	}
 }
 
