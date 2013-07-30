@@ -357,17 +357,35 @@ function showMessages(scroll) {
 	});
 }
 
+//Chat user list
+
+var users = new Array();
+
 function addToUserList(){
-	if (Parse.User.current() == null){
+	currentUser = Parse.User.current();
+	if (currentUser == null){
 		
 	}
 	else {
-		
+		users[users.length + 1] = currentUser.get("username");
+		users.sort();
 	}
 }
 
 function displayUsers(){
-	if (Parse.User.current() == null){
+	currentUser = Parse.User.current();
+	if (currentUser == null){
+		
+	}
+	else {
+		users.sort();
+		//document.getElementById("chat-members").removeChild()
+	}
+}
+
+function removeFromUserList(){
+	currentUser = Parse.User.current();
+	if (currentUser == null){
 		
 	}
 	else {
