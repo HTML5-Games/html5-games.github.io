@@ -110,6 +110,26 @@
 		buildProfile();
 		addToUserList();
 		window.setInterval(displayUsers, 2500);
+		
+		//Press Enter to send message (A temporary method for now)
+		focused = false;
+		document.getElementById("message-chat").onfocus = function(){
+			focused = true;	
+		}
+		document.getElementById("message-chat").onfocusout = function(){
+			focused = false;
+		}
+		
+		window.onkeydown = function( e ){
+			
+			e = e || window.event;
+			
+			code = e.keycode;
+			
+			if (code == 13){ /* Enter */
+				sendMessage();
+			}
+		}
 	</script>
 
 	<script>
