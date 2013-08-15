@@ -1,5 +1,3 @@
-//New 404 js
-
 var winHeight = $(window).height();   // returns height of browser viewport
 var docHeight = $(document).height(); // returns height of HTML document
 var winWidth = $(window).width();   // returns width of browser viewport
