@@ -19,6 +19,10 @@ var player = {
         pxlBlk(this.x + 10,this.y);
         pxlBlk(this.x + 30,this.y);
         pxlBlk(this.x,this.y + 10);
+        pxlBlk(this.x + 10,this.y + 10);
+        pxlBlk(this.x + 20,this.y + 10);
+        pxlBlk(this.x + 30,this.y + 10);
+        pxlBlk(this.x + 40,this.y + 10);
     },
     update: function(){
         
