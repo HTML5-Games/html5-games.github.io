@@ -17,7 +17,7 @@ var player = {
     y: 500,
     draw: function(){
         pxlBlk(this.x + 10,this.y);
-        pxlBlk(this.x + 20,this.y);
+        pxlBlk(this.x + 30,this.y);
     },
     update: function(){
         
