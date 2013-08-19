@@ -17,13 +17,35 @@ var player = {
     y: 500,
     vx: 0,
     draw: function(){
+        //Cannons
         pxlBlk(this.x + 10,this.y);
         pxlBlk(this.x + 30,this.y);
+        //Body
         pxlBlk(this.x,this.y + 10);
         pxlBlk(this.x + 10,this.y + 10);
         pxlBlk(this.x + 20,this.y + 10);
         pxlBlk(this.x + 30,this.y + 10);
         pxlBlk(this.x + 40,this.y + 10);
+        pxlBlk(this.x,this.y + 20);
+        pxlBlk(this.x + 10,this.y + 20);
+        pxlBlk(this.x + 20,this.y + 20);
+        pxlBlk(this.x + 30,this.y + 20);
+        pxlBlk(this.x + 40,this.y + 20);
+        pxlBlk(this.x,this.y + 30);
+        pxlBlk(this.x + 10,this.y + 30);
+        pxlBlk(this.x + 20,this.y + 30);
+        pxlBlk(this.x + 30,this.y + 30);
+        pxlBlk(this.x + 40,this.y + 30);
+        pxlBlk(this.x,this.y + 40);
+        pxlBlk(this.x + 10,this.y + 40);
+        pxlBlk(this.x + 20,this.y + 40);
+        pxlBlk(this.x + 30,this.y + 40);
+        pxlBlk(this.x + 40,this.y + 40);
+        pxlBlk(this.x,this.y + 50);
+        pxlBlk(this.x + 10,this.y + 50);
+        pxlBlk(this.x + 20,this.y + 50);
+        pxlBlk(this.x + 30,this.y + 50);
+        pxlBlk(this.x + 40,this.y + 50);
     },
     update: function(){
         this.x += this.vx / FPS;
