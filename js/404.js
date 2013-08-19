@@ -65,6 +65,14 @@ var player = {
         pxlBlk(this.x - 20,this.y + 70);
         pxlBlk(this.x - 10,this.y + 60);
         pxlBlk(this.x - 10,this.y + 70);
+        /*Right*/
+        pxlBlk(this.x + 40 + 30,this.y + 50);
+        pxlBlk(this.x + 40 + 30,this.y + 60);
+        pxlBlk(this.x + 40 + 30,this.y + 70);
+        pxlBlk(this.x + 40 + 20,this.y + 60);
+        pxlBlk(this.x + 40 + 20,this.y + 70);
+        pxlBlk(this.x + 40 + 10,this.y + 60);
+        pxlBlk(this.x + 40 + 10,this.y + 70);
     },
     update: function(){
         this.x += this.vx / FPS;
