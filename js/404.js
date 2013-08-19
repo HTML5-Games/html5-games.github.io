@@ -64,7 +64,7 @@ window.onkeyup = function( e ){
 }
 
 function update(){
-    
+    player.update();
 }
 
 function tick(){
