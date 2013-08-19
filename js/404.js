@@ -56,16 +56,10 @@ var player = {
         pxlBlk(this.x + 20,this.y + 70);
         pxlBlk(this.x + 30,this.y + 70);
         pxlBlk(this.x + 40,this.y + 70);
-        pxlBlk(this.x,this.y + 80);
-        pxlBlk(this.x + 10,this.y + 80);
-        pxlBlk(this.x + 20,this.y + 80);
-        pxlBlk(this.x + 30,this.y + 80);
-        pxlBlk(this.x + 40,this.y + 80);
-        pxlBlk(this.x,this.y + 90);
-        pxlBlk(this.x + 10,this.y + 90);
-        pxlBlk(this.x + 20,this.y + 90);
-        pxlBlk(this.x + 30,this.y + 90);
-        pxlBlk(this.x + 40,this.y + 90);
+        //Wings
+        /*Left*/
+        pxlBlk(this.x - 30,this.y + 50);
+        
     },
     update: function(){
         this.x += this.vx / FPS;
