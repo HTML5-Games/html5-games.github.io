@@ -79,6 +79,17 @@ var player = {
     }
 }
 
+var bullet = {
+    x: player.x + 25,
+    y: player.y + 10,
+    vy: 500,
+    fire: function(){
+        pxlBlk(this.x, this.y);
+    },
+    shoot: function(){
+        this.y -= this.vy / FPS;
+    }
+}
 
 function draw(){
     ctx.fillStyle = "black";
@@ -96,6 +107,9 @@ window.onkeydown = function( e ){
     }
     if(code == 39){
         player.vx = 500;
+    }
+    if(code == 32){
+        bullet.fire();
     }
 }
 
