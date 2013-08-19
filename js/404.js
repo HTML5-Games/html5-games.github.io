@@ -46,6 +46,26 @@ var player = {
         pxlBlk(this.x + 20,this.y + 50);
         pxlBlk(this.x + 30,this.y + 50);
         pxlBlk(this.x + 40,this.y + 50);
+        pxlBlk(this.x,this.y + 60);
+        pxlBlk(this.x + 10,this.y + 60);
+        pxlBlk(this.x + 20,this.y + 60);
+        pxlBlk(this.x + 30,this.y + 60);
+        pxlBlk(this.x + 40,this.y + 60);
+        pxlBlk(this.x,this.y + 70);
+        pxlBlk(this.x + 10,this.y + 70);
+        pxlBlk(this.x + 20,this.y + 70);
+        pxlBlk(this.x + 30,this.y + 70);
+        pxlBlk(this.x + 40,this.y + 70);
+        pxlBlk(this.x,this.y + 80);
+        pxlBlk(this.x + 10,this.y + 80);
+        pxlBlk(this.x + 20,this.y + 80);
+        pxlBlk(this.x + 30,this.y + 80);
+        pxlBlk(this.x + 40,this.y + 80);
+        pxlBlk(this.x,this.y + 90);
+        pxlBlk(this.x + 10,this.y + 90);
+        pxlBlk(this.x + 20,this.y + 90);
+        pxlBlk(this.x + 30,this.y + 90);
+        pxlBlk(this.x + 40,this.y + 90);
     },
     update: function(){
         this.x += this.vx / FPS;
@@ -65,10 +85,10 @@ window.onkeydown = function( e ){
     code = e.keycode || e.which;
     
     if(code == 37){
-        player.vx = -100;
+        player.vx = -500;
     }
     if(code == 39){
-        player.vx = 100;
+        player.vx = 500;
     }
 }
 
