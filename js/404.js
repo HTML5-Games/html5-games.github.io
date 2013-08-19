@@ -88,6 +88,9 @@ var bullet = {
     },
     shoot: function(){
         this.y -= this.vy / FPS;
+    },
+    updateX: function(){
+        this.x = player.x + 25;
     }
 }
 
@@ -128,6 +131,8 @@ window.onkeyup = function( e ){
 
 function update(){
     player.update();
+    bullet.shoot();
+    bullet.updateX();
 }
 
 function tick(){
