@@ -261,7 +261,10 @@ function sendMessage() {
 		text = text.replace(/e/gi, "3");
 		text = text.replace(/l/gi, "1");
 		text = text.replace(/a/gi, "4");
-		text = text.replace(/o/gi, "0");
+		text = text.replace(/g/gi, "6");
+		text = text.replace(/t/gi, "7");
+		text = text.replace(/z/gi, "2");
+		text = text.replace(/s/gi, "5");
 	}
 	
 	// Create new message
