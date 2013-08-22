@@ -230,6 +230,9 @@ $("body").append($(loginModal)).append($(signupModal));
 buildMenu();
 
 // Chat
+
+var isInChat = false;
+
 function sendMessage() {
 	// Make sure that user is logged in
 	currentUser = Parse.User.current();
@@ -695,4 +698,18 @@ function displayFeaturedGames() {
 			alert("Error: " + error.code + " " + error.message);
 		}
 	});
+}
+
+//Keyb and mouse Events, Keep at bottom
+window.onkeydown = function(e){
+	
+	e = e || window.event;
+	
+	code = e.keycode || e.which;
+	
+	if (isInChat){
+		if (code == 13){
+			sendmessage();
+		}
+	}
 }
