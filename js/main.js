@@ -709,7 +709,7 @@ window.onkeydown = function(e){
 	
 	if (isInChat){
 		if (code == 13){
-			sendmessage();
+			sendMessage();
 		}
 	}
 }
