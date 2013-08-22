@@ -255,6 +255,14 @@ function sendMessage() {
 		return false;
 	}
 	
+	// Fun Codes/ Cammans /*Make chat more interesting*/
+	if (text.indexOf("1337: ") >= 0 && text.indexOf("1337: ") <= 6){
+		text = text.replace("1337:", "");
+		text = text.replace(/e/gi, "3");
+		text = text.replace(/l/gi, "1");
+		text = text.replace(/a/gi, "4");
+		text = text.replace(/o/gi, "0");
+	}
 	
 	// Create new message
 	var message = new Message();
