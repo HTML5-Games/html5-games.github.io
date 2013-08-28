@@ -24,7 +24,7 @@ window.onmousedown = function( e ){
     }
     ctx.font = "20pt inherit";
     ctx.fillStyle = "#252525";
-    ctx.fillText("404!" cord.x, cord.y);
+    ctx.fillText("404!", cord.x, cord.y);
 }
 
 window.onkeydown = function( e ){
