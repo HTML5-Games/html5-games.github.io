@@ -5,8 +5,26 @@ var canvas = document.getElementById("404canvas"),
 canvas.width = 1000;
 canvas.height = 700;
 
+var space = canvas.getBoundingClientRect();
+
+var offset = {
+    x: space.top,
+    y: space.left
+}
+
 function draw(){
 
+}
+
+window.onmousedown = function( e ){
+    e = e || window.event;
+    var cord = {
+        x: e.pageX - offset.x,
+        y: e.pageY - offset.y
+    }
+    ctx.font = "20pt inherit";
+    ctx.fillStyle = #252525;
+    ctx.fillText("404!" cord.x, cord.y);
 }
 
 window.onkeydown = function( e ){
