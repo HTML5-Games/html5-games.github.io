@@ -23,7 +23,7 @@ window.onmousedown = function( e ){
         y: e.pageY - offset.y
     }
     ctx.font = "20pt inherit";
-    ctx.fillStyle = #252525;
+    ctx.fillStyle = "#252525";
     ctx.fillText("404!" cord.x, cord.y);
 }
 
