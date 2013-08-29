@@ -19,10 +19,10 @@ function draw(){
 window.onmousedown = function( e ){
     e = e || window.event;
     var cord = {
-        x: e.pageX - offset.x,
-        y: e.pageY - offset.y
+        x: offset.x - e.pageX,
+        y: offset.y - e.pageY
     }
-    ctx.font = "20pt inherit";
+    ctx.font = "30px inherit";
     ctx.fillStyle = "#252525";
     ctx.fillText("404!", cord.x, cord.y);
 }
