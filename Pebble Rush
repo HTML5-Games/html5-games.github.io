@@ -1,0 +1,336 @@
+ <head>
++<meta name="description" content="[add your bin description]" />
++      <meta http-equiv="Content-type" content="text/html; charset=utf-8">
++      <title>Pebble Rush</title>
++      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
++      <script>
++ 
++        $(function() {
++      
++        });
++    </script>
++  
++<style id="jsbin-css">
++
++</style>
++</head>
++  <body>
++    <style type="text/css">
++      canvas {
++        border:1px solid black;
++      }
++    </style>
++    <h1>Pebble Rush</h1>
++    <canvas id="canvas" width="500" height="500">
++      Your browser does not support the HTML5 Canvas feature. This game uses new HTML5 features and will only work on the latest versions of Firefox, Safari or Chrome (and maybe Internet Explorer 9).
++    </canvas>
++  <script>
++var canvas = $('#canvas')[0]; 
++        // different browsers support different contexts. All support 2d
++        var context = canvas.getContext('2d');
++
++
++        var paddleX = 200;
++        var paddleY = 400;
++
++        var paddleWidth = 50;
++        var paddleHeight = 15;
++
++        var paddleDeltaX = 0;
++        var paddleDeltaY = 0;
++
++        function drawPaddle(){
++                context.fillStyle="rgb(100,100,100)";
++                context.fill();
++                
++          context.fillRect(paddleX,paddleY,paddleWidth,paddleHeight);
++              }
++             
++             var ballX = 10;
++             var ballY = 10;
++             var ballRadius = 20;
++             var ballX1=20;
++             var ballY1=10;
++             var ballX2=40;
++             var ballY2=10;
++             var ballX3=60;
++             var ballY3=10;
++             var ballX4=60;
++             var ballY4=10;
++             var ballX5=80;
++             var ballY5=10;
++             var score=0;  
++              
++
++               function drawball_1(){
++               context.beginPath();
++               context.arc(ballX,ballY,ballRadius,0,Math.PI*2,true);
++               context.fillStyle="rgb(100,100,100)";
++               context.fill();  
++               }
++     
++
++                function drawBall(){
++                  // Context.beginPath when you draw primitive shapes
++                  context.beginPath();
++ 
++                 // Draw arc at center ballX, ballY with radius ballRadius, 
++                 // From 0 to 2xPI radians (full circle)
++                
++               
++                 
++                context.arc(ballX1,ballY1,ballRadius,0,Math.PI*2,true);
++                context.arc(ballX2,ballY2,ballRadius,0,Math.PI*2,true); 
++                context.arc(ballX3,ballY3,ballRadius,0,Math.PI*2,true); 
++                context.arc(ballX4,ballY4,ballRadius,0,Math.PI*2,true);
++                context.arc(ballX5,ballY5,ballRadius,0,Math.PI*2,true); 
++                // Fill up the path that you just drew
++                context.fillStyle="rgb(100,00,100)";
++                context.fill();  
++                context.fill();           
++                 }
++              
++            
++              
++
++             function drawplatform(){
++             
++                context.fillStyle="rgb(00,0,0)";
++                context.fill();
++          context.fillRect(0,415,500,65);
++              
++             
++             }
++             function displayscoreboard(){
++                context.fillStyle="rgb(79,123,145)";
++
++context.font = "20px Times New Roman";
++               
++               context.clearRect(0,canvas.height-30,canvas.width,30);
++               if(score>=30 && score<=35)
++               {
++                context.fillText("Carry on dude!!!!",10,canvas.height-5); 
++               }
++               else if(score >=60 && score <=65)
++               {
++                 context.fillText("Way to go!!!!",10,canvas.height-5); 
++               }
++               else if(score >=100 && score <=110)
++               {
++                context.fillText("On Fire!!!!",10,canvas.height-5);  
++               }
++               else if(score >=150 && score <=160)
++               {
++                context.fillText("Exhausted praising You!!!",10,canvas.height-5);  
++               }
++               else if(score <=-10 && score >=-15)
++               {
++                context.fillText("Watch Out!!!!",10,canvas.height-5);  
++               }
++               else if(score <=-30 && score >=-35 )
++               {
++                context.fillText("Game ends at -40",10,canvas.height-5);  
++               }
++               else{
++               context.fillText('Score:'+score,10,canvas.height-5);
++               }
++             }
++        function animate () {
++          context.clearRect(0,0,canvas.width,canvas.height);
++                    
++          moveBall();
++                    movePaddle();
++                   
++                    
++          drawPaddle();
++                    
++                    drawBall();
++                    drawball_1();
++                    drawplatform();
++                    displayscoreboard();
++          endGame();
++          
++          //displayScoreBoard();
++        }
++        
++                
++                var ballDeltaY=8;
++ 
++                function moveBall(){
++                // Move the ball
++                ballY = ballY + ballDeltaY;
++                ballY1 = ballY1 + ballDeltaY;
++                ballY2 = ballY2 + ballDeltaY;
++                ballY3 = ballY3 + ballDeltaY;
++                ballY4 = ballY4 + ballDeltaY;
++                ballY5 = ballY5 + ballDeltaY;  
++                var a=Math.floor((Math.random()*500)+1);
++                var b=Math.floor((Math.random()*500)+1);
++                var c=Math.floor((Math.random()*500)+1);
++                var d=Math.floor((Math.random()*500)+1);
++                var e=Math.floor((Math.random()*500)+1);
++                  
++                while((a != b)&&(a !=c)&&(a !=d)&&(a != e))
++                {
++                 a=Math.floor((Math.random()*500)+1); 
++                }
++                  
++                if(ballY <= 500  )
++                {
++                  ballY=ballY;
++                }
++                else
++                {
++                  ballX=a;
++                  ballY=0;
++                }
++                if(ballY1 <= 500  )
++                {
++                  ballY1=ballY1;
++                }
++                else
++                {
++                  ballX1=a;
++                  ballY1=0;
++                }
++                 if(ballY2 <= 500  )
++                {
++                  ballY2=ballY2;
++                }
++                else
++                {
++                  ballX2=a;
++                  ballY2=0;
++                }
++                if(ballY3 <= 500  )
++                {
++                  ballY3=ballY3;
++                }
++                else
++                {
++                  ballX3=a;
++                  ballY3=0;
++                }
++                  
++                if(ballY4 <= 500  )
++                {
++                  ballY4=ballY4;
++                }
++                else
++                {
++                  ballX4=a;
++                  ballY4=0;
++                }  
++                  
++                  if ((ballY + ballDeltaY + ballRadius >= paddleY) && (ballX>=paddleX && ballX <= paddleX+100)){
++    // and it is positioned between the two ends of the paddle (is on top)
++    
++        ballY = 0;
++        ballX=Math.floor((Math.random()*500+1));
++        score++;            
++    
++}
++  
++                  if ((ballY1 + ballDeltaY + ballRadius >= paddleY) && (ballX1>=paddleX && ballX1 <= paddleX+100)){
++    // and it is positioned between the two ends of the paddle (is on top)
++        ballY1 = 0;
++        ballX1=Math.floor((Math.random()*500+1));
++        score--;         
++    
++}
++
++                if ((ballY2 + ballDeltaY + ballRadius >= paddleY) && (ballX2>=paddleX && ballX2 <= paddleX+100)){
++    // and it is positioned between the two ends of the paddle (is on top)
++        
++        ballY2 = 0;
++        ballX2=Math.floor((Math.random()*500+1));          
++        score--;            
++    
++}
++                  
++                                  if ((ballY3 + ballDeltaY + ballRadius >= paddleY) && (ballX3>=paddleX && ballX3 <= paddleX+100)){
++    // and it is positioned between the two ends of the paddle (is on top)
++    
++        ballY3 = 0;
++        ballX3=Math.floor((Math.random()*500+1));                            
++        score--;            
++    
++}
++
++                                  if ((ballY4 + ballDeltaY + ballRadius >= paddleY) && (ballX4>=paddleX && ballX4 <= paddleX+100)){
++    // and it is positioned between the two ends of the paddle (is on top)
++         
++        ballY4 = 0;
++        ballX4=Math.floor((Math.random()*500+1));                            
++                  
++    
++}
++
++                  
++  
++
++                  
++                }
++
++        var paddleDeltaX;
++        var paddleSpeedX = 10;
++
++        function movePaddle(){
++          if (paddleMove == 'LEFT'){
++            paddleDeltaX = -paddleSpeedX;
++          } else if (paddleMove == 'RIGHT'){
++            paddleDeltaX = paddleSpeedX;
++          } else {
++            paddleDeltaX = 0;
++          }
++          // If paddle reaches the ends, then don't let it move 
++          if (paddleX + paddleDeltaX < 0 || paddleX + paddleDeltaX +paddleWidth >canvas.width){
++            paddleDeltaX = 0; 
++          }
++          paddleX = paddleX + paddleDeltaX;
++        }
++        
++        var gameLoop;
++        var paddleMove;
++        
++        function startGame(){
++          
++          paddleMove = 'NONE';
++          paddleDeltaX = 0;
++
++          // call the animate() function every 200ms until clearInterval(gameLoop) is called
++          
++
++          // Start Tracking Keystokes
++          $(document).keydown(function(evt) {
++            if (evt.keyCode == 39) {
++              paddleMove = 'RIGHT';
++            } else if (evt.keyCode == 37){
++              paddleMove = 'LEFT';
++            }
++          });      
++
++          $(document).keyup(function(evt) {
++            if (evt.keyCode == 39) {
++              paddleMove = 'NONE';
++            } else if (evt.keyCode == 37){
++              paddleMove = 'NONE';
++            }
++          }); 
++
++                gameLoop = setInterval(animate,20);
++                }
++
++        function endGame(){
++                  if(score <= -40 )
++                  { 
++          clearInterval(gameLoop);
++                    context.clearRect(0,0,canvas.width,canvas.height);
++                    context.fillText('The End!!!!',canvas.width/2,canvas.height/2);
++                  }
++                   
++                }
++        
++        startGame();
++</script>
++</body>
