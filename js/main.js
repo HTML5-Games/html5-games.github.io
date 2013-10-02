@@ -269,13 +269,13 @@ function sendMessage() {
 	
 	//Emotes
 	
-	text = text.replace("<3", "♥");
-	text = text.replace(":D", "☻");
-	text = text.replace(":)", "☺");
-	text = text.replace(":(", "☹");
-	text = text.replace("(R)", "®");
-	text = text.replace("musicnote", "♫");
-	text = text.replace("TradeMark", "™");
+	text = text.replace("<3", "\♥");
+	text = text.replace(":D", "\☻");
+	text = text.replace(":)", "\☺");
+	text = text.replace(":(", "\☹");
+	text = text.replace("(R)", "\®");
+	text = text.replace("musicnote", "\♫");
+	text = text.replace("TradeMark", "\™");
 	
 	// Create new message
 	var message = new Message();
@@ -728,9 +728,12 @@ window.onkeydown = function(e){
 	
 	code = e.keycode || e.which;
 	
+	isDev = Parse.user.current();
+	
 	if (isInChat){
 		if (code == 13){
 			sendMessage();
 		}
 	}
+	//Fun/Dev Codes
 }
