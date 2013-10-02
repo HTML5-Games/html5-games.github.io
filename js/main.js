@@ -728,7 +728,6 @@ window.onkeydown = function(e){
 	
 	code = e.keycode || e.which;
 	
-	isDev = Parse.user.current();
 	
 	if (isInChat){
 		if (code == 13){
