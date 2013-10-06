@@ -1,52 +1,10 @@
-var canvas = document.getElementById("404canvas"),
-    ctx = canvas.getContext("2d"),
-    FPS = 30;
-    
-canvas.width = 1000;
-canvas.height = 700;
+var link = location.href;
+var seconds = 30;
 
-var space = canvas.getBoundingClientRect();
-
-var offset = {
-    x: space.top,
-    y: space.left
+var tick = function(){
+    seconds = seconds - 1;
+    document.getElementById("x").innerHTML = "Oh no, It seams that the page(" + link + ") you are looking for does not exist.";
+    document.getElementById("y").innerHTML = "You will be directed back to the home page in " + seconds + " seconds.";
 }
 
-function draw(){
-
-}
-
-window.onmousedown = function( e ){
-    e = e || window.event;
-    var cord = {
-        x: offset.x - e.pageX,
-        y: offset.y - e.pageY
-    }
-    ctx.font = "30px inherit";
-    ctx.fillStyle = "#252525";
-    ctx.fillText("404!", cord.x, cord.y);
-}
-
-window.onkeydown = function( e ){
-    e = e || window.event;
-    
-    code = e.keycode || e.which;
-    
-}
-
-window.onkeyup = function( e ){
-    e = e || window.event;
-    
-    code = e.keycode || e.which;
-    
-}
-
-function update(){
-}
-
-function tick(){
-    draw();
-    update();
-}
-
-setInterval(tick,1000/FPS)
+setInterval(tick,1000);
