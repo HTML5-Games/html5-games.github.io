@@ -713,6 +713,39 @@ function displayFeaturedGames() {
 	});
 }
 
+//Profile Pages, (anything to do with the profile page)
+
+var aboutProfileState = "text"
+
+document.getElementById("aboutProfile").onclick = function(){
+	var aboutElem = { };
+	
+	if (aboutProfileState == "text"){
+
+		$.each($("div")[0].attributes, function(idx, aboutE) {
+		    aboutElem[aboutE.nodeName] = attr.nodeValue;
+		});
+
+
+		$("div").replaceWith(function () {
+    			attrs.text = $(this).text();
+    			return $("<textarea />", attrs);
+		});
+	}
+	else if (aboutProfileState == "edit"){
+
+		$.each($("textarea")[0].attributes, function(idx, aboutE) {
+		    aboutElem[aboutE.nodeName] = attr.nodeValue;
+		});
+
+
+		$("textarea").replaceWith(function () {
+    			attrs.text = $(this).text();
+    			return $("<div />", attrs);
+		});
+	}
+}
+
 //Keyb and mouse Events, Keep at bottom
 window.onkeydown = function(e){
 	
