@@ -715,35 +715,41 @@ function displayFeaturedGames() {
 
 //Profile Pages, (anything to do with the profile page)
 
-var aboutProfileState = "text"
+//Profile About Me (Click on it to edit (does not save yet))
+document.getElementById("aboutProfile").onclick = function(event){
+	var div, input, text;
+	//Get event
+    	event = event || window.event;
+	//Event element
+    	div = event.target || event.srcElement;
 
-document.getElementById("aboutProfile").onclick = function(){
-	var aboutElem = { };
-	
-	if (aboutProfileState == "text"){
+    	// If it is a DIV
+    	if (div && div.tagName.toUpperCase() === "DIV") {
+      		// Hide it
+      		div.style.display = "none";
 
-		$.each($("div")[0].attributes, function(idx, aboutE) {
-		    aboutElem[aboutE.nodeName] = attr.nodeValue;
-		});
+      		// Get its text
+      		text = div.innerHTML;
 
+		// Create an input
+      		input = document.createElement("input");
+      		input.type = "text";
+      		input.size = Math.max(text.length / 4 * 3, 4);
+	      	div.parentNode.insertBefore(input, div);
 
-		$("div").replaceWith(function () {
-    			attrs.text = $(this).text();
-    			return $("<textarea />", attrs);
-		});
-	}
-	else if (aboutProfileState == "edit"){
+      		// Focus it, hook blur to undo
+      		input.focus();
+      		input.onblur = function() {
+		// Remove the input
+        	div.parentNode.removeChild(input);
 
-		$.each($("textarea")[0].attributes, function(idx, aboutE) {
-		    aboutElem[aboutE.nodeName] = attr.nodeValue;
-		});
+        	// Update the DIV
+        	div.innerHTML = input.value;
 
-
-		$("textarea").replaceWith(function () {
-    			attrs.text = $(this).text();
-    			return $("<div />", attrs);
-		});
-	}
+        	// Show the DIV again
+        	div.style.display = "";
+      		};
+    	}
 }
 
 //Keyb and mouse Events, Keep at bottom
