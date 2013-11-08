@@ -732,7 +732,7 @@ document.getElementById("aboutProfile").onclick = function(event){
       		text = div.innerHTML;
 
 		// Create an input
-      		input = document.createElement("input");
+      		input = document.createElement("textarea");
       		input.type = "text";
       		input.size = Math.max(text.length / 4 * 3, 4);
 	      	div.parentNode.insertBefore(input, div);
