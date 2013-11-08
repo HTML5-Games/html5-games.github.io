@@ -731,7 +731,7 @@ document.getElementById("aboutProfile").onclick = function(event){
       		// Get its text
       		text = div.innerHTML;
 
-		// Create an input
+		// Create an input(Text area)
       		input = document.createElement("textarea");
       		input.type = "text";
       		input.size = Math.max(text.length / 4 * 3, 4);
