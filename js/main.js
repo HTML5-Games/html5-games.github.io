@@ -234,6 +234,7 @@ buildMenu();
 // Chat
 
 var isInChat = false;
+var colors = ["red","purple","blue","green","yellow","orange"];
 
 function sendMessage() {
 	// Make sure that user is logged in
@@ -268,8 +269,13 @@ function sendMessage() {
 		text = text.replace(/z/gi, "2");
 		text = text.replace(/s/gi, "5");
 	}
+	// Make them close color elements
+	for (c in colors){
+		if (text.indexOf("<" + colors[c] + ">") !== -1 && text.indexOf("<" + colors[c] + "/>") == -1){
+			alert("You must close the <" + colors[c] + "> with <" + colors[c] + "/>");
+		}	
+	}
 	
-	//Emotes
 
 	// Create new message
 	var message = new Message();
