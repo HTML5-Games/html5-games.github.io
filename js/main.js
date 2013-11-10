@@ -740,14 +740,19 @@ document.getElementById("aboutProfile").onclick = function(event){
       		// Focus it, hook blur to undo
       		input.focus();
       		input.onblur = function() {
-		// Remove the input
-        	div.parentNode.removeChild(input);
+      			if (input.value = ""){
+      				input.value = "Cannot be empty";
+      			}
+			else {
+				// Remove the input
+        			div.parentNode.removeChild(input);
 
-        	// Update the DIV
-        	div.innerHTML = input.value;
+        			// Update the DIV
+        			div.innerHTML = input.value;
 
-        	// Show the DIV again
-        	div.style.display = "";
+        			// Show the DIV again
+        			div.style.display = "";
+			}
       		};
     	}
 }
