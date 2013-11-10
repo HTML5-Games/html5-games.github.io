@@ -740,8 +740,18 @@ document.getElementById("aboutProfile").onclick = function(event){
       		// Focus it, hook blur to undo
       		input.focus();
       		input.onblur = function() {
+      			//The input cannot be empty
       			if (input.value = ""){
-      				input.value = "Cannot be empty";
+      				//Use  the old text
+      				input.value = text;
+      				// Remove the input
+        			div.parentNode.removeChild(input);
+
+        			// Update the DIV
+        			div.innerHTML = input.value;
+
+        			// Show the DIV again
+        			div.style.display = "";
       			}
 			else {
 				// Remove the input
