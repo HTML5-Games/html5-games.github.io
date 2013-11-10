@@ -742,8 +742,8 @@ document.getElementById("aboutProfile").onclick = function(event){
       		input.onblur = function() {
       			//The input cannot be empty
       			if (input.value = ""){
-      				//Use  the old text
-      				input.value = text;
+      				//Warning
+      				input.value = "No text available";
       				// Remove the input
         			div.parentNode.removeChild(input);
 
