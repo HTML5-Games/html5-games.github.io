@@ -14,6 +14,8 @@ var Comment = Parse.Object.extend("Comment");
 var Message = Parse.Object.extend("Message");
 var InsMessage = Parse.Object.extend("Message")
 var Game = Parse.Object.extend("Game");
+//  Int Parse Profile Objects
+var AboutMe = Parse.Object.extend("AboutMe")
 
 function buildProfile() {
 	level1 = '<b>Newb</b>Basic access';
