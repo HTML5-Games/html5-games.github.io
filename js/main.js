@@ -725,7 +725,9 @@ function displayFeaturedGames() {
 
 //Profile About Me (Click on it to edit (does not save yet))
 document.getElementById("aboutProfile").onclick = function(event){
+	//Parse Related
 	currentUser = Parse.user.current();
+	var aboutMe = new AboutMe();
 	
 	var div, input, text;
 	//Get event
@@ -764,6 +766,20 @@ document.getElementById("aboutProfile").onclick = function(event){
         			div.style.display = "";
       			}
 			else {
+				//Parse
+				aboutMe.set("user", currentUser);
+				aboutMe.set("meText", input.value);
+				
+				aboutMe.save(null, {
+					success: function(aboutMe){
+						alert("Value successfully saved");
+					},
+					error: function(aboutMe, error){
+						alert("Value failed to save; Error code: " + error.description);
+					}
+					
+				});
+				
 				// Remove the input
         			div.parentNode.removeChild(input);
 
@@ -792,3 +808,12 @@ window.onkeydown = function(e){
 	}
 	//Fun/Dev Codes
 }
+
+//For the devs, use in your browsers javascript console
+/*function devTool(e){
+	currentUser = Parse.user.current();
+	if (e == "aboutUser"){
+		var query = new Parse.Query(AboutMe);
+		console.log(aboutMe.get("");)
+	}
+}*/
