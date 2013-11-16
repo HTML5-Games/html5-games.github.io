@@ -725,6 +725,8 @@ function displayFeaturedGames() {
 
 //Profile About Me (Click on it to edit (does not save yet))
 document.getElementById("aboutProfile").onclick = function(event){
+	currentUser = Parse.user.current();
+	
 	var div, input, text;
 	//Get event
     	event = event || window.event;
