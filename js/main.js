@@ -215,7 +215,7 @@ function buildMenu() {
 	}
 	// If user logged in
 	else {
-		var $profile = $('<li><a tabindex="-1" href="profile.html">Profile</a></li>');
+		var $profile = $('<li><a tabindex="-1" href="profile?' + Parse.User.current().get("username") + '">Profile</a></li>');
 		var $editProfile = $('<li><a tabindex="-1" href="editprofile.html">Settings</a></li>');
 		var $logout = $('<li><a tabindex="-1" href="#" onclick="logOut();">Logout</a></li>');
 		$loginMenu.append($profile);
