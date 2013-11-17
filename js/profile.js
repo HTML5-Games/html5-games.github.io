@@ -14,6 +14,7 @@ function loadProfile(){
                 success: function(object) {
                         // Successfully retrieved the object.
                         alert(object.get("user"));
+                        document.getElementById("aboutProfile").innerHTML = object.get("aboutMe");
                 },
                 error: function(error) {
                         alert("Error: " + error.code + " " + error.message);
