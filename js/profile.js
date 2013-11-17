@@ -5,11 +5,11 @@
 Parse.initialize("cF1KaOFNgSERAxKgv4ZUDE3XBnMEpGxF2ACWmMZE", "tnNd8KSP42GsJ9ZyBVaaN9REYRW76gUj9sxm8e3i");
 
 var Profile = Parse.Object.extend("Profile");
+var User = Parse.Object.extend("User");
 
 function loadProfile(){
         var query = new Parse.Query(Profile);
-        var currentUser = Parse.User.current();
-        query.equalTo("user", currentUser);
+        query.equalTo("user", "katnapper");
         query.limit(1);
         query.find({
                 success: function(results) {
