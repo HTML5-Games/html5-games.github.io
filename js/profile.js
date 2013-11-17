@@ -27,3 +27,19 @@ function loadProfile(){
                 }
         });
 }
+
+function saveProfile(){
+        var profile = new Profile();
+        
+        profile.set("user", Parse.User.current().get("username"));
+        profile.set("aboutMe", document.getElementById("profileDesc").value);
+        
+        profile.save(null, {
+                success: function(gameScore) {
+                        
+                },
+                error: function(gameScore, error) {
+                        alert("Error: " + error.code + " " + error.message);
+                }
+        });
+}
