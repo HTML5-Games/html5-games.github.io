@@ -12,10 +12,8 @@ Parse.initialize("cF1KaOFNgSERAxKgv4ZUDE3XBnMEpGxF2ACWmMZE", "tnNd8KSP42GsJ9ZyBV
 var Post = Parse.Object.extend("Post");
 var Comment = Parse.Object.extend("Comment");
 var Message = Parse.Object.extend("Message");
-var InsMessage = Parse.Object.extend("Message")
+var InsMessage = Parse.Object.extend("Message");
 var Game = Parse.Object.extend("Game");
-//  Int Parse Profile Objects
-var AboutMe = Parse.Object.extend("AboutMe")
 
 function buildProfile() {
 	level1 = '<b>Newb</b>Basic access';
@@ -721,78 +719,6 @@ function displayFeaturedGames() {
 	});
 }
 
-//Profile Pages, (anything to do with the profile page)
-
-//Profile About Me (Click on it to edit (does not save yet))
-document.getElementById("aboutProfile").onclick = function(event){
-	//Parse Related
-	currentUser = Parse.user.current();
-	var aboutMe = new AboutMe();
-	
-	var div, input, text;
-	//Get event
-    	event = event || window.event;
-	//Event element
-    	div = event.target || event.srcElement;
-
-    	// If it is a DIV
-    	if (div && div.tagName.toUpperCase() === "DIV") {
-      		// Hide it
-      		div.style.display = "none";
-
-      		// Get its text
-      		text = div.innerHTML;
-
-		// Create an input(Text area)
-      		input = document.createElement("textarea");
-      		input.type = "text";
-      		input.size = Math.max(text.length / 4 * 3, 4);
-	      	div.parentNode.insertBefore(input, div);
-
-      		// Focus it, hook blur to undo
-      		input.focus();
-      		input.onblur = function() {
-      			//The input cannot be empty
-      			if (input.value == ""){
-      				//Warning
-      				input.value = text;
-      				// Remove the input
-        			div.parentNode.removeChild(input);
-
-        			// Update the DIV
-        			div.innerHTML = input.value;
-
-        			// Show the DIV again
-        			div.style.display = "";
-      			}
-			else {
-				//Parse
-				aboutMe.set("user", currentUser);
-				aboutMe.set("meText", input.value);
-				
-				aboutMe.save(null, {
-					success: function(aboutMe){
-						alert("Value successfully saved");
-					},
-					error: function(aboutMe, error){
-						alert("Value failed to save; Error code: " + error.description);
-					}
-					
-				});
-				
-				// Remove the input
-        			div.parentNode.removeChild(input);
-
-        			// Update the DIV
-        			div.innerHTML = input.value;
-
-        			// Show the DIV again
-        			div.style.display = "";
-			}
-      		};
-    	}
-}
-
 //Keyb and mouse Events, Keep at bottom
 window.onkeydown = function(e){
 	
@@ -808,12 +734,3 @@ window.onkeydown = function(e){
 	}
 	//Fun/Dev Codes
 }
-
-//For the devs, use in your browsers javascript console
-/*function devTool(e){
-	currentUser = Parse.user.current();
-	if (e == "aboutUser"){
-		var query = new Parse.Query(AboutMe);
-		console.log(aboutMe.get("");)
-	}
-}*/
