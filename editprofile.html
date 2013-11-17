@@ -45,7 +45,24 @@
         </header>
 
         <section id="editProfile" align="center">
-                <h1>Coming very soon!</h1>
+                <table>
+                        <tr>
+                                <td><h4>Profile Image</h4></td>
+                        </tr>
+                        <tr>
+                                <td><div class="persona-icon" style="background-image: url(http://www.gravatar.com/avatar/ec138e774a943d24a47b790a849fc6c1.jpg?s=190&d=wavatar)"></div></td>
+                                <td><input type="text" placeholder="Image"/><input type="button" value="Browse" onclick="alert('Oh no, It looks like that feature doesnt work yet')"/></td>
+                        </tr>
+                        <tr>
+                                <td><h4>Profile Description</h4></td>
+                        </tr>
+                        <tr>
+                                <td><textarea id="profileDesc" placeholder="Enter A Profile Description"></textarea></td>
+                        </tr>
+                        <tr>
+                                <td><button onclick="saveProfile()">Save</button></td>
+                        </tr>
+                </table>
         </section>
 
         <footer id="footer" class="section section-dark">
@@ -92,6 +109,7 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="http://www.parsecdn.com/js/parse-1.2.7.min.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/profile.js"></script>
 
 </body>
 </html>
