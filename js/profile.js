@@ -7,15 +7,15 @@ Parse.initialize("cF1KaOFNgSERAxKgv4ZUDE3XBnMEpGxF2ACWmMZE", "tnNd8KSP42GsJ9ZyBV
 var Profile = Parse.Object.extend("Profile");
 
 function loadProfile(){
-  var query = new Parse.Query(Profile);
-  var currentUser = Parse.User.current();
-  query.equalTo("user", currentUser);
-  query.first({
-    success: function(object){
-      document.getElementById("aboutProfile").innerHTML = object.get("aboutMe");
-    },
-    error: function(error){
-      alert("Error receiving Profile. Code:" error.code + " " + error.message);
-    }
-  });
+        var query = new Parse.Query(Profile);
+        var currentUser = Parse.User.current();
+        query.equalTo("user", currentUser);
+        query.first({
+                success: function(object) {
+                        // Successfully retrieved the object.
+                },
+                error: function(error) {
+                        alert("Error: " + error.code + " " + error.message);
+                }
+        });
 }
