@@ -9,8 +9,8 @@ var User = Parse.Object.extend("User");
 
 function loadProfile(){
         var query = new Parse.Query(Profile);
-        var currentUser = Parse.User.current();
-        query.equalTo("user", currentUser.get("username"));
+        var user = window.location.href.replace("http://html5-games.github.io/","");
+        query.equalTo("user", user);
         query.limit(1);
         query.find({
                 success: function(results) {
