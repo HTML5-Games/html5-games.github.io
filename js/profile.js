@@ -10,11 +10,14 @@ function loadProfile(){
         var query = new Parse.Query(Profile);
         var currentUser = Parse.User.current();
         query.equalTo("user", currentUser);
-        query.first({
-                success: function(object) {
+        query.find({
+                success: function(results) {
                         // Successfully retrieved the object.
-                        alert(object.get("user"));
-                        document.getElementById("aboutProfile").innerHTML = object.get("aboutMe");
+                        for (var i = 0; i < results.length; i++) { 
+                                alert(object.id + " " + object.get("user"));
+                                document.getElementById("aboutProfile").innerHTML = object.get("aboutMe");
+                        }
+                        
                 },
                 error: function(error) {
                         alert("Error: " + error.code + " " + error.message);
