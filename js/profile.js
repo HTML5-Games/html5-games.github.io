@@ -10,10 +10,12 @@ function loadProfile(){
         var query = new Parse.Query(Profile);
         var currentUser = Parse.User.current();
         query.equalTo("user", currentUser);
+        query.limit(1);
         query.find({
                 success: function(results) {
                         // Successfully retrieved the object.
                         for (var i = 0; i < results.length; i++) { 
+                                var object = results[i];
                                 alert(object.id + " " + object.get("user"));
                                 document.getElementById("aboutProfile").innerHTML = object.get("aboutMe");
                         }
