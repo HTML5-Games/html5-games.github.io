@@ -9,7 +9,8 @@ var User = Parse.Object.extend("User");
 
 function loadProfile(){
         var query = new Parse.Query(Profile);
-        query.equalTo("user", "katnapper");
+        var currentUser = Parse.User.current();
+        query.equalTo("user", currentUser.get("username"));
         query.limit(1);
         query.find({
                 success: function(results) {
