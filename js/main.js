@@ -318,7 +318,7 @@ function displayMessages(scroll) {
 				var messageObject = messages.pop();
 				var user = messageObject.get("user");
 				var m = '<div class="messages">';
-				m += "<a href='profile?" + user + "'>" +  user + "</a> ";
+				m += "<a href='profile? title=" + user + " " + user + "'>" +  user + "</a> ";
 				m += "(" + messageObject.createdAt.toLocaleTimeString() + "): ";
 				m += messageObject.get("text");
 				m += "</div>"
