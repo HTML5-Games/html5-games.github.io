@@ -318,7 +318,7 @@ function displayMessages(scroll) {
 				var messageObject = messages.pop();
 				var user = messageObject.get("user");
 				var m = '<div class="messages">';
-				m += user + " ";
+				m += "<a href='profile?" + user + "'>" +  user + "</a> ";
 				m += "(" + messageObject.createdAt.toLocaleTimeString() + "): ";
 				m += messageObject.get("text");
 				m += "</div>"
@@ -360,7 +360,7 @@ function showMessages(scroll) {
 				var messageObject = messages.pop();
 				var user = messageObject.get("user");
 				var m = '<div class="messages">';
-				m += user + " ";
+				m += "<a href='profile?" + user + "'>" +  user + "</a> ";
 				m += "(" + messageObject.createdAt.toLocaleTimeString() + "): ";
 				m += messageObject.get("text");
 				m += "</div>"
