@@ -36,7 +36,6 @@ function saveProfile(){
                 success: function(gameScore) {
                         profile.set("user", Parse.User.current().get("username"));
                         profile.set("aboutMe", document.getElementById("profileDesc").value);
-                        user.set("color", "#" + document.getElementById("red").innerHTML  + document.getElementById("green").innerHTML + document.getElementById("blue").innerHTML)
                         profile.save();
                         alert("Save Successful");
                 },
