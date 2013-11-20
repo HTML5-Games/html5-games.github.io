@@ -44,9 +44,3 @@ function saveProfile(){
                 }
         });
 }
-
-function loadColor(){
-        var color = "#" + document.getElementById("red").innerHTML  + document.getElementById("green").innerHTML + document.getElementById("blue").innerHTML;
-        
-        document.getElementById("color").style.background = String(color);
-}
