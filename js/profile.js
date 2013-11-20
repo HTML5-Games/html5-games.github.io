@@ -23,7 +23,7 @@ function loadProfile(){
                         
                 },
                 error: function(error) {
-                        alert("Error: " + error.code + " " + error.message);
+                        
                 }
         });
 }
@@ -38,6 +38,7 @@ function saveProfile(){
                         profile.set("aboutMe", document.getElementById("profileDesc").value);
                         user.set("color", "#" + document.getElementById("red").innerHTML  + document.getElementById("green").innerHTML + document.getElementById("blue").innerHTML)
                         profile.save();
+                        alert("Save Successful");
                 },
                 error: function(gameScore, error) {
                         alert("Error: " + error.code + " " + error.message);
