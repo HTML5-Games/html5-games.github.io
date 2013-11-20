@@ -6,10 +6,10 @@ Parse.initialize("cF1KaOFNgSERAxKgv4ZUDE3XBnMEpGxF2ACWmMZE", "tnNd8KSP42GsJ9ZyBV
 
 var Profile = Parse.Object.extend("Profile");
 var User = Parse.Object.extend("User");
+var userProfile = window.location.href.replace("http://html5-games.github.io/","");
 
 function loadProfile(){
         var query = new Parse.Query(Profile);
-        var userProfile = window.location.href.replace("http://html5-games.github.io/","");
         query.equalTo("user", userProfile);
         query.limit(1);
         query.find({
