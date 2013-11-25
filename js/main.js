@@ -271,8 +271,9 @@ function sendMessage() {
 	}
 	// Make them close color elements
 	for (c in colors){
-		if (text.indexOf("<" + colors[c] + ">") !== -1 && text.indexOf("<" + colors[c] + "/>") == -1){
-			alert("You must close the <" + colors[c] + "> with <" + colors[c] + "/>");
+		if (text.indexOf("<" + colors[c] + ">") !== -1 && text.indexOf("</" + colors[c] + ">") == -1){
+			alert("You must close the <" + colors[c] + "> with </" + colors[c] + ">");
+			return false;
 		}	
 	}
 	
