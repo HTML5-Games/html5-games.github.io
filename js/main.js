@@ -41,7 +41,8 @@ function buildProfile() {
 	$("#level11").popover({html: true, placement: "bottom", content: level11});
 
 	currentUser = Parse.User.current();
-	if (currentUser != null && window.location.toLowerCase == "html5-games.github.io/profile?" + currentUser.get("username")) {
+	currentProfile = window.location.href.replace("http://html5-games.github.io/profile?","");
+	if (currentUser != null) {
 		$("#username-profile").text(currentUser.get("username"));
 		var joined = currentUser.createdAt;
 		$("#joined-profile").text(joined.getMonth() + "/" + joined.getDate() + "/" + joined.getFullYear().toString().substring(2, 4));
@@ -55,8 +56,7 @@ function buildProfile() {
 			$level.text(i);
 		}
 	}
-	currentProfile = window.location.href.replace("http://html5-games.github.io/profile?","");
-	if (currentProfile != currentUser.get("username")) {
+	else if (currentProfile != currentUser.get("username")) {
 		var FindUser = new Parse.Query(Profile);
 		FindUser.equalTo("username", currentProfile.toLowerCase());
 		FindUser.limit(1);
@@ -84,6 +84,9 @@ function buildProfile() {
 			}
 		})
 			
+	}
+	else {
+		window.location = "http://www.html5-games.github.io/404.html";
 	}
 }
 
