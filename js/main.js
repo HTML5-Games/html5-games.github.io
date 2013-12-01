@@ -14,6 +14,7 @@ var Comment = Parse.Object.extend("Comment");
 var Message = Parse.Object.extend("Message");
 var InsMessage = Parse.Object.extend("Message");
 var Game = Parse.Object.extend("Game");
+var Profile = Parse.Object.extend("User")
 
 function buildProfile() {
 	level1 = '<b>Newb</b>Basic access';
@@ -56,18 +57,33 @@ function buildProfile() {
 	}
 	currentProfile = window.location.href.replace("http://html5-games.github.io/profile?","");
 	if (currentProfile != currentUser.get("username")) {
-		$("#username-profile").text(currentProfile.get("username"));
-		var joined = currentProfile.createdAt;
-		$("#joined-profile").text(joined.getMonth() + "/" + joined.getDate() + "/" + joined.getFullYear().toString().substring(2, 4));
-		$("#level-profile").text(currentProfile.get("level"));
-		$(".persona-icon").each(function() {
-			$(this).css("background-image", "url('http://www.gravatar.com/avatar/" + md5(currentProfile.get("email")) + ".jpg?s=190&d=wavatar')");
-		});
-		for (var i = 1; i <= currentProfile.get("level"); i++) {
-			$level = $("#level" + i);
-			$level.removeClass("locked");
-			$level.text(i);
-		}
+		var FindUser = new Parse.Query(Profile);
+		FindUser.equalTo("username", currentProfile.toLowerCase());
+		FindUser.limit(1);
+		FindUser.find({
+			success: function(results){
+				for (var i = 0; i >= results.length; i++){
+					var UserProfile = results[i];
+					
+					$("#username-profile").text(UserProfile.get("username"));
+					var joined = UserProfile.createdAt;
+					$("#joined-profile").text(joined.getMonth() + "/" + joined.getDate() + "/" + joined.getFullYear().toString().substring(2, 4));
+					$("#level-profile").text(UserProfile.get("level"));
+						$(".persona-icon").each(function() {
+						$(this).css("background-image", "url('http://www.gravatar.com/avatar/" + md5(UserProfile.get("email")) + ".jpg?s=190&d=wavatar')");
+					});
+					for (var i = 1; i <= UserProfile.get("level"); i++) {
+						$level = $("#level" + i);
+						$level.removeClass("locked");
+						$level.text(i);
+					}
+				}
+			},
+			error: function(error){
+				alert("There was an error retrieve the profile. Error " + error.code + " " + error.description + " " + error.message);
+			}
+		})
+			
 	}
 }
 
