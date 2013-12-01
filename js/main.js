@@ -40,7 +40,7 @@ function buildProfile() {
 	$("#level11").popover({html: true, placement: "bottom", content: level11});
 
 	currentUser = Parse.User.current();
-	if (currentUser != null) {
+	if (currentUser != null && window.location.toLowerCase == "html5-games.github.io/profile?" + currentUser.get("username")) {
 		$("#username-profile").text(currentUser.get("username"));
 		var joined = currentUser.createdAt;
 		$("#joined-profile").text(joined.getMonth() + "/" + joined.getDate() + "/" + joined.getFullYear().toString().substring(2, 4));
