@@ -10,20 +10,19 @@ var userProfile = window.location.href.replace("http://html5-games.github.io/pro
 
 function loadProfile(){
         var query = new Parse.Query(Profile);
-        query.equalTo("user", userProfile);
+        query.equalTo("user", userProfile.toLowerCase());
         query.limit(1);
         query.find({
                 success: function(results) {
                         // Successfully retrieved the object.
                         for (var i = 0; i < results.length; i++) { 
                                 var object = results[i];
-                                alert(object.id + " " + object.get("user"));
-                                document.getElementById("aboutProfile").innerHTML = object.get("aboutMe");
+                                $("#aboutProfile").text(object.get("aboutMe"));
                         }
                         
                 },
                 error: function(error) {
-                        
+                        alert("Error: " + error.code + " " + error.message);
                 }
         });
 }
