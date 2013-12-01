@@ -54,6 +54,21 @@ function buildProfile() {
 			$level.text(i);
 		}
 	}
+	currentProfile = window.location.href.replace("http://html5-games.github.io/profile?","");
+	if (currentProfile != currentUser.get("username")) {
+		$("#username-profile").text(currentProfile.get("username"));
+		var joined = currentProfile.createdAt;
+		$("#joined-profile").text(joined.getMonth() + "/" + joined.getDate() + "/" + joined.getFullYear().toString().substring(2, 4));
+		$("#level-profile").text(currentProfile.get("level"));
+		$(".persona-icon").each(function() {
+			$(this).css("background-image", "url('http://www.gravatar.com/avatar/" + md5(currentProfile.get("email")) + ".jpg?s=190&d=wavatar')");
+		});
+		for (var i = 1; i <= currentProfile.get("level"); i++) {
+			$level = $("#level" + i);
+			$level.removeClass("locked");
+			$level.text(i);
+		}
+	}
 }
 
 // Log In & Sign Up
