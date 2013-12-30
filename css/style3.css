@@ -1,0 +1,25 @@
+/* New stylesheet for: 404.html */
+
+h1 {
+	text-align: center;
+	font-family: 'Shojumaru';
+	color: #FFFFFF;
+	font-size: 62px;
+	padding: 5%;
+}
+
+body {
+	background-color: #1F1F1F;
+}
+
+h3 {
+	color: #FFFFFF;
+	text-align: center;
+	font-family: 'Monda';
+}
+
+h4 {
+	color: #FFFFFF;
+	text-align: center;
+	font-family: 'Monda';
+}
