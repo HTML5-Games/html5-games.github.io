@@ -15,7 +15,7 @@ var tick = function(){
     else {
         sec = " second";
     }
-    document.getElementById("x").innerHTML = "Oh no, It seams that the page(" + link + ") you are looking for does not exist.";
+    document.getElementById("x").innerHTML = "Oh no, It seems that the page - " + link + " - does not exist.";
     document.getElementById("y").innerHTML = "You will be directed back to the home page in " + seconds + sec;
 }
 
