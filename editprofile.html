@@ -52,8 +52,20 @@
                         </tr>
                         <tr>
                                 <td><div class="persona-icon" style="background-image: url(http://www.gravatar.com/avatar/ec138e774a943d24a47b790a849fc6c1.jpg?s=190&d=wavatar)"></div></td>
-                                <td><input type="text" placeholder="Image"/></td>
-                                <td><input type="button" value="Browse" onclick="alert('Oh no, It looks like that feature doesnt work yet')"/></td>
+                                
+                                <!--Development in progress message-->
+                                
+                                <div style="background-color:#F8FC7E; opacity:0.6;">
+                                	<p style="color:#000000;">Sorry, the profile system is still in development - check back later!</p>
+                                </div>
+                                
+                                <!--
+                                Don't know why we need this:
+                                 <td><input type="text" placeholder="Image"/></td>
+                                -->
+                                
+                                <!--Choose file feature (not yet working)-->
+                                <td><input type="file" value="browse" /></td>
                         </tr>
                         <tr>
                                 <td><h4>Profile Description</h4></td>
