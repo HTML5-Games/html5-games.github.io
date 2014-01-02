@@ -4,7 +4,6 @@ body {
 	font-family: 'Monda', sans-serif;
 	font-size: 16px;
 	line-height: 24px;
-	padding-top: 40px;
 }
 
 @media ( max-width: 979px ) {
@@ -184,6 +183,10 @@ a.well-dark:hover h3 {
 	max-height: 300px;
 	overflow-x: auto;
 	margin-bottom: 10px;
+}
+
+#footer {
+    text-align: center;
 }
 
 #footer .span3 a {
