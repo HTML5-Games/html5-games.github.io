@@ -6,7 +6,7 @@
 * Fix submit game
 * Filter posts in blog
 * Fix header nav (and implement scrollspy) (Claimed by @Logi0, [#13](https://github.com/HTML5-Games/html5-games.github.io/issues/13))
-* Make `games.html` and 'game.html' (Claimed by @Graeme22)
+* Make `games.html` and `game.html` (Claimed by @Graeme22)
 * Add edit profile page
 * Implement user levels
 * Add badges
