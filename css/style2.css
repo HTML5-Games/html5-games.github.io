@@ -312,6 +312,7 @@ a.well-dark:hover h3 {
 	text-align: center;
 	line-height: 48px;
 	cursor: pointer;
+	margin-top: 4px;
 }
 
 .level.locked {
